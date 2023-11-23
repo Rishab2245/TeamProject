@@ -1,0 +1,56 @@
+import React from "react";
+import Logo from "../assets/Logo.png"
+import { useState } from "react";
+import axios from "axios";
+import "../SignUp/Signup.css"
+import login from "../assets/Login.png"
+
+const Login = () => {
+    const [email,setMail] = useState("");
+    const [password,setPassword] = useState("");
+
+    const HandleChange = (e) => {
+        const {name,value} = e.target;
+        if (name === 'email'){
+            setMail(value);
+        }
+        if (name === 'password'){
+            setPassword(value);
+        }
+    }
+    const Submit =async () => {
+        
+    }
+    return (
+        <div className="hero">
+            <div className="nav">
+                <figure>
+                    <img src={Logo} alt="" />
+                </figure>
+                <h1>&nbsp;Teemify</h1>
+            </div>
+            <div className="main">
+                <h2>SignUp</h2>
+                <div className="container">
+                    <form>
+                        <div className="form-container">
+                            <div>
+                                <input type="email" name="email" id="email" placeholder="Email" autoComplete="off"required={true} onChange={HandleChange}/>
+                                <hr />
+                            </div>
+                            <div>
+                                <input type="password" name="password" id="password" placeholder="Password" required={true} onChange={HandleChange}/>
+                                <hr />
+                            </div>
+                        </div>
+                        <button onClick={Submit}>LOGIN</button>
+                    </form>
+                    <figure className="img">
+                        <img src={login} alt="Image" />
+                    </figure>
+                </div>
+            </div>
+        </div>
+    )
+}
+export default Login;
