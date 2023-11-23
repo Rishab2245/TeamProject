@@ -1,4 +1,5 @@
 import './Homepg.css'
+import Teamwork from "src\assets\vecteezy_teamwork-or-team-building-office-business-meeting-vector_4154417-removebg-preview 1.png" 
 function Home() {
     return(
         <>
@@ -34,7 +35,7 @@ Productivity peacks.</p>
     </div></div>
       </div>
        <div className="illustration">
-        <img src="src\assets\vecteezy_teamwork-or-team-building-office-business-meeting-vector_4154417-removebg-preview 1.png" alt="" />
+        <img src={Teamwork} alt="" />
        </div>
       </div>
         </>
