@@ -1,12 +1,26 @@
 import React from "react";
-import Logo from "../images/Logo.png"
+import Logo from "../assets/Logo.png"
 import { useState } from "react";
 import axios from "axios";
-import signup from "../images/signup.png"
 import "../SignUp/Signup.css"
-import login from "../images/Login.png"
+import login from "../assets/Login.png"
 
 const Login = () => {
+    const [email,setMail] = useState("");
+    const [password,setPassword] = useState("");
+
+    const HandleChange = (e) => {
+        const {name,value} = e.target;
+        if (name === 'email'){
+            setMail(value);
+        }
+        if (name === 'password'){
+            setPassword(value);
+        }
+    }
+    const Submit =async () => {
+        
+    }
     return (
         <div className="hero">
             <div className="nav">
@@ -21,15 +35,15 @@ const Login = () => {
                     <form>
                         <div className="form-container">
                             <div>
-                                <input type="email" name="email" id="email" placeholder="Email" autoComplete="off"required={true}/>
+                                <input type="email" name="email" id="email" placeholder="Email" autoComplete="off"required={true} onChange={HandleChange}/>
                                 <hr />
                             </div>
                             <div>
-                                <input type="password" name="password" id="password" placeholder="Password" required={true}/>
+                                <input type="password" name="password" id="password" placeholder="Password" required={true} onChange={HandleChange}/>
                                 <hr />
                             </div>
                         </div>
-                        <button>SIGN UP</button>
+                        <button onClick={Submit}>LOGIN</button>
                     </form>
                     <figure className="img">
                         <img src={login} alt="Image" />
