@@ -1,11 +1,12 @@
 import './Homepg.css'
 import Teamwork from "../assets/vecteezy_teamwork-or-team-building-office-business-meeting-vector_4154417-removebg-preview 1.png" 
+import Logo from "../assets/Logo_Teemify.png"
 function Home() {
     return(
         <>
         <nav>
             <div className="logo">
-                <div><img src="src\assets\Logo_Teemify.png" alt="" /></div>
+                <div><img src={Logo} alt="" /></div>
                <div> <h3>Teemify</h3></div>
             </div>
             <div className="homeNav">
