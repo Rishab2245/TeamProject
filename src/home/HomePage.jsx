@@ -1,5 +1,5 @@
 import './Homepg.css'
-import Teamwork from "src\assets\vecteezy_teamwork-or-team-building-office-business-meeting-vector_4154417-removebg-preview 1.png" 
+import Teamwork from "../assets/vecteezy_teamwork-or-team-building-office-business-meeting-vector_4154417-removebg-preview 1.png" 
 function Home() {
     return(
         <>
