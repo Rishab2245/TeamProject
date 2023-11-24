@@ -63,3 +63,9 @@ button{
     padding: .5rem;
     cursor:pointer;
 }
+.btn-container{
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 2rem;
+    gap: 11rem;
+}

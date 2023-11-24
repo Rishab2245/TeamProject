@@ -4,29 +4,30 @@ import { useState } from "react";
 import axios from "axios";
 import "./Login.css"
 import login from "../assets/Login.png"
+import { Link } from "react-router-dom";
 
 const Login = () => {
-    const [email,setMail] = useState("");
-    const [password,setPassword] = useState("");
+    const [email, setMail] = useState("");
+    const [password, setPassword] = useState("");
 
     const HandleChange = (e) => {
-        const {name,value} = e.target;
-        if (name === 'email'){
+        const { name, value } = e.target;
+        if (name === 'email') {
             setMail(value);
         }
-        if (name === 'password'){
+        if (name === 'password') {
             setPassword(value);
         }
     }
     const Submit = async () => {
         try {
-            const response = await axios.post("https://teammanagement.onrender.com/api/user/login",{
+            const response = await axios.post("https://teammanagement.onrender.com/api/user/login", {
                 "email": email,
                 "password": password,
             })
             console.log(response);
         }
-        catch (error){
+        catch (error) {
             console.error(error);
         }
     }
@@ -44,15 +45,20 @@ const Login = () => {
                     <form>
                         <div className="f-container">
                             <div>
-                                <input type="email" name="email" id="email" placeholder="Email" autoComplete="off"required={true} onChange={HandleChange}/>
+                                <input type="email" name="email" id="email" placeholder="Email" autoComplete="off" required={true} onChange={HandleChange} />
                                 <hr />
                             </div>
                             <div>
-                                <input type="password" name="password" id="password" placeholder="Password" required={true} onChange={HandleChange}/>
+                                <input type="password" name="password" id="password" placeholder="Password" required={true} onChange={HandleChange} />
                                 <hr />
                             </div>
                         </div>
-                        <button onClick={Submit}>LOGIN</button>
+                        <div className="buttons">
+                            <button onClick={Submit}>LOGIN</button>
+                            <Link to={'/signup'}>
+                                <button>Signup</button>
+                            </Link>
+                        </div>
                     </form>
                     <figure className="img">
                         <img src={login} alt="Image" />
