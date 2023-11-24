@@ -1,10 +1,9 @@
 import React from "react";
 import axios from "axios";
-import "./Signup.css"
 import signup from "../assets/signup.png"
 import Logo from "../assets/Logo.png"
 import { useState } from "react";
-
+import "./Signup.css"
 const SignUp = () => {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
