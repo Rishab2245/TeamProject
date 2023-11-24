@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "../assets/Logo.png"
 import { useState } from "react";
 import axios from "axios";
-import "../SignUp/Signup.css"
+import "./Login.css"
 import login from "../assets/Login.png"
 
 const Login = () => {
@@ -18,8 +18,17 @@ const Login = () => {
             setPassword(value);
         }
     }
-    const Submit =async () => {
-        
+    const Submit = async () => {
+        try {
+            const response = await axios.post("https://teammanagement.onrender.com/api/user/login",{
+                "email": email,
+                "password": password,
+            })
+            console.log(response);
+        }
+        catch (error){
+            console.error(error);
+        }
     }
     return (
         <div className="hero">

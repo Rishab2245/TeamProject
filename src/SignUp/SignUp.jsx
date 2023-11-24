@@ -9,7 +9,6 @@ const SignUp = () => {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const [mail, setMail] = useState("");
-    const [status,setStatus] = useState(1);
     const HandleChange = (e) => {
         const { name, value } = e.target;
         if (name === 'name') {
