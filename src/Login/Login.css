@@ -64,3 +64,8 @@ button{
     padding: .5rem;
     cursor:pointer;
 }
+.buttons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 11rem;
+}

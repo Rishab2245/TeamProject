@@ -4,13 +4,14 @@ import signup from "../assets/signup.png"
 import Logo from "../assets/Logo.png"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 import "./Signup.css"
 const SignUp = () => {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const [mail, setMail] = useState("");
-    const [display,setDisplay] = useState(false);
+    const [display, setDisplay] = useState(false);
     const navigate = useNavigate();
     const HandleChange = (e) => {
         const { name, value } = e.target;
@@ -37,7 +38,7 @@ const SignUp = () => {
             setDisplay(false);
             navigate('/aftersignup');
         }
-        catch (error){
+        catch (error) {
             console.log(error.response.request.status);
             // const err = error.response.request.status;
             // console.log("Previously :",value);
@@ -56,7 +57,7 @@ const SignUp = () => {
             <div className="main">
                 <h2>SignUp</h2>
                 <div className="container">
-                    <form>
+                    <form onSubmit={Submit}>
                         <div className="form-container">
                             <div>
                                 <input type="text" name="name" id="name" placeholder="Name" autoComplete="off" required={true} onChange={HandleChange} />
@@ -71,9 +72,14 @@ const SignUp = () => {
                                 <hr />
                             </div>
                         </div>
-                        <button onClick={Submit}>SIGN UP</button>
+                        <div className="btn-container">
+                            <button type="submit">SIGN UP</button>
+                            <Link to={'/login'}>
+                                <button>Login</button>
+                            </Link>
+                        </div>
                         {display && (
-                            <p>Please enter correct and unused account details.</p>
+                            <h3>Please enter correct and unused account details.</h3>
                         )}
                     </form>
                     <figure className="img">
