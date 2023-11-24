@@ -42,7 +42,7 @@ const Login = () => {
                 <h2>SignUp</h2>
                 <div className="container">
                     <form>
-                        <div className="form-container">
+                        <div className="f-container">
                             <div>
                                 <input type="email" name="email" id="email" placeholder="Email" autoComplete="off"required={true} onChange={HandleChange}/>
                                 <hr />
