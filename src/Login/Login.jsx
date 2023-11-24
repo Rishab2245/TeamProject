@@ -39,7 +39,7 @@ const Login = () => {
                 <h1>&nbsp;Teemify</h1>
             </div>
             <div className="main">
-                <h2>SignUp</h2>
+                <h2>Login</h2>
                 <div className="container">
                     <form>
                         <div className="f-container">
