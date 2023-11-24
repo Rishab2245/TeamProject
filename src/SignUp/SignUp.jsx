@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
 import signup from "../assets/signup.png"
 import Logo from "../assets/Logo.png"
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"
+
 import "./Signup.css"
 const SignUp = () => {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const [mail, setMail] = useState("");
+    const [display,setDisplay] = useState(false);
+    const navigate = useNavigate();
     const HandleChange = (e) => {
         const { name, value } = e.target;
         if (name === 'name') {
@@ -20,34 +24,26 @@ const SignUp = () => {
             setPassword(value);
         }
     }
-    const Submit = async () => {
-        // e.preventDefault();
+    const Submit = async (e) => {
+        e.preventDefault();
         try {
             const response = await axios.post("https://teammanagement.onrender.com/api/user/signup", {
                 "name": name,
                 "email": mail,
                 "password": password
             })
-            console.log(response);
-            return response;
+            console.log(response.data.status);
+            // console.log(value);
+            setDisplay(false);
+            navigate('/aftersignup');
         }
         catch (error){
             console.log(error.response.request.status);
-            const err = error.response.request.status;
-            return err;
+            // const err = error.response.request.status;
+            // console.log("Previously :",value);
+            setDisplay(true);
         }
-    }
-    const Check =async (e) => {
-        e.preventDefault();
-        const value = await Submit();
-        if (value === 'success'){
-            console.log('true');
-            return true;
-        }
-        else {
-            console.log('false')
-            return false;
-        }
+        console.log(display);
     }
     return (
         <div className="hero">
@@ -75,7 +71,10 @@ const SignUp = () => {
                                 <hr />
                             </div>
                         </div>
-                        <button onClick={Check}>SIGN UP</button>
+                        <button onClick={Submit}>SIGN UP</button>
+                        {display && (
+                            <p>Please enter correct and unused account details.</p>
+                        )}
                     </form>
                     <figure className="img">
                         <img src={signup} alt="Image" />
