@@ -30,7 +30,7 @@ h2{
     margin: 0 0 0 3rem;
 }
 
-.form-container{
+.f-container{
     background-color: white;
     border: 1px solid white;
     padding: 2rem;
@@ -39,7 +39,7 @@ h2{
     width: 25rem;
     font-size: 2.5rem;
 }
-.form-container input{
+.f-container input{
     margin-top: 4rem;
     outline: none;
     border: none;
