@@ -30,7 +30,7 @@ const Login = () => {
                 "password": password,
             })
             console.log(response);
-            navigate('/dashboard');
+            navigate(`/dashboard`,{state : {id: 1,email: email}});
         }
         catch (error) {
             console.error(error);
@@ -48,7 +48,7 @@ const Login = () => {
             <div className="main">
                 <h2>Login</h2>
                 <div className="container">
-                    <form>
+                    <form onSubmit={Submit}>
                         <div className="f-container">
                             <div>
                                 <input type="email" name="email" id="email" placeholder="Email" autoComplete="off" required={true} onChange={HandleChange} />
@@ -60,7 +60,7 @@ const Login = () => {
                             </div>
                         </div>
                         <div className="buttons">
-                            <button onClick={Submit}>LOGIN</button>
+                            <button type="submit">LOGIN</button>
                             <Link to={'/signup'}>
                                 <button>Signup</button>
                             </Link>
