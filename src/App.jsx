@@ -8,6 +8,8 @@ import Login from './Login/Login'
 import {BrowserRouter,Routes,Route} from "react-router-dom";
 import AfterSignUp from './AfterSignUp/AfteSignUp';
 import Dashboard from './dashboard/Dashboard';
+import Forgot from './Forgot/Forgot';
+import Otp from './Forgot/Otp';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/aftersignup' element={<AfterSignUp />} />
         <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/forgot' element={<Forgot />} />
+        <Route path='confirmOtp' element={<Otp />} />
       </Routes>
     </BrowserRouter>
 

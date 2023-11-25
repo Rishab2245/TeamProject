@@ -9,7 +9,7 @@ import { Link, useNavigate } from "react-router-dom";
 const Login = () => {
     const [email, setMail] = useState("");
     const [password, setPassword] = useState("");
-    const [display,setDisplay] = useState(false);
+    const [display, setDisplay] = useState(false);
     const navigate = useNavigate();
 
     const HandleChange = (e) => {
@@ -29,7 +29,7 @@ const Login = () => {
                 "password": password,
             })
             console.log(response);
-            navigate(`/dashboard`,{state : {id: 1,email: email}});
+            navigate(`/dashboard`, { state: { id: 1, email: email } });
         }
         catch (error) {
             console.error(error);
@@ -62,6 +62,11 @@ const Login = () => {
                             <button type="submit">LOGIN</button>
                             <Link to={'/signup'}>
                                 <button>Signup</button>
+                            </Link>
+                        </div>
+                        <div className="forgot">
+                            <Link to={'/forgot'}>
+                                <button>Forgot Password</button>
                             </Link>
                         </div>
                         {display && (

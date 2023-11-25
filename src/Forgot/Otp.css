@@ -1,0 +1,28 @@
+.otp-container{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 1rem 2rem;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+.otp-container input,label{
+    font-size: 1.5rem;
+}
+.otp-container input{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    margin-top: 1rem;
+}
+.otp-container hr{
+    margin-bottom: 1rem;
+}
+.otp-image{
+    margin-top: 5rem;
+}
+.otp-container h3{
+    color: red;
+}
