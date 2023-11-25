@@ -8,13 +8,13 @@ import MainSection from '../components/MainSection'
 const Dashboard = () => {
   return (
     <>
-   <Header/>
-   <div className='below'>
-   <SideBar/>
-   <MainSection/> 
-   </div>
+      <Header />
+      <div className='below'>
+        <SideBar />
+        <MainSection />
+      </div>
 
-   </>
+    </>
   )
 }
 
