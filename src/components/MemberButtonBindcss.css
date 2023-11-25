@@ -1,0 +1,14 @@
+.memberheading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.membersection{
+   margin: 0.5rem;
+   margin-bottom: 3rem;
+}
+.memberheading span{
+   font-weight: 600;
+   font-size: 1.5rem;
+}

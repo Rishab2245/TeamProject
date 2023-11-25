@@ -1,0 +1,18 @@
+.header{
+    width: 100vw;
+    border-bottom: 1px solid black;
+    height: 10vh;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+    
+}
+.header img{
+  width: 2.5rem;
+  
+}
+.header h1{
+  font-size: 1.5rem;
+  
+}

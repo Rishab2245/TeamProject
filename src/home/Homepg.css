@@ -1,0 +1,166 @@
+*{
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;  
+     
+}
+button{
+    cursor: pointer;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 2rem ;
+    margin-left: 4rem;
+    margin-right: 3rem;
+    gap: 16rem;
+    text-wrap: nowrap;
+}
+.logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    font-size: 2.25rem;
+}
+.homeNav{
+    display: flex;
+    flex-direction: row;
+    color: #978C8C;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+font-size: 1.5625rem;
+justify-content: center;
+gap: 3.12rem;
+align-items: center;
+}
+.hmb{
+    color: #978C8C;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 1.5625rem;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    align-items: center;
+}
+.hmb:focus{
+    color: black;
+    border-bottom: 1px solid black;
+}
+.logo h3{
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;    
+}
+.slbuttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2.8rem;
+}
+.login{
+    color: #000;
+font-family: Inter;
+font-size: 1.8rem;
+font-weight: 400;
+width: 6.91875rem;
+height: 3.31875rem;
+border-radius: 1.06875rem;
+background: #E2E2E5;
+padding: 0.5rem;
+border: none;
+}
+.signup{
+    border: none;
+    border-radius: 1.1875rem;
+background: #18184C;
+width: 8.61rem;
+height: 3.6875rem;
+flex-shrink: 0;
+padding: 0.5rem;
+    color: #FFF;
+font-size: 1.8125rem;
+font-weight: 400;
+}
+.heroSection{
+    margin-left: 5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+.intro{
+    text-align: left;
+}
+.heroSection h6{
+color: #4EA327;
+font-size: 1.25rem;
+font-style: normal;
+font-weight: 644;
+width: 9.375rem;
+height: 3rem;
+flex-shrink: 0;
+border-radius: 1rem;
+background: #E6F5DF;
+padding: 0.7rem;
+/* margin-left: 5rem; */
+margin-top: 5rem;
+}
+.heroSection h1{
+    color: #000;
+font-size: 4rem;
+font-style: normal;
+font-weight: 644;
+width: 39rem;
+height: 11rem;
+margin-top: 2rem;
+margin-bottom: 3rem;
+text-transform: capitalize;
+}
+.heroSection p{
+    width: 36.6875rem;
+    height: 4.5rem;
+    flex-shrink: 0;
+    color: #000;
+
+font-size: 1.75rem;
+font-style: normal;
+font-weight: 400;
+margin-bottom: 2rem;
+}
+.trialButton{
+    width: 14.75rem;
+height: 3.91925rem;
+flex-shrink: 0;
+border-radius: 0.4375rem;
+background: rgba(224, 85, 54, 0.98);
+border: none;
+color: white;
+}
+.adjectives{
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: row;
+
+    gap: 4.19em;
+}
+.figures{
+    width: 6.125rem;
+    color: #000;
+font-size: 3.0625rem;
+font-style: normal;
+font-weight: 644;
+}
+.ftext{
+    color: #000;
+font-size: 1.25rem;
+font-style: normal;
+font-weight: 644;
+margin-bottom: 5rem;
+}
+.illustration{
+    width: 42.6875rem;
+height: 28.25rem;
+flex-shrink: 0;
+}

@@ -1,0 +1,22 @@
+.navbutton{
+    /* background-color: rgb(111, 102, 102); */
+    height: 2rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.navbutton button{
+    background-color: transparent;
+   color: rgb(0, 0, 0);
+   font-size: 0.8rem;
+   border-radius: none;
+   height: 2rem;  
+   border-radius: 0px; 
+   /* width: 2.8rem; */
+}
+.navbutton button.click{
+   background-color: transparent;
+   color: rgb(137, 137, 137);
+   border-bottom: 1px solid rgb(84, 81, 81);
+}

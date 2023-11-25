@@ -1,0 +1,13 @@
+.projectheading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.projectsection{
+   margin: 0.5rem;
+}
+.projectheading span{
+   font-weight: 600;
+   font-size: 1.5rem;
+}

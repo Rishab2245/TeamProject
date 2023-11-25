@@ -1,0 +1,19 @@
+.member-button div{
+    background-color: black;
+    width: 100%;
+    height: 2rem;
+    margin-top: 0.2rem;
+    font-size: small;
+    border-radius:0.3rem ;
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    padding: 1rem;
+    padding-left: .5rem;
+    border: 1px solid #b9b9b9;
+    
+}
+.member-button div img{
+     height: 1.5rem;
+     border-radius: 50%;
+}
