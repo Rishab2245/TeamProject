@@ -3,23 +3,23 @@
     /* width: auto; */
     text-wrap:wrap;
 }
-
-nav {
+.home-main *{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    width:auto;
+}
+.home-main nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-top: 2rem;
     margin-left: 4rem;
     margin-right: 3rem;
-    gap: 16rem;
     text-wrap: nowrap;
+    flex-wrap: nowrap;
+    gap:1vw;
 }
-
-.home-main * {
-    margin: 0;
-    padding: 0;
-}
-
 .logo {
     display: flex;
     flex-direction: row;
@@ -37,6 +37,7 @@ nav {
     justify-content: center;
     gap: 3.12rem;
     align-items: center;
+    text-wrap: nowrap;
 }
 
 .hmb {
@@ -66,7 +67,7 @@ nav {
     gap: 2.8rem;
 }
 
-.login {
+.home-main .login {
     color: #000;
     font-family: Inter;
     font-size: 1.8rem;
@@ -78,8 +79,7 @@ nav {
     padding: 0.5rem;
     border: none;
 }
-
-.signup {
+.home-main .signup {
     border: none;
     border-radius: 1.1875rem;
     background: #18184C;
@@ -91,19 +91,15 @@ nav {
     font-size: 1.8125rem;
     font-weight: 400;
 }
-
-.heroSection {
+.home-main .heroSection {
     margin-left: 5rem;
     display: flex;
     flex-direction: row;
     align-items: center;
-
 }
-
 .intro {
     text-align: left;
 }
-
 .heroSection h6 {
     color: #4EA327;
     font-size: 1.25rem;
@@ -118,7 +114,6 @@ nav {
     /* margin-left: 5rem; */
     margin-top: 5rem;
 }
-
 .heroSection h1 {
     color: #000;
     font-size: 4rem;
@@ -130,7 +125,6 @@ nav {
     margin-bottom: 3rem;
     text-transform: capitalize;
 }
-
 .heroSection p {
     width: 36.6875rem;
     height: 4.5rem;
@@ -142,7 +136,6 @@ nav {
     font-weight: 400;
     margin-bottom: 2rem;
 }
-
 .trialButton {
     width: 14.75rem;
     height: 3.91925rem;
@@ -152,15 +145,12 @@ nav {
     border: none;
     color: white;
 }
-
 .adjectives {
     margin-top: 4rem;
     display: flex;
     flex-direction: row;
-
     gap: 4.19em;
 }
-
 .figures {
     width: 6.125rem;
     color: #000;
@@ -168,7 +158,6 @@ nav {
     font-style: normal;
     font-weight: 644;
 }
-
 .ftext {
     color: #000;
     font-size: 1.25rem;
@@ -176,7 +165,6 @@ nav {
     font-weight: 644;
     margin-bottom: 5rem;
 }
-
 .illustration {
     width: 42.6875rem;
     height: 28.25rem;
