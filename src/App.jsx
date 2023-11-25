@@ -5,7 +5,6 @@ import Login from './Login/Login'
 import {BrowserRouter,Routes,Route} from "react-router-dom";
 import AfterSignUp from './AfterSignUp/AfteSignUp';
 
-
 function App() {
   return (
     <BrowserRouter>
@@ -18,5 +17,4 @@ function App() {
     </BrowserRouter>
   )
 }
-
 export default App
