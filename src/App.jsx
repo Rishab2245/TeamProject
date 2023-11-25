@@ -9,6 +9,7 @@ import {BrowserRouter,Routes,Route} from "react-router-dom";
 import AfterSignUp from './AfterSignUp/AfteSignUp';
 import Dashboard from './dashboard/Dashboard';
 
+
 function App() {
   return (
     <BrowserRouter>
@@ -23,5 +24,4 @@ function App() {
 
   )
 }
-
 export default App
