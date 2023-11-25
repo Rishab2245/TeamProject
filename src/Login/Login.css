@@ -73,3 +73,8 @@ button{
 #span{
     color: red;
 }
+.forgot{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
