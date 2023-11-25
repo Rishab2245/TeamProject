@@ -5,7 +5,6 @@ import axios from "axios";
 import "./Login.css"
 import login from "../assets/Login.png"
 import { Link, useNavigate } from "react-router-dom";
-import { Navigate } from "react-router-dom";
 
 const Login = () => {
     const [email, setMail] = useState("");
