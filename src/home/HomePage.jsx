@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 
 function Home() {
     return (
-        <>
+        <div className='home-main'>
             <nav>
                 <div className="logo">
                     <div><img src={Logo} alt="" /></div>
@@ -47,7 +47,7 @@ function Home() {
                     <img src={Teamwork} alt="" />
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 export default Home
