@@ -1,8 +1,5 @@
 import './App.css'
-
 import Home from './home/HomePage'
- 
-
 import SignUp from './SignUp/SignUp'
 import Login from './Login/Login'
 import {BrowserRouter,Routes,Route} from "react-router-dom";
