@@ -1,0 +1,28 @@
+.main-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 10%;
+    gap: 7rem;
+    margin-left: 10%;
+}
+.forgot-form{
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    height: 20rem;
+    justify-content: flex-start;
+    padding: 1rem;
+    border-radius: 10px;
+}
+.forgot-form input{
+    margin-top: 2rem;
+    outline: none;
+    border: none;
+    font-size: 1.5rem;
+    background-color: transparent;
+}
+.forgot-form button{
+    margin-top: 3rem;
+    background-color: #37B047;
+}

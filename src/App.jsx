@@ -3,20 +3,28 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Todo from './Components/Todo'
-
+import Home from './home/HomePage'
+import SignUp from './SignUp/SignUp'
+import Login from './Login/Login'
+import {BrowserRouter,Routes,Route} from "react-router-dom";
+import AfterSignUp from './AfterSignUp/AfteSignUp';
+import Dashboard from './dashboard/Dashboard';
+import Forgot from './Forgot/Forgot';
+import Otp from './Forgot/Otp';
 
 function App() {
-
-  
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-   
-    <Todo/>
-      
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element= {<Home />} />
+        <Route path='/signup' element={<SignUp />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/aftersignup' element={<AfterSignUp />} />
+        <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/forgot' element={<Forgot />} />
+        <Route path='confirmOtp' element={<Otp />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
-
 export default App
