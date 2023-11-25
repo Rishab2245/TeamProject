@@ -1,4 +1,5 @@
 import './App.css'
+import Todo from './Components/Todo'
 import Home from './home/HomePage'
 import SignUp from './SignUp/SignUp'
 import Login from './Login/Login'
@@ -21,8 +22,6 @@ function App() {
         <Route path='confirmOtp' element={<Otp />} />
       </Routes>
     </BrowserRouter>
-
   )
 }
-
 export default App
