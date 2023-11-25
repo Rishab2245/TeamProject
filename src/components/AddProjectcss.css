@@ -1,0 +1,13 @@
+.add-project-button button{
+    background-color: black;
+    width: 85%;
+    height: 2rem;
+    margin-top: 0.2rem;
+    font-size: small;
+    border-radius: 0.6rem;
+   
+}
+.add-project-button {
+    display: flex;
+    justify-content: center;
+}
