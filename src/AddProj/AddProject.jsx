@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './AddPr.css';
 import axios from 'axios';
 
-const AddProject = () => {
+const AddProject = ({profunc}) => {
   const [projectDetails, setProjectDetails] = useState({
     Project: '',
     description: '',
@@ -14,7 +14,6 @@ const AddProject = () => {
       [e.target.name]: e.target.value,
     });
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -25,10 +24,12 @@ const AddProject = () => {
     } catch (error) {
       console.error('Error sending data to API:', error);
     }
+
+    profunc();
   };
 
   return (
-    <>
+    <div className='adpr'>
       <div className="top-section">
         <h1>Add Project</h1>
       </div>
@@ -60,7 +61,7 @@ const AddProject = () => {
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

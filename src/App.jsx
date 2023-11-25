@@ -1,4 +1,5 @@
-import './App.css'
+
+// import Todo from './Components/Todo'
 import Home from './home/HomePage'
 import SignUp from './SignUp/SignUp'
 import Login from './Login/Login'
@@ -7,7 +8,7 @@ import AfterSignUp from './AfterSignUp/AfteSignUp';
 import Dashboard from './dashboard/Dashboard';
 import Forgot from './Forgot/Forgot';
 import Otp from './Forgot/Otp';
-
+import UserDetails from './UserDetailpage/UserDetailForm';
 function App() {
   return (
     <BrowserRouter>
@@ -19,10 +20,10 @@ function App() {
         <Route path='/dashboard' element={<Dashboard />} />
         <Route path='/forgot' element={<Forgot />} />
         <Route path='confirmOtp' element={<Otp />} />
+        <Route path='/userDetail' element={<UserDetails/>}/>
       </Routes>
-    </BrowserRouter>
-
-  )
+    </BrowserRouter> 
+  )  
 }
 
 export default App;

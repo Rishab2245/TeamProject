@@ -1,4 +1,4 @@
-*{
+.adpr{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -39,7 +39,7 @@ margin: 6rem 2rem 3rem;
 }
 .projectName input:focus, 
 .projectName input:active {
-    border: none;
+    outline: none;
     }
 .PDescrip h4{
     font-size: 2rem;
