@@ -4,11 +4,14 @@ import { useState } from "react";
 import axios from "axios";
 import "./Login.css"
 import login from "../assets/Login.png"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 const Login = () => {
     const [email, setMail] = useState("");
     const [password, setPassword] = useState("");
+    const [display,setDisplay] = useState(false);
+    const navigate = useNavigate();
 
     const HandleChange = (e) => {
         const { name, value } = e.target;
@@ -19,16 +22,19 @@ const Login = () => {
             setPassword(value);
         }
     }
-    const Submit = async () => {
+    const Submit = async (e) => {
+        e.preventDefault();
         try {
             const response = await axios.post("https://teammanagement.onrender.com/api/user/login", {
                 "email": email,
                 "password": password,
             })
             console.log(response);
+            navigate('/dashboard');
         }
         catch (error) {
             console.error(error);
+            setDisplay(true);
         }
     }
     return (
@@ -59,6 +65,9 @@ const Login = () => {
                                 <button>Signup</button>
                             </Link>
                         </div>
+                        {display && (
+                            <h3 id="span">Please enter the correct credentials</h3>
+                        )}
                     </form>
                     <figure className="img">
                         <img src={login} alt="Image" />
