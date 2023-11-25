@@ -8,9 +8,11 @@ import Login from './Login/Login'
 import {BrowserRouter,Routes,Route} from "react-router-dom";
 import AfterSignUp from './AfterSignUp/AfteSignUp';
 import Dashboard from './dashboard/Dashboard';
+import UserDetails from './UserDetailpage/UserDetailForm';
 
 function App() {
   return (
+  <>
     <BrowserRouter>
       <Routes>
         <Route path="/" element= {<Home />} />
@@ -20,6 +22,7 @@ function App() {
         <Route path='/dashboard' element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
+    </>
 
   )
 }
