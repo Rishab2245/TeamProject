@@ -18,6 +18,7 @@ h2{
     align-items:baseline;
     justify-content: space-around;
     gap: 0;
+    margin-top: 3rem;
 }
 .container {
     display: flex;
@@ -29,16 +30,16 @@ h2{
     margin: 0 0 0 3rem;
 }
 
-.form-container{
+.f-container{
     background-color: white;
     border: 1px solid white;
     padding: 2rem;
     border-radius: 10px;
-    height: 24rem;
+    height: 20rem;
     width: 25rem;
     font-size: 2.5rem;
 }
-.form-container input{
+.f-container input{
     margin-top: 4rem;
     outline: none;
     border: none;
@@ -63,9 +64,12 @@ button{
     padding: .5rem;
     cursor:pointer;
 }
-.btn-container{
+.buttons {
     display: flex;
     justify-content: flex-start;
-    margin-bottom: 2rem;
     gap: 11rem;
+    margin-bottom: 2rem;
+}
+#span{
+    color: red;
 }

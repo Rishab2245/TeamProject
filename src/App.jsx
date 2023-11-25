@@ -1,12 +1,25 @@
 import './App.css'
+
 import Home from './home/HomePage'
- //import AddProject from './AddProj/AddProject';
+ 
+
+import SignUp from './SignUp/SignUp'
+import Login from './Login/Login'
+import {BrowserRouter,Routes,Route} from "react-router-dom";
+import AfterSignUp from './AfterSignUp/AfteSignUp';
+import Dashboard from './dashboard/Dashboard';
+
 function App() {
   return (
-    <div>
-       <Home/>
-    
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element= {<Home />} />
+        <Route path='/signup' element={<SignUp />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/aftersignup' element={<AfterSignUp />} />
+        <Route path='/dashboard' element={<Dashboard />} />
+      </Routes>
+    </BrowserRouter>
 
   )
 }
