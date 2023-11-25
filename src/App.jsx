@@ -1,8 +1,9 @@
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
 import './App.css'
-
+import Todo from './Components/Todo'
 import Home from './home/HomePage'
- 
-
 import SignUp from './SignUp/SignUp'
 import Login from './Login/Login'
 import {BrowserRouter,Routes,Route} from "react-router-dom";
@@ -24,8 +25,6 @@ function App() {
         <Route path='confirmOtp' element={<Otp />} />
       </Routes>
     </BrowserRouter>
-
   )
 }
-
 export default App
