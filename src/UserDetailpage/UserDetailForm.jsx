@@ -10,7 +10,7 @@ const UserDetails = () => {
     speciality: '',
     bio: '',
   });
-  
+
   const handleChange = (e) => {
     setaddUserDetails({
       ...addUserDetails,
@@ -22,7 +22,7 @@ const UserDetails = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("https://teammanagement.onrender.com//api/user/addUserDetails", {addUserDetails});
+      const response = await axios.post("https://teammanagement.onrender.com//api/user/addUserDetails", { addUserDetails });
 
       console.log('API Response:', response.data);
     } catch (error) {
@@ -31,61 +31,62 @@ const UserDetails = () => {
   };
 
   return (
-    <>
-    <div className="logo">
+    <div className='usd'>
+      <div className="logo">
         <div><img src={Logo1} alt="" /></div>
         <div> <h3>Teemify</h3></div>
-    </div>
-    <div>
+      </div>
+      <div>
         <div className="userd">
           <div className='form'>
-          <div>
-          <input
-            type="number"
-            name="experience"
-            placeholder='Experience(in years)'
-            value={addUserDetails.experience}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <input
-            type="number"
-            name="age"
-            placeholder='Age'
-            value={addUserDetails.age}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <input
-            type="text"
-            name="speciality"
-            placeholder='Speciality'
-            value={addUserDetails.speciality}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <input
-            type="text"
-            name="bio"
-            placeholder='Bio'
-            value={addUserDetails.bio}
-            onChange={handleChange}
-            required
-          />
-        </div>
+            <div>
+              <input
+                type="number"
+                name="experience"
+                placeholder='Experience(in years)'
+                value={addUserDetails.experience}
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <input
+                type="number"
+                name="age"
+                placeholder='Age'
+                value={addUserDetails.age}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div>
+              <input
+                type="text"
+                name="speciality"
+                placeholder='Speciality'
+                value={addUserDetails.speciality}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div>
+              <input
+                type="text"
+                name="bio"
+                placeholder='Bio'
+                value={addUserDetails.bio}
+                onChange={handleChange}
+                required
+              />
+            </div>
           </div>
           <div >
-            <img src={usd} alt="" className='avatar'/>
+            <img src={usd} alt="" className='avatar' />
           </div>
         </div>
-        <button type="button" className='submit'  onClick={handleSubmit}>Submit</button>
-      
-    </div></>
+        <button type="button" className='submit' onClick={handleSubmit}>Submit</button>
+
+      </div>
+    </div>
   );
 };
 

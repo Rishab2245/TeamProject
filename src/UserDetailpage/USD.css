@@ -1,12 +1,4 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;  
-     text-wrap: nowrap;
-     
-}
-.logo{
+.usd .logo{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -16,16 +8,16 @@
     margin-left: 4rem;
     margin-right: 3rem;
 }
-.userd{
+.usd .userd{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
 }
-.form{
+.usd .form{
     text-align: left;
 }
-input{
+.usd input{
     border: none;
     outline: none;
     border-bottom: 1px solid black;
@@ -35,10 +27,10 @@ input{
     font-size: 1.3rem;
     width: 30rem;
 }
-.avatar{
+.usd .avatar{
     height: 40rem;
 }
-.submit{
+.usd .submit{
     color: white;
     margin: -1.4rem 6rem;
 }
