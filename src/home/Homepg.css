@@ -145,6 +145,7 @@
     border: none;
     color: white;
     text-wrap: nowrap;
+    padding:1.2rem
 }
 .adjectives {
     margin-top: 4rem;
