@@ -10,7 +10,7 @@ const Login = () => {
     const [email, setMail] = useState("");
     const [password, setPassword] = useState("");
     const [display, setDisplay] = useState(false);
-    const navigate = useNavigate();
+    const navigate = useNavigate('');
 
     const HandleChange = (e) => {
         const { name, value } = e.target;
@@ -29,7 +29,9 @@ const Login = () => {
                 "password": password,
             })
             console.log(response);
-            navigate(`/dashboard`, { state: { id: 1, email: email } });
+            if (response.data.success) {
+                navigate("/userDetails");}
+
         }
         catch (error) {
             console.error(error);
@@ -59,7 +61,9 @@ const Login = () => {
                             </div>
                         </div>
                         <div className="buttons">
-                            <button type="submit">LOGIN</button>
+                            
+                            <button type="submit">LOGIN</button> 
+                            
                             <Link to={'/signup'}>
                                 <button>Signup</button>
                             </Link>

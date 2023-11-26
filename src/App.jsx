@@ -9,6 +9,7 @@ import Forgot from './Forgot/Forgot';
 import Otp from './Forgot/Otp';
 import UserDetails from './UserDetailpage/UserDetailForm';
 import AfterOtp from './AfterOtp/AfterOtp';
+
 function App() {
   return (
   
@@ -23,6 +24,7 @@ function App() {
         <Route path='confirmOtp' element={<Otp />} />
         <Route path='/userDetail' element={<UserDetails/>}/>
         <Route path='/afterotp' element={<AfterOtp />} />
+        <Route path='/userDetails' element={<UserDetails/>}/>
       </Routes>
     </BrowserRouter> 
   )  
