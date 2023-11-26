@@ -4,14 +4,17 @@ import "./Otp.css";
 import Logo from "../assets/Logo.png"
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Otp = () => {
     const [OTP,setOTP] = useState();
     const [password,setPassword] = useState("");
     const [confirm,setConfirm] = useState("");
     const [display,setDisplay] = useState(false);
-
+    const [msg,setMsg] = useState("");
+    const navigate = useNavigate();
     const HandleChange = (e) => {
+        setDisplay(false);
         const {name , value} = e.target;
         if (name === 'otp'){
             setOTP(value);
@@ -31,21 +34,24 @@ const Otp = () => {
         }
         else {
             try{
-                const response = await axios.post("https://teammanagement.onrender.com/api/user/password/resetPassword",{
-                    "token" : OTP,
+                await axios.post("https://teammanagement.onrender.com/api/user/password/resetPassword",{
+                    "token" : `${OTP}`,
                     "password" : password,
                     "confirmPassword": confirm
                 })
-                console.log(response);
+                navigate('/afterotp');
             }
             catch(error){
+                setDisplay(true)
                 console.log(error);
+                console.log(error.response.data.message);
+                setMsg(error.response.data.message)
             }
         }
     }
 
     return (
-        <div className="hero">
+        <div className="otp-hero">
             <div className="nav">
                 <figure>
                     <img src={Logo} alt="" />
@@ -80,7 +86,7 @@ const Otp = () => {
                             </div>
                             <div>
                                 {display && (
-                                    <h3>Both passwords do not match</h3>
+                                    <h3>{msg}</h3>
                                 )}
                             </div>
                         </div>
