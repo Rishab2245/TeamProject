@@ -29,7 +29,7 @@ const Login = () => {
                 "password": password,
             })
             console.log(response);
-            navigate(`/dashboard`, { state: { id: 1, email: email } });
+            navigate(`/dashboard`,{state : {id: 1,email: email}});
         }
         catch (error) {
             console.error(error);
