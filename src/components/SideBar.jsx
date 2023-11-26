@@ -4,16 +4,16 @@ import ProjectButtonBind from './ProjectButtonBind'
 import MemberButtonbind from './MemberButtonBind';
 import AddProject from './AddProject';
 
-const SideBar = ({profunc}) => {
+const SideBar = ({profunc,projectdata}) => {
 
+console.log(projectdata);
 
   return (
     <div className='side'>
-      <ProjectButtonBind/>
+      <ProjectButtonBind project={projectdata}/>
       <MemberButtonbind/>
       <AddProject profunc={profunc}/>
     </div>
   )
 }
-
 export default SideBar

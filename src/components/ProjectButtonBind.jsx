@@ -1,14 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ProjectButton from './ProjectButton'
 import './ProjectButtonBindcss.css'
-const ProjectButtonbind = () => {
-    
-let data = [
-    {value:"hello",bol:false},
-    {value:"hello",bol:true},
-    {value:"hello",bol:true},
-    {value:"hello",bol:true},
-]
+const ProjectButtonbind = ({project}) => {
+
+let [data,setdata] = useState([
+
+]);
+console.log(project);
+useEffect(()=>{
+  setdata((p)=>{return([...p,{value:`${project.Project}` , bol:`${true}`}])})
+},[project])
+console.log(data);
+
   return (
     <>
     <div className='projectsection'>
