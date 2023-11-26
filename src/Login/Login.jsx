@@ -37,14 +37,14 @@ const Login = () => {
         }
     }
     return (
-        <div className="hero">
+        <div className="login-hero">
             <div className="nav">
                 <figure>
                     <img src={Logo} alt="" />
                 </figure>
                 <h1>&nbsp;Teemify</h1>
             </div>
-            <div className="main">
+            <div className="login-main">
                 <h2>Login</h2>
                 <div className="container">
                     <form onSubmit={Submit}>
@@ -63,8 +63,6 @@ const Login = () => {
                             <Link to={'/signup'}>
                                 <button>Signup</button>
                             </Link>
-                        </div>
-                        <div className="forgot">
                             <Link to={'/forgot'}>
                                 <button>Forgot Password</button>
                             </Link>

@@ -32,11 +32,13 @@ const Otp = () => {
         else {
             try{
                 const response = await axios.post("https://teammanagement.onrender.com/api/user/password/resetPassword",{
-                    "token" : OTP,
+                    "token" : `${OTP}`,
                     "password" : password,
                     "confirmPassword": confirm
                 })
                 console.log(response);
+                console.log(OTP);
+
             }
             catch(error){
                 console.log(error);
@@ -45,7 +47,7 @@ const Otp = () => {
     }
 
     return (
-        <div className="hero">
+        <div className="otp-hero">
             <div className="nav">
                 <figure>
                     <img src={Logo} alt="" />
