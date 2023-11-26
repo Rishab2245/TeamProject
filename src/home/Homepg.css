@@ -72,7 +72,7 @@
     font-family: Inter;
     font-size: 1.8rem;
     font-weight: 400;
-    width: 6.91875rem;
+    
     height: 3.31875rem;
     border-radius: 1.06875rem;
     background: #E2E2E5;
@@ -83,8 +83,7 @@
     border: none;
     border-radius: 1.1875rem;
     background: #3581B8;
-    width: 8.61rem;
-    height: 3.6875rem;
+    height: 3.31875rem;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     flex-shrink: 0;
     padding: 0.5rem;
@@ -131,20 +130,20 @@
     height: 4.5rem;
     flex-shrink: 0;
     color: #000;
-
+    font-family: Josefin Sans;
     font-size: 1.75rem;
     font-style: normal;
     font-weight: 400;
     margin-bottom: 2rem;
 }
 .trialButton {
-    width: 14.75rem;
     height: 3.91925rem;
     flex-shrink: 0;
     border-radius: 0.4375rem;
     background: #3581B8;
     border: none;
     color: white;
+    text-wrap: nowrap;
 }
 .adjectives {
     margin-top: 4rem;
