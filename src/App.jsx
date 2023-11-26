@@ -24,7 +24,7 @@ function App() {
         <Route path='/userDetail' element={<UserDetails/>}/>
       </Routes>
     </BrowserRouter>
-  )
+
 
   )  
 }
