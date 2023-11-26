@@ -10,7 +10,7 @@ const Login = () => {
     const [email, setMail] = useState("");
     const [password, setPassword] = useState("");
     const [display, setDisplay] = useState(false);
-    const navigate = useNavigate();
+    const navigate = useNavigate('');
 
     const HandleChange = (e) => {
         const { name, value } = e.target;
@@ -30,6 +30,7 @@ const Login = () => {
             })
             console.log(response);
             navigate(`/dashboard`, { state: { id: 1, email: email } });
+
         }
         catch (error) {
             console.error(error);
@@ -68,12 +69,14 @@ const Login = () => {
                             <div id="forgot-button">
                                 <input type="password" name="password" id="password" placeholder="Password" required={true} onChange={HandleChange} className="password-input" />
                                 <Link to={'/forgot'}>
-                                <p>Forgot Password?</p>
+                                    <p>Forgot Password?</p>
                                 </Link>
                             </div>
                             <div className="buttons">
                                 <button type="submit">LOGIN</button>
                             </div>
+
+
                         </div>
                         {display && (
                             <h3 id="span">Please enter the correct credentials</h3>
