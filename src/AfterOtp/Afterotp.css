@@ -1,0 +1,27 @@
+.after-otp{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+}
+.after-main{
+    background-color: white;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 1rem;
+}
+.after-main *{
+    margin-top: 0;
+}
+.after-main button{
+    font-size: 1.5rem;
+    background-color: #04c9c9;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
