@@ -137,8 +137,9 @@
     margin-bottom: 2rem;
 }
 .trialButton {
-    height: 3.91925rem;
+    height: 3.5rem;
     flex-shrink: 0;
+    padding: 1.1rem;
     border-radius: 0.4375rem;
     background: #3581B8;
     border: none;
