@@ -1,5 +1,5 @@
 
-import Todo from './Components/Todo'
+// import Todo from './Components/Todo'
 import Home from './home/HomePage'
 import SignUp from './SignUp/SignUp'
 import Login from './Login/Login'
@@ -23,9 +23,8 @@ function App() {
         <Route path='confirmOtp' element={<Otp />} />
         <Route path='/userDetail' element={<UserDetails/>}/>
       </Routes>
-    </BrowserRouter>
-
-
+    </BrowserRouter> 
   )  
 }
-export default App
+
+export default App;
