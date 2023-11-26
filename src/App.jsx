@@ -1,4 +1,3 @@
-
 // import Todo from './Components/Todo'
 import Home from './home/HomePage'
 import SignUp from './SignUp/SignUp'
@@ -9,6 +8,7 @@ import Dashboard from './dashboard/Dashboard';
 import Forgot from './Forgot/Forgot';
 import Otp from './Forgot/Otp';
 import UserDetails from './UserDetailpage/UserDetailForm';
+import AfterOtp from './AfterOtp/AfterOtp';
 function App() {
   return (
   
@@ -22,6 +22,7 @@ function App() {
         <Route path='/forgot' element={<Forgot />} />
         <Route path='confirmOtp' element={<Otp />} />
         <Route path='/userDetail' element={<UserDetails/>}/>
+        <Route path='/afterotp' element={<AfterOtp />} />
       </Routes>
     </BrowserRouter> 
   )  
