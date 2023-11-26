@@ -46,7 +46,7 @@ const SignUp = () => {
         console.log(display);
     }
     return (
-        <div className="hero">
+        <div className="sign-hero">
             <div className="nav">
                 <figure>
                     <img src={Logo} alt="" />
