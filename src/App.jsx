@@ -12,7 +12,7 @@ import AfterOtp from './AfterOtp/AfterOtp';
 function App() {
   return (
   
-    <HashRouter>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element= {<Home />} />
         <Route path='/signup' element={<SignUp />} />
@@ -24,7 +24,7 @@ function App() {
         <Route path='/userDetail' element={<UserDetails/>}/>
         <Route path='/afterotp' element={<AfterOtp />} />
       </Routes>
-    </HashRouter> 
+    </BrowserRouter> 
   )  
 }
 
