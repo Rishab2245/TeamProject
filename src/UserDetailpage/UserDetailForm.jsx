@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Logo1 from "../assets/Logo_Teemify.png"
 import usd from "../assets/usd.webp"
+import { Link, useNavigate } from "react-router-dom";
 const UserDetails = () => {
   const [addUserDetails, setaddUserDetails] = useState({
     experience: '',
@@ -18,6 +19,7 @@ const UserDetails = () => {
     });
   };
 
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -25,6 +27,7 @@ const UserDetails = () => {
       const response = await axios.post("https://teammanagement.onrender.com//api/user/addUserDetails", { addUserDetails });
 
       console.log('API Response:', response.data);
+      navigate(`/dashboard`, { state: { id: 1, email: email } });
     } catch (error) {
       console.error('Error sending data to API:', error);
     }
@@ -83,8 +86,9 @@ const UserDetails = () => {
             <img src={usd} alt="" className='avatar' />
           </div>
         </div>
+                 
         <button type="button" className='submit' onClick={handleSubmit}>Submit</button>
-
+        
       </div>
     </div>
   );
