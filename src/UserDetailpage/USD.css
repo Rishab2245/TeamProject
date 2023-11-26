@@ -1,0 +1,36 @@
+.usd .logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
+    font-size: 2.25rem;
+    margin-top: 2rem ;
+    margin-left: 4rem;
+    margin-right: 3rem;
+}
+.usd .userd{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.usd .form{
+    text-align: left;
+}
+.usd input{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+    background: transparent;
+    padding: 1.1rem 0rem;
+    margin: 2rem;
+    font-size: 1.3rem;
+    width: 30rem;
+}
+.usd .avatar{
+    height: 40rem;
+}
+.usd .submit{
+    color: white;
+    margin: -1.4rem 6rem;
+}

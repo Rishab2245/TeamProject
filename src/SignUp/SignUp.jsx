@@ -5,7 +5,6 @@ import Logo from "../assets/Logo.png"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"
 import { Link } from "react-router-dom";
-
 import "./Signup.css"
 const SignUp = () => {
     const [name, setName] = useState("");

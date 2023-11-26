@@ -52,7 +52,7 @@ figure{
 .img img{
     height: 25rem;
 }
-button{
+.f-container button{
     background-color: #E1583A;
     margin-top: 1rem;
     height: auto;
@@ -72,4 +72,9 @@ button{
 }
 #span{
     color: red;
+}
+.forgot{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
