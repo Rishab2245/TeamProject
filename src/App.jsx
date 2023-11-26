@@ -11,6 +11,7 @@ import Otp from './Forgot/Otp';
 import UserDetails from './UserDetailpage/UserDetailForm';
 function App() {
   return (
+  
     <BrowserRouter>
       <Routes>
         <Route path="/" element= {<Home />} />
