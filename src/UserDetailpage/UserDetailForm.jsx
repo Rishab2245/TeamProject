@@ -23,7 +23,6 @@ const UserDetails = () => {
 
     try {
       const response = await axios.post("https://teammanagement.onrender.com//api/user/addUserDetails", { addUserDetails });
-
       console.log('API Response:', response.data);
     } catch (error) {
       console.error('Error sending data to API:', error);

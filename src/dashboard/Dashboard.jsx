@@ -10,7 +10,7 @@ import AddProject from '../AddProj/AddProject'
 const Dashboard = () => {
   let [add,setadd]=useState(false)
   const loacation = useLocation();
-  let[projedata,setprojedata] = useState({Project:"frontend",discription:"hellow world"});
+  let[projedata,setprojedata] = useState({Project:"",discription:""});
   console.log(loacation.state.email);
 
   const profunc = ()=>{
@@ -22,9 +22,8 @@ const Dashboard = () => {
       <Header />
       <div className='below'>
         <SideBar profunc={profunc} projectdata={projedata}/>
-        {
-          add ? <MainSection/> : <AddProject profunc={profunc} setprojectdata={setprojedata}/>
-        }
+          <MainSection profunc={profunc} setprojectdata={setprojedata} add={add}/> 
+        
       </div>
       </>
   )
