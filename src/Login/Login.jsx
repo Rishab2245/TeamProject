@@ -29,13 +29,15 @@ const Login = () => {
                 "password": password,
             })
             console.log(response);
-            navigate(`/dashboard`, { state: { id: 1, email: email } });
-
+            const token = response.headers.authorization
+            navigate(`/dashboard`, { state: { id: 1, email: email,auth:token }});
         }
         catch (error) {
             console.error(error);
             setDisplay(true);
         }
+        // const token = document.cookie.split(';').find(row => row.startsWith('token')).split('=')[1];
+        // console.log(token);
     }
     return (
         <div className="login-signup-hero">
@@ -69,7 +71,7 @@ const Login = () => {
                             <div id="forgot-button">
                                 <input type="password" name="password" id="password" placeholder="Password" required={true} onChange={HandleChange} className="password-input" />
                                 <Link to={'/forgot'}>
-                                <p>Forgot Password?</p>
+                                    <p>Forgot Password?</p>
                                 </Link>
                             </div>
                             <div className="buttons">
