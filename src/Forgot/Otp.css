@@ -1,46 +1,78 @@
-.otp-container{
+.otp-image img{
+    height: 44vw;
+}
+.otp-hero .nav figure{
+    display: flex;
+    align-items: center;
+}
+.otp-hero .container{
+    height: auto;
     display: flex;
     flex-direction: column;
-    background-color: whitesmoke;
-    padding: 1rem 2rem;
-    align-items: center;
-    justify-content: flex-start;
-    border-radius: 10px;
-    margin-top: 2rem;
 }
-.otp-hero{
-    height: 100%;
-    background-color: white;
-    margin: 0;
-    margin-top:-2rem;
-    padding-bottom:9.7%;
-}
-.otp-container input,label{
-    font-size: 1.5rem;
-}
-.otp-container input{
-    outline: none;
-    border: none;
-    background-color: transparent;
-    margin-top: 1rem;
-}
-.otp-container hr{
-    margin-bottom: 1rem;
-}
-.otp-image{
-    margin-top: 5rem;
-}
-.otp-container h3{
-    color: red;
-}
-.otp-hero button{
-    font-size: 1.4rem;
-    background-color: #E1583A;
-    cursor: pointer;
-    color:white;
-    border:none;
-    border-radius: 5px;
+.otp-hero h1{
+    font-size: 2.7rem;
 }
 .otp-hero h2{
-    margin-bottom: 0;
+    font-size: 2rem;
+}
+.otp-hero .nav{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding :0;
+    font-size: 2rem;
+}
+.otp-hero .otp-nav{
+    display: flex;
+    flex-direction: row;
+}
+.otp-hero .main{
+    display: flex;  
+    justify-content: flex-start;
+    gap: 10vw;
+    align-items: center;
+}
+.otp-nav{
+    display: flex;
+    gap:5vw;
+}
+.otp-buttons {
+    display: flex;
+    gap: 1vw;
+}
+.otp-hero button{
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: #3681B9;
+    padding: .5rem;
+}
+.otp-hero .main img{
+    height: 42vw;
+}
+.otp-hero .main h2{
+    text-align: center;
+}
+#otp-login{
+    background-color: #E1E1E5;
+}
+#proceed {
+    background-image:linear-gradient(to right,#3681B9,#2D5B86);
+    margin-top: 4rem;
+}
+.otp-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.otp-container input{
+    width: 100%;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    padding:10px 0 10px 50px;
+    margin-top: 2rem;
+}
+.otp-hero .password{
+    background: url("../assets/lock.jpg") no-repeat scroll 7px;
 }
