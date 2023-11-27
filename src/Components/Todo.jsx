@@ -2,6 +2,7 @@ import React from 'react'
 import './Todo.css'
 
 import { useState,useEffect } from 'react'
+import { Link, useNavigate } from "react-router-dom";
 
 const Todo = () => {
 
@@ -13,8 +14,12 @@ const Todo = () => {
   useEffect(()=>{
     const fetchData = async () => {
       try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/users');
+        const response = await fetch('http://teammanagement.onrender.com/api/board/getBoards',{
+          mode:'no-cors',
+        });
+        console.log(response);
         const data = await response.json();
+        // console.log(data);
         const finalData=data.map((item)=>({
           id: item.id,
           fullName:item.name,
@@ -79,76 +84,41 @@ const Todo = () => {
 
 
   return (
-    
-    <div className='container'>
-     
-
-      
-      {/* <ul>
-        {userData.map((user) => (
-          <li key={user.id}>{user.firstname}</li>
-        ))}
-      </ul> */}
-    <div className='outer'>
-      <div className='heading'>
-        TO-DO
-      
-
-      </div>
-      
-     
-    
-      
-  
-      
-        {finalData.map((user,index)=>(
-          <div key={user.id} className='taskBox'>
+    <div className="todo">
+      <div className='container'>
+        <div className='outer'>
+          <div className='heading'>TO-DO</div>
+           {finalData.map((user,index)=>(
+           <div key={user.id} className='taskBox'>
             <button onClick={() => handleDeleteInOne(user.id)}className='btn' >Next</button>
-            
-          <div className='name'>{user.fullName}</div>
-          <div className='name'>{user.username}</div>
+            <div className='name'>{user.fullName}</div>
+            <div className='name'>{user.username}</div>
+         </div>
+         ))}
+        </div>
+        <div className='outerProg'>
+          <div className='heading'>In Progress</div>
+          {listTwo.map((user,index)=>(
+          <div key={user.id} className='taskBox'>
+             <button onClick={() => handleDeleteInTwo(user.id)}className='btn'>Next</button>
+             <div className='name'>{user.fullName}</div>
+             <div className='name'>{user.username}</div>
+         </div>
+         ))}
+        </div>
+        <div className='outerComp'>
+          <div className='heading'>Completed</div>
+          {listThree.map((user,index)=>(
+          <div key={user.id} className='taskBox'>
+            <div className='name'>{user.fullName}</div>
+            <div className='name'>{user.username}</div>
           </div>
-        ))}
-        
-        
-        
+          ))}
+        </div>
       </div>
-    
-    <div className='outerProg'>
-    <div className='heading'>
-        In Progress
-        </div>
-    
-      
-      {listTwo.map((user,index)=>(
-          <div key={user.id} className='taskBox'>
-            <button onClick={() => handleDeleteInTwo(user.id)}className='btn' >Next</button>
-            
-          <div className='name'>{user.fullName}</div>
-          <div className='name'>{user.username}</div>
-          </div>
-        ))}
-        
-      
-    </div>
-
-    <div className='outerComp'>
-    <div className='heading'>
-        Completed
-        </div>
-  
-    {listThree.map((user,index)=>(
-          <div key={user.id} className='taskBox'>
-            
-            
-          <div className='name'>{user.fullName}</div>
-          <div className='name'>{user.username}</div>
-          </div>
-        ))}
     </div>
     
     
-    </div>
   )
 }
 

@@ -1,26 +1,41 @@
 body{
-    background-color: #F2F2F2;
+    background-color: white;
 }
-.nav{
+.login-signup-hero .nav{
     display: flex;
     flex-direction: row;
-    margin-top: 2rem;
     font-size: 2rem;
     align-items: center;
-    margin-left: 3rem;
+    justify-content: space-between;
+    gap:0;
+    margin-right: 1rem;
 }
-h2{
+.login-signup-hero .nav figure{
+    display: flex;
+    align-items: center;
+}
+.login-signup-hero h1{
     font-size: 2.7rem;
+    margin-top: 0;
+    margin-bottom: 0;
 }
-.main{
+.login-signup-hero h2{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.login-signup-hero h3{
+    font-size: 2.3rem;
+    font-weight: 100;
+}
+.login-signup-hero .login-main{
     display: flex;
     flex-direction: column;
     align-items:baseline;
     justify-content: space-around;
-    gap: 0;
     margin-top: 3rem;
 }
-.container {
+.login-signup-hero .container {
     display: flex;
     flex-direction: row;
     vertical-align: middle;
@@ -33,7 +48,6 @@ h2{
 .f-container{
     background-color: white;
     border: 1px solid white;
-    padding: 2rem;
     border-radius: 10px;
     height: 20rem;
     width: 25rem;
@@ -41,40 +55,71 @@ h2{
 }
 .f-container input{
     margin-top: 4rem;
-    outline: none;
-    border: none;
     font-size: 1.5rem;
+    border-radius: 5px;
+    width: 100%;
 }
-figure{
+.buttons{
+    margin-top: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login-hero figure{
     margin: 0;
     padding: 0;
 }
 .img img{
     height: 25rem;
 }
-.f-container button{
-    background-color: #E1583A;
-    margin-top: 1rem;
-    height: auto;
-    width: auto;
-    font-size: 1.5rem;
-    border-radius: 5px;
+
+.sub-buttons button{
+    background-color: #3681B9;
+    font-size: 1.3rem;
     outline: none;
     border: none;
+    border-radius: 5px;
     padding: .5rem;
-    cursor:pointer;
+    cursor: pointer;
 }
-.buttons {
-    display: flex;
-    justify-content: flex-start;
-    gap: 11rem;
-    margin-bottom: 2rem;
+.buttons button{
+    background-image:linear-gradient(to right,#3681B9,#2D5B86);
+    padding: .5rem;
+    font-size: 1.5rem;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    cursor: pointer;
 }
 #span{
     color: red;
 }
-.forgot{
+.login-signup-hero .mail-input {
+    background: url('../assets/icon _email_.jpg') no-repeat scroll 7px;
+    padding-left: 50px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.login-signup-hero .password-input{
+    background: url('../assets/lock.jpg') no-repeat scroll 7px;
+    padding-left: 50px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.sub-nav{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 3rem;
+}
+.nav .logo{
+    height:3rem;
+    vertical-align: middle;
+}
+#forgot-button p,a{
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: black;
+    text-align: end;
 }

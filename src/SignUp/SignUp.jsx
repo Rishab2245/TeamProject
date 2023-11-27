@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import axios from "axios";
-import signup from "../assets/signup.png"
+import login from "../assets/login.jpg"
 import Logo from "../assets/Logo.png"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"
@@ -46,44 +46,48 @@ const SignUp = () => {
         console.log(display);
     }
     return (
-        <div className="hero">
+        <div className="login-signup-hero">
             <div className="nav">
                 <figure>
-                    <img src={Logo} alt="" />
+                    <img src={Logo} alt="" className="logo" />
+                    <h1>&nbsp;Teemify</h1>
                 </figure>
-                <h1>&nbsp;Teemify</h1>
+                <div className="sub-nav">
+                    <h3>Home</h3>
+                    <h3>Contact</h3>
+                    <h3>About Us</h3>
+                </div>
+                <div className="sub-buttons">
+                    <Link to={'/login'}>
+                        <button>Login</button>
+                    </Link>
+                </div>
             </div>
-            <div className="main">
-                <h2>SignUp</h2>
+            <div className="login-main">
                 <div className="container">
+                    <figure className="img">
+                        <img src={login} alt="Image" />
+                    </figure>
                     <form onSubmit={Submit}>
-                        <div className="form-container">
+                        <h2>SIGNUP</h2>
+                        <div className="f-container">
                             <div>
-                                <input type="text" name="name" id="name" placeholder="Name" autoComplete="off" required={true} onChange={HandleChange} />
-                                <hr />
+                                <input type="text" name="name" id="name" autoComplete="off" required={true} onChange={HandleChange} className="name-input" placeholder="Username" />
                             </div>
                             <div>
-                                <input type="email" name="email" id="email" placeholder="Email" autoComplete="off" onChange={HandleChange} required={true} />
-                                <hr />
+                                <input type="email" name="email" id="email" placeholder="Email" autoComplete="off" required={true} onChange={HandleChange} className="mail-input" />
                             </div>
                             <div>
-                                <input type="password" name="password" id="password" placeholder="Password" onChange={HandleChange} required={true} />
-                                <hr />
+                                <input type="password" name="password" id="password" placeholder="Password" required={true} onChange={HandleChange} className="password-input" />
                             </div>
-                        </div>
-                        <div className="btn-container">
-                            <button type="submit">SIGN UP</button>
-                            <Link to={'/login'}>
-                                <button>Login</button>
-                            </Link>
+                            <div className="buttons">
+                                <button type="submit">SIGNUP</button>
+                            </div>
                         </div>
                         {display && (
-                            <h3>Please enter correct and unused account details.</h3>
+                            <h3 id="span">Please enter the correct credentials.</h3>
                         )}
                     </form>
-                    <figure className="img">
-                        <img src={signup} alt="Image" />
-                    </figure>
                 </div>
             </div>
         </div>

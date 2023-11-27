@@ -12,60 +12,14 @@ body{
 h2{
     font-size: 2.7rem;
 }
-.main{
-    display: flex;
-    flex-direction: column;
-    align-items:baseline;
-    justify-content: space-around;
-    gap: 0;
-}
-.container {
-    display: flex;
-    flex-direction: row;
-    vertical-align: middle;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 20rem;
-    margin: 0 0 0 3rem;
-}
-
-.form-container{
-    background-color: white;
-    border: 1px solid white;
-    padding: 2rem;
-    border-radius: 10px;
-    height: 24rem;
-    width: 25rem;
-    font-size: 2.5rem;
-}
-.form-container input{
-    margin-top: 4rem;
-    outline: none;
-    border: none;
-    font-size: 1.5rem;
+.name-input {
+    width: 100%;
+    background: url('../assets/user.jpg') no-repeat scroll 7px;
+    padding-left: 50px;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 figure{
     margin: 0;
     padding: 0;
-}
-.img img{
-    height: 25rem;
-}
-button{
-    background-color: #E1583A;
-    margin-top: 1rem;
-    height: auto;
-    width: auto;
-    font-size: 1.5rem;
-    border-radius: 5px;
-    outline: none;
-    border: none;
-    padding: .5rem;
-    cursor:pointer;
-}
-.btn-container{
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: 2rem;
-    gap: 11rem;
 }

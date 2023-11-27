@@ -2,7 +2,6 @@ import React from 'react'
 import './Homepg.css'
 import Teamwork from "../assets/vecteezy_teamwork-or-team-building-office-business-meeting-vector_4154417-removebg-preview 1.png"
 import Logo from "../assets/Logo_Teemify.png"
-
 import { Link } from 'react-router-dom'
 
 function Home() {
@@ -12,11 +11,6 @@ function Home() {
                 <div className="logo">
                     <div><img src={Logo} alt="" /></div>
                     <div> <h3>Teemify</h3></div>
-                </div>
-                <div className="homeNav">
-                    <div><button className='hmb'>Home</button></div>
-                    <div><button className='hmb'>Contact</button></div>
-                    <div><button className='hmb'>About Us</button></div>
                 </div>
                 <div className="slbuttons">
                     <Link to={"/login"}>

@@ -3,7 +3,7 @@ import Logo from "../assets/Logo.png"
 import { useState } from "react";
 import axios from "axios";
 import "./Login.css"
-import login from "../assets/Login.png"
+import login from "../assets/login.jpg"
 import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
@@ -30,6 +30,7 @@ const Login = () => {
             })
             console.log(response);
             navigate(`/dashboard`, { state: { id: 1, email: email } });
+
         }
         catch (error) {
             console.error(error);
@@ -37,45 +38,49 @@ const Login = () => {
         }
     }
     return (
-        <div className="hero">
+        <div className="login-signup-hero">
             <div className="nav">
                 <figure>
-                    <img src={Logo} alt="" />
+                    <img src={Logo} alt="" className="logo" />
+                    <h1>&nbsp;Teemify</h1>
                 </figure>
-                <h1>&nbsp;Teemify</h1>
+                <div className="sub-nav">
+                    <h3>Home</h3>
+                    <h3>Contact</h3>
+                    <h3>About Us</h3>
+                </div>
+                <div className="sub-buttons">
+                    <Link to={'/signup'}>
+                        <button>Sign Up</button>
+                    </Link>
+                </div>
             </div>
-            <div className="main">
-                <h2>Login</h2>
+            <div className="login-main">
                 <div className="container">
+                    <figure className="img">
+                        <img src={login} alt="Image" />
+                    </figure>
                     <form onSubmit={Submit}>
+                        <h2>User Login</h2>
                         <div className="f-container">
                             <div>
-                                <input type="email" name="email" id="email" placeholder="Email" autoComplete="off" required={true} onChange={HandleChange} />
-                                <hr />
+                                <input type="email" name="email" id="email" placeholder="Email" autoComplete="off" required={true} onChange={HandleChange} className="mail-input" />
                             </div>
-                            <div>
-                                <input type="password" name="password" id="password" placeholder="Password" required={true} onChange={HandleChange} />
-                                <hr />
+                            <div id="forgot-button">
+                                <input type="password" name="password" id="password" placeholder="Password" required={true} onChange={HandleChange} className="password-input" />
+                                <Link to={'/forgot'}>
+                                <p>Forgot Password?</p>
+                                </Link>
                             </div>
-                        </div>
-                        <div className="buttons">
-                            <button type="submit">LOGIN</button>
-                            <Link to={'/signup'}>
-                                <button>Signup</button>
-                            </Link>
-                        </div>
-                        <div className="forgot">
-                            <Link to={'/forgot'}>
-                                <button>Forgot Password</button>
-                            </Link>
+                            <div className="buttons">
+                                <button type="submit">LOGIN</button>
+                            </div>
+
                         </div>
                         {display && (
                             <h3 id="span">Please enter the correct credentials</h3>
                         )}
                     </form>
-                    <figure className="img">
-                        <img src={login} alt="Image" />
-                    </figure>
                 </div>
             </div>
         </div>

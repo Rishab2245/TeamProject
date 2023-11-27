@@ -4,7 +4,7 @@ import "./Dash.css"
 import MainSection from '../components/MainSection'
 // import { useParams } from 'react-router'
 import { useLocation } from 'react-router'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import AddProject from '../AddProj/AddProject'
 
 const Dashboard = () => {
