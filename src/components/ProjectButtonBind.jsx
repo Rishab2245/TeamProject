@@ -8,9 +8,21 @@ let [data,setdata] = useState([
 ]);
 console.log(project);
 useEffect(()=>{
-  setdata((p)=>{return([...p,{value:`${project.Project}` , bol:`${true}`}])})
+  if(project.Project!=""){
+  setdata((p)=>{return([...p,{value:`${project.Project}` , bol:`${true}` , description:`${project.description}`}])})
+  }
 },[project])
+
 console.log(data);
+
+const activeproj = (e) =>{
+  let temp = data.map((ev)=>{
+    return(
+      {...ev,["bol"]: e.target.innerText == ev.value ? false : true }
+    )
+  })
+  setdata(temp);
+}
 
   return (
     <>
@@ -22,7 +34,7 @@ console.log(data);
     <div  style={{padding:"0.2rem"}}>
        {
         data.map((e,idx)=>(
-            <ProjectButton key={idx} value={e.value} bol={e.bol}/>
+             <ProjectButton key={idx} value={e.value} bol={e.bol} acpj={activeproj}/>
         ))
        }
     </div>

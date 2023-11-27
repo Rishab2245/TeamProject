@@ -8,9 +8,10 @@
     display: flex;
     gap: 0.8rem;
     align-items: center;
-    padding: 1rem;
+    padding: 0rem;
     padding-left: .5rem;
     border: 1px solid #b9b9b9;
+    box-sizing: border-box;
     
 }
 .member-button div img{

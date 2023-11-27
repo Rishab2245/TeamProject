@@ -6,12 +6,14 @@ import MainSection from '../components/MainSection'
 import { useLocation } from 'react-router'
 import React, { useEffect, useState } from 'react'
 import AddProject from '../AddProj/AddProject'
+import axios from 'axios'
 
 const Dashboard = () => {
   let [add,setadd]=useState(false)
   const loacation = useLocation();
-  let[projedata,setprojedata] = useState({Project:"frontend",discription:"hellow world"});
+  let[projedata,setprojedata] = useState({Project:"",discription:""});
   console.log(loacation.state.email);
+  
 
   const profunc = ()=>{
     setadd(!add);
@@ -22,9 +24,7 @@ const Dashboard = () => {
       <Header />
       <div className='below'>
         <SideBar profunc={profunc} projectdata={projedata}/>
-        {
-          add ? <MainSection/> : <AddProject profunc={profunc} setprojectdata={setprojedata}/>
-        }
+          <MainSection profunc={profunc} setprojectdata={setprojedata} add={add}/> 
       </div>
       </>
   )

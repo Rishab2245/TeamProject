@@ -7,6 +7,7 @@ const AddProject = ({profunc , setprojectdata}) => {
     Project: '',
     description: '',
   });
+  
 
   const handleChange = (e) => {
     setProjectDetails({
@@ -16,9 +17,15 @@ const AddProject = ({profunc , setprojectdata}) => {
   };
   const handleSubmit = async (e) => {
     
-    e.preventDefault();
+    // e.preventDefault();
+    let senddata = {}
+    senddata["name"] = projectDetails["Project"]
+    senddata["description"] = projectDetails["description"]
+    senddata["color"] = projectDetails[""]
+    console.log(senddata);
+
     try {
-      const response = await axios.post('', projectDetails);
+      const response = await axios.post('http://teammanagement.onrender.com/api/board/createBoard', senddata);
       console.log('API Response:', response.data);
     } catch (error) {
       console.error('Error sending data to API:', error);
@@ -27,9 +34,8 @@ const AddProject = ({profunc , setprojectdata}) => {
 
   const sendda = ()=>{
     profunc();
-    setprojectdata(projectDetails);
-    console.log(projectdata)
     handleSubmit();
+    setprojectdata(projectDetails);
   }
 
   return (

@@ -4,6 +4,8 @@
     height: 2rem;
     margin-top: 0.2rem;
     font-size: small;
+    border-radius: 0.3rem;
+    border: none;
 }
 .project-button {
 }
