@@ -3,6 +3,7 @@ import './Todo.css'
 
 import { useState,useEffect } from 'react'
 import { Link, useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 const Todo = () => {
 
@@ -14,8 +15,9 @@ const Todo = () => {
   useEffect(()=>{
     const fetchData = async () => {
       try {
-        const response = await fetch('http://teammanagement.onrender.com/api/board/getBoards',{
-          mode:'no-cors',
+        const response = await axios.get('https://teammanagement.onrender.com/api/board/getBoards/',{
+          
+          
         });
         console.log(response);
         const data = await response.json();

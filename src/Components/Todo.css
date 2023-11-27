@@ -1,12 +1,13 @@
-/* .todo .container{
+.todo .container{
     display: flex;
     justify-content: space-between;
     
 
-} */
+}
 .todo{
     display: flex;
     justify-content: space-between;
+    flex-direction: row;
 }
 
 
@@ -23,7 +24,7 @@
    border: 1px solid black;
    margin: 1%;
    width: 25em;
-   height: 100%;
+   height: 100vh;
 }
 .todo .container .outer .taskBox{
     background-color:#FFFFFF;
@@ -99,7 +100,7 @@
     
    border: 1px solid black;
    margin: 1%;
-   height: 100%;
+   /* height: 100vh; */
    width: 25em;
    
 }
