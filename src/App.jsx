@@ -9,6 +9,7 @@ import Forgot from './Forgot/Forgot';
 import Otp from './Forgot/Otp';
 import UserDetails from './UserDetailpage/UserDetailForm';
 import AfterOtp from './AfterOtp/AfterOtp';
+import Nav from './NavBar/Nav';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
   
     <BrowserRouter>
       <Routes>
-        <Route path="/" element= {<Home />} />
+        <Route path="/" element= {<Nav />} />
         <Route path='/signup' element={<SignUp />} />
         <Route path='/login' element={<Login />} />
         <Route path='/aftersignup' element={<AfterSignUp />} />
