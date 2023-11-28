@@ -24,7 +24,7 @@ const Login = () => {
     const Submit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("https://teammanagement.onrender.com/api/user/login", {
+            const response = await axios.post("https://teammanagement.onrender.com/api/user/login/", {
                 "email": email,
                 "password": password,
             })

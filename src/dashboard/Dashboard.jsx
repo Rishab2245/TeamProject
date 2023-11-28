@@ -11,7 +11,8 @@ import axios from 'axios'
 const Dashboard = () => {
   let [add, setadd] = useState(false)
   const location = useLocation();
-  let [projedata, setprojedata] = useState({ Project: "frontend", discription: "hellow world" });
+  const[boarddata,setboarddata] = useState([]);
+  let [projedata, setprojedata] = useState({ Project: "", discription: "" });
   console.log(location.state.auth);
   const auth = location.state.auth
 
@@ -27,7 +28,8 @@ const Dashboard = () => {
           'Authorization':auth
         }
       })
-      console.log(response)
+      setboarddata(response.data.boards)
+      console.log(response.data.boards)
     }
     catch (error) {
       console.error(error);
@@ -41,10 +43,8 @@ const Dashboard = () => {
     <>
       <Header />
       <div className='below'>
-        <SideBar profunc={profunc} projectdata={projedata} />
-        {
-          add ? <MainSection /> : <AddProject profunc={profunc} setprojectdata={setprojedata} />
-        }
+        <SideBar profunc={profunc} projectdata={projedata}  auth = {auth} boarddata={boarddata}/>
+          <MainSection profunc={profunc} setprojectdata={setprojedata} add={add} auth={auth}/> 
       </div>
     </>
   )
