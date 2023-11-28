@@ -24,13 +24,12 @@ const Login = () => {
     const Submit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("https://teammanagement.onrender.com/api/user/login", {
+            const response = await axios.post("https://teammanagement.onrender.com/api/user/login/", {
                 "email": email,
                 "password": password,
             })
             console.log(response);
-            navigate(`/dashboard`, { state: { id: 1, email: email } });
-
+            navigate(`/dashboard`, { state: { id: 1, email: email , authorisation: response.headers.authorization} } );
         }
         catch (error) {
             console.error(error);

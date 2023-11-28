@@ -13,8 +13,8 @@ const Dashboard = () => {
   const loacation = useLocation();
   let[projedata,setprojedata] = useState({Project:"",discription:""});
   console.log(loacation.state.email);
-  
-
+  console.log(loacation.state.authorisation);
+  const auth =   loacation.state.authorisation;
   const profunc = ()=>{
     setadd(!add);
     console.log("add")
@@ -23,8 +23,8 @@ const Dashboard = () => {
     <>
       <Header />
       <div className='below'>
-        <SideBar profunc={profunc} projectdata={projedata}/>
-          <MainSection profunc={profunc} setprojectdata={setprojedata} add={add}/> 
+        <SideBar profunc={profunc} projectdata={projedata}  auth = {auth}/>
+          <MainSection profunc={profunc} setprojectdata={setprojedata} add={add} auth={auth}/> 
       </div>
       </>
   )
