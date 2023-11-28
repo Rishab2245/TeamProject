@@ -1,6 +1,16 @@
 body{
     background-color: white;
 }
+html {
+    margin: 0;
+    padding: 0;
+}
+.login-signup-hero {
+    margin: 0;
+    padding: 0;
+    margin-top: -3vw;
+    height: max-content;
+}
 .login-signup-hero .nav{
     display: flex;
     flex-direction: row;

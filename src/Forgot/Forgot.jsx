@@ -58,10 +58,12 @@ const Forgot = () => {
                     <p>Enter your email</p>
                     <input type="email" name="email" id="mail" required placeholder="Email" autoComplete="off" onChange={HandleMail} />
                     <hr />
-                    <button type="submit">Proceed</button>
-                    {display && (
-                        <h3>Please enter correct credentials.</h3>
-                    )}
+                    <div className="proceed">
+                        <button type="submit">Proceed</button>
+                        {display && (
+                            <h3>Please enter correct credentials.</h3>
+                        )}
+                    </div>
                 </form>
             </div>
         </div>

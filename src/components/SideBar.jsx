@@ -5,15 +5,14 @@ import MemberButtonbind from './MemberButtonBind';
 import AddProject from './AddProject';
 import axios from 'axios';
 
-const SideBar = ({profunc,projectdata}) => {
-
+const SideBar = ({profunc,projectdata,boarddata}) => {
   
   // getboards();
 console.log(projectdata);
 
   return (
     <div className='side'>
-      <ProjectButtonBind project={projectdata}/>
+      <ProjectButtonBind project={projectdata} boarddata={boarddata}/>
       <MemberButtonbind/>
       <AddProject profunc={profunc}/>
     </div>
