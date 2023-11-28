@@ -36,8 +36,6 @@ const Login = () => {
             console.error(error);
             setDisplay(true);
         }
-        // const token = document.cookie.split(';').find(row => row.startsWith('token')).split('=')[1];
-        // console.log(token);
     }
     return (
         <div className="login-signup-hero">
