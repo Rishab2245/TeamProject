@@ -1,25 +1,81 @@
-body{
-    background-color: #F2F2F2;
+html{
+    height: 99%;
 }
-.nav{
+body{
+    height: 100%;
+}
+#root{
+    height: 100%;
+}
+.signup-hero{
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    height: 100%;
+}
+.signup-main{
     display: flex;
     flex-direction: row;
-    margin-top: 2rem;
-    font-size: 2rem;
+}
+.signup-main .container{
+    display: flex;
+    flex-direction: row;
     align-items: center;
-    margin-left: 3rem;
-}
-h2{
-    font-size: 2.7rem;
-}
-.name-input {
+    justify-content: space-around;
     width: 100%;
-    background: url('../assets/user.jpg') no-repeat scroll 7px;
-    padding-left: 50px;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    /* margin-top: 3vw; */
 }
-figure{
-    margin: 0;
-    padding: 0;
+.signup-main .container img{
+    height: 30vw;
+}
+.f-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: -100px;
+    flex-direction: column;
+    box-shadow:inset 0 0 2000px rgba(255,255,255,.5);
+    border-radius: 10px;
+    padding: 0.5vw 5vw;
+}
+.f-container h2{
+    font-size: 2.5rem;
+    color: #0D3B66;
+}
+.f-container input{
+    margin-top: 3vw;
+    font-size: 1.2rem;
+    border-radius: 10px;
+}
+.f-container button{
+    background-color: #0D3B66;
+    margin-top: 2vw;
+    color: white;
+    padding: .7vw;
+    border-radius: 10px;
+}
+.signup-hero .mail-input {
+    background: url('../assets/icon _email_.jpg') no-repeat scroll 7px;
+    padding-left: 3.8vw;
+    padding-bottom: 1vw;
+    padding-top: 1vw;
+    background-color: white;
+}
+.signup-hero .password-input{
+    background: url('../assets/lock.jpg') no-repeat scroll 7px;
+    padding-left: 3.8vw;
+    padding-bottom: 1vw;
+    padding-top: 1vw;
+    background-color: white;
+}
+.signup-hero .name-input{
+    background: url('../assets/user.jpg') no-repeat scroll 7px;
+    padding-left: 3.8vw;
+    padding-bottom: 1vw;
+    padding-top: 1vw;
+    background-color: white;
+}
+.signup-wave{
+    margin: auto auto;
+    margin-bottom: 0;
 }
