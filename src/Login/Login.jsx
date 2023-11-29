@@ -3,10 +3,10 @@ import Logo from "../assets/Logo.png"
 import { useState } from "react";
 import axios from "axios";
 import "./Login.css"
-import login from "../assets/login.jpg"
 import { Link, useNavigate } from "react-router-dom";
 import Wave from "../wave/Wave.jsx"
 import Nav from "../NavBar/Nav";
+import login from "../assets/Login.png"
 
 const Login = () => {
     const [email, setMail] = useState("");
@@ -45,14 +45,19 @@ const Login = () => {
             <div className="login-main">
                 <form className="login-form" onSubmit={Submit}>
                     <h2>LOGIN</h2>
-                    <input type="text" className="mail-input" placeholder="Email" onChange={HandleChange} name="email" autoComplete="off"/>
+                    <input type="text" className="mail-input" placeholder="Email" onChange={HandleChange} name="email" autoComplete="off" />
                     <br />
-                    <input type="password" className="password-input" placeholder="Password" onChange={HandleChange} name="password"/>
+                    <div>
+                        <input type="password" className="password-input" placeholder="Password" onChange={HandleChange} name="password" />
+                        <Link to={'/forgot'}>
+                            <p>Forgot Password?</p>
+                        </Link>
+                    </div>
                     <br />
                     <button type="submit">LOGIN</button>
                 </form>
                 <figure >
-                    <img src={login} alt="image" className="login-img"/>
+                    <img src={login} alt="image" className="login-img" />
                 </figure>
             </div>
             <div className="wave-class">

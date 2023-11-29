@@ -19,31 +19,30 @@ button{
 }
 .login-signup-hero .mail-input {
     background: url('../assets/icon _email_.jpg') no-repeat scroll 7px;
-    padding-left: 50px;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    padding-left: 3.8vw;
+    padding-bottom: 1vw;
+    padding-top: 1vw;
     background-color: white;
 }
 .login-signup-hero .password-input{
     background: url('../assets/lock.jpg') no-repeat scroll 7px;
-    padding-left: 50px;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    padding-left: 3.8vw;
+    padding-bottom: 1vw;
+    padding-top: 1vw;
     background-color: white;
 }
 .login-signup-hero .login-form{
     display: flex;
     flex-direction: column;
-    /* filter: blur(1px); */
     box-shadow:inset 0 0 2000px rgba(255,255,255,.5);
     padding: 5rem;
     backdrop-filter: -100px;
-    margin-top: 2vw;
+    margin-top: 1vw;
     border-radius: 10px;
     align-items: center;
 }
 .login-form h2{
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     margin-top: 0;
     color: #0D3B66;
 }
@@ -56,16 +55,14 @@ button{
     text-align: center;
     background-color: #0D3B66;
     color: white;
-    padding: 0.7vw;
+    padding: 0.6vw;
     border-radius: 10px;
-
 }
 .login-main{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    margin-top: 2vw;
 }
 .wave-class{
     margin:auto auto;
@@ -76,4 +73,8 @@ button{
 }
 .login-img{
     height: 30vw;
+}
+.login-form a{
+    text-decoration: none;
+    color: white;
 }
