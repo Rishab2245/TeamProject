@@ -1,47 +1,48 @@
 import React from 'react'
 import './Homepg.css'
-import Teamwork from "../assets/vecteezy_teamwork-or-team-building-office-business-meeting-vector_4154417-removebg-preview 1.png"
-import Logo from "../assets/Logo_Teemify.png"
-import { Link } from 'react-router-dom'
-
+import HomeNav from './HomeNav/HomeNav'
+import graphic from '../assets/Group 19.png'
+import arrow from '../assets/Vector 4.png'
 function Home() {
     return (
-        <div className='home-main'>
-            <nav>
-                <div className="logo">
-                    <div><img src={Logo} alt="" /></div>
-                    <div> <h3>Teemify</h3></div>
-                </div>
-                <div className="slbuttons">
-                    <Link to={"/login"}>
-                        <button className='login'>Log In</button>
-                    </Link>
-                    <Link to={"/signup"}>
-                        <button className='signup'>Sign Up</button>
-                    </Link>
-                </div>
-            </nav>
-            <div className="heroSection">
-                <div className="intro">
-                    <h6>#Gettogether</h6>
-                    <h1>More Accomplish <br />Together</h1>
-                    <p>Collaborato, Manage Project and raach now
-                        Productivity peacks.</p>
-                    <button className='trialButton'>TRY FREE FOR 30 DAYS</button>
-                    <div className="adjectives">
-                        <div>
-                            <div className='figures'>50+</div>
-                            <div className='ftext'>Years <br /> Experience</div></div>
-                        <div>
-                            <div className='figures'>10M+</div>
-                            <div className='ftext'>total<br /> active users</div>
-                        </div></div>
-                </div>
-                <div className="illustration">
-                    <img src={Teamwork} alt="" />
+        <>
+        <div className="homePage">
+           <div className="homeNav">
+            <HomeNav/>
+           </div>
+           <div className="homeBody">
+            <div className="homeText">
+                <h1>Teemify brings all <br/>
+                    your tasks, teammates,<br/>
+                    and tools <span>together</span> 
+                </h1>
+                <p>Keep everything in the same place-even if<br/> 
+                   your team isn’t.
+                </p>
+                <div className="trial">
+                    <div className="trialButton"><button>Try free for 30 days</button></div>
+                    <div className="trialArrow"><img src={arrow} alt="" /></div>
                 </div>
             </div>
-        </div>
+            <div className="graphic"><img src={graphic} alt="" /></div>
+           </div>
+           <div className="wave">
+           <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1512 169" fill="none">
+  <path d="M401.354 32.818C271.066 36.6527 77.7019 117.361 -0.199241 170.008L1500.57 197.699C1523.29 132.061 1554.88 0.862285 1499.48 1.16896C1430.23 1.5523 1229.95 118.442 1013.42 119.641C796.898 120.839 564.216 28.0247 401.354 32.818Z" fill="url(#paint0_linear_542_43)" stroke="url(#paint1_linear_542_43)" stroke-width="1.18632"/>
+  <defs>
+    <linearGradient id="paint0_linear_542_43" x1="24.3324" y1="108.483" x2="1530.75" y2="100.144" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D9D9D9"/>
+      <stop offset="1" stop-color="#D9D9D9" stop-opacity="0.69"/>
+    </linearGradient>
+    <linearGradient id="paint1_linear_542_43" x1="-0.199092" y1="170.009" x2="1493.76" y2="170.784" gradientUnits="userSpaceOnUse">
+      <stop stop-color="white"/>
+      <stop offset="1" stop-color="#707070" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+           </div>
+            </div></>
     )
 }
 export default Home
