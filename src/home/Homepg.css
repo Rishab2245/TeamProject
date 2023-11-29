@@ -1,181 +1,82 @@
-.home-main button {
-    cursor: pointer;
-    /* width: auto; */
-    text-wrap:wrap;
-}
-.home-main *{
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
-    width:auto;
-}
-.home-main nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 2rem;
-    margin-left: 4rem;
-    margin-right: 3rem;
-    text-wrap: nowrap;
-    flex-wrap: nowrap;
-    gap:1vw;
-}
-.logo {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 10px;
-    font-size: 2.25rem;
-}
-
-.homeNav {
-    display: flex;
-    flex-direction: row;
-    color: #978C8C;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-size: 1.5625rem;
-    justify-content: center;
-    gap: 3.12rem;
-    align-items: center;
-    text-wrap: nowrap;
-}
-
-.hmb {
-    color: #978C8C;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-size: 1.5625rem;
-    justify-content: center;
-    border: none;
-    background: transparent;
-    align-items: center;
-}
-
-.hmb:focus {
-    color: black;
-    border-bottom: 1px solid black;
-}
-
-.logo h3 {
-    font-weight: 400;
-    font-family: 'Inter', sans-serif;
-}
-
-.slbuttons {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 2.8rem;
-}
-
-.home-main .login {
-    color: #000;
-    font-family: Inter;
-    font-size: 1.8rem;
-    font-weight: 400;
-    
-    height: 3.31875rem;
-    border-radius: 1.06875rem;
-    background: #E2E2E5;
-    padding: 0.5rem;
-    border: none;
-}
-.home-main .signup {
-    border: none;
-    border-radius: 1.1875rem;
-    background: #3581B8;
-    height: 3.31875rem;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    flex-shrink: 0;
-    padding: 0.5rem;
-    color: #FFF;
-    font-size: 1.8125rem;
-    font-weight: 400;
-}
-.home-main .heroSection {
-    margin-left: 5rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-.intro {
-    text-align: left;
-}
-.heroSection h6 {
-    color: #4EA327;
-    font-size: 1.25rem;
-    font-style: normal;
-    font-weight: 644;
-    width: 9.375rem;
-    height: 3rem;
-    flex-shrink: 0;
-    border-radius: 1rem;
-    background: #E6F5DF;
-    padding: 0.7rem;
-    /* margin-left: 5rem; */
-    margin-top: 5rem;
-}
-.heroSection h1 {
-    color: #000;
-    font-size: 4rem;
-    font-style: normal;
-    font-weight: 644;
-    width: 39rem;
-    height: 11rem;
-    margin-top: 2rem;
-    margin-bottom: 3rem;
-    text-transform: capitalize;
-}
-.heroSection p {
-    width: 36.6875rem;
-    height: 4.5rem;
-    flex-shrink: 0;
-    color: #000;
-    font-family: Josefin Sans;
-    font-size: 1.75rem;
-    font-style: normal;
-    font-weight: 400;
-    margin-bottom: 2rem;
-}
-.trialButton {
-    height: 3.5rem;
-    flex-shrink: 0;
-    padding: 1.1rem;
-    border-radius: 0.4375rem;
-    background: #3581B8;
-    border: none;
+body {
+    margin: 0;
+  }
+.homePage{
+    background: linear-gradient(113deg, #45048A 0%, #C40CC6 100%);
+    margin: 0px;
+    padding: 0px;
     color: white;
-    text-wrap: nowrap;
-    padding:1.2rem
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
-.adjectives {
-    margin-top: 4rem;
+.homePage .homeText{
+    font-family: Josefin Sans;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-wrap: nowrap;
+    padding: 2rem;
+}
+.homePage .homeNav{
+    width: 100%;
+    margin: 0;
+}
+.homePage .homeBody{
     display: flex;
     flex-direction: row;
-    gap: 4.19em;
-    border-radius: 1rem;
-    background: rgba(242, 242, 242, 0.55);
-
-
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10rem 6rem 0rem 5rem;
+    margin: 0rem 6rem 0rem 5rem;
 }
-.figures {
-    width: 6.125rem;
-    color: #000;
-    font-size: 3.0625rem;
+.homePage .graphic img{
+height: 45rem;
+}
+.homePage .homeText span{
+  font-weight: 300;
+    border-radius: 4.375rem;
+    background: #FFF;
+    color: black;
+    padding: 0.5rem;
+    }
+.homePage .trial{
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+}
+.homePage .trialButton button{
+    width: 14.1875rem;
+    height: 4.1875rem;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.77);
+    border: none;
+    font-size: 1.375rem;
     font-style: normal;
-    font-weight: 644;
+    font-weight: 400;
+    line-height: normal
 }
-.ftext {
-    color: #000;
-    font-size: 1.25rem;
+.homePage .trialArrow{
+padding: 1rem;
+}
+.homePage p{
+    color: #FFF;
+    font-family: 'Josefin Sans';
+    font-size: 1.84519rem;
     font-style: normal;
-    font-weight: 644;
-    margin-bottom: 5rem;
-}
-.illustration {
-    width: 42.6875rem;
-    height: 28.25rem;
+    font-weight: 400;
+    line-height: normal;
+    width: 44.45763rem;
+    height: 4.15169rem;
     flex-shrink: 0;
 }
-.home-main button{
-    font-size: 1.3rem;
+.homePage .wave{
+    margin: 0;
+    padding: 0;
+   
+}
+.homePage button{
+    cursor: pointer;
 }
