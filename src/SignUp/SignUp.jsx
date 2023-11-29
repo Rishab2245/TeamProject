@@ -6,6 +6,9 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom"
 import { Link } from "react-router-dom";
 import "./Signup.css"
+import Nav from "../NavBar/Nav";
+import Wave from "../wave/Wave";
+
 const SignUp = () => {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
@@ -46,49 +49,35 @@ const SignUp = () => {
         console.log(display);
     }
     return (
-        <div className="login-signup-hero">
-            <div className="nav">
-                <figure>
-                    <img src={Logo} alt="" className="logo" />
-                    <h1>&nbsp;Teemify</h1>
-                </figure>
-                <div className="sub-nav">
-                    <h3>Home</h3>
-                    <h3>Contact</h3>
-                    <h3>About Us</h3>
-                </div>
-                <div className="sub-buttons">
-                    <Link to={'/login'}>
-                        <button>Login</button>
-                    </Link>
-                </div>
-            </div>
-            <div className="login-main">
+        <div className="signup-hero">
+            <Nav />
+            <div className="signup-main">
                 <div className="container">
-                    <figure className="img">
-                        <img src={login} alt="Image" />
-                    </figure>
-                    <form onSubmit={Submit}>
+                    <form onSubmit={Submit} className="f-container">
                         <h2>SIGNUP</h2>
-                        <div className="f-container">
-                            <div>
-                                <input type="text" name="name" id="name" autoComplete="off" required={true} onChange={HandleChange} className="name-input" placeholder="Username" />
-                            </div>
-                            <div>
-                                <input type="email" name="email" id="email" placeholder="Email" autoComplete="off" required={true} onChange={HandleChange} className="mail-input" />
-                            </div>
-                            <div>
-                                <input type="password" name="password" id="password" placeholder="Password" required={true} onChange={HandleChange} className="password-input" />
-                            </div>
-                            <div className="buttons">
-                                <button type="submit">SIGNUP</button>
-                            </div>
+                        <div>
+                            <input type="text" name="name" id="name" autoComplete="off" required={true} onChange={HandleChange} className="name-input" placeholder="Username" />
+                        </div>
+                        <div>
+                            <input type="email" name="email" id="email" placeholder="Email" autoComplete="off" required={true} onChange={HandleChange} className="mail-input" />
+                        </div>
+                        <div>
+                            <input type="password" name="password" id="password" placeholder="Password" required={true} onChange={HandleChange} className="password-input" />
+                        </div>
+                        <div className="buttons">
+                            <button type="submit">SIGNUP</button>
                         </div>
                         {display && (
                             <h3 id="span">Please enter the correct credentials.</h3>
                         )}
                     </form>
+                    <figure>
+                        <img src={login} alt="Image" className="img" />
+                    </figure>
                 </div>
+            </div>
+            <div className="signup-wave">
+                <Wave />
             </div>
         </div>
     )
