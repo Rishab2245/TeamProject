@@ -1,22 +1,27 @@
+body {
+    margin: 0;
+  }
 .homePage{
-    background: linear-gradient(to bottom right, #45048A 0%, #C40CC6 100%);
+    background: linear-gradient(113deg, #45048A 0%, #C40CC6 100%);
     margin: 0px;
     padding: 0px;
-    height: 100%;
     color: white;
-    overflow: auto;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
 }
 .homePage .homeText{
     font-family: Josefin Sans;
-font-size: 2.5rem;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-text-wrap: nowrap;
-padding: 2rem;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-wrap: nowrap;
+    padding: 2rem;
+}
+.homePage .homeNav{
+    width: 100%;
+    margin: 0;
 }
 .homePage .homeBody{
     display: flex;
@@ -24,19 +29,19 @@ padding: 2rem;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: flex-start;
- padding: 10rem 6rem 0rem 5rem;
- margin: 0rem 6rem 0rem 5rem;
+    padding: 10rem 6rem 0rem 5rem;
+    margin: 0rem 6rem 0rem 5rem;
 }
 .homePage .graphic img{
 height: 45rem;
 }
 .homePage .homeText span{
   font-weight: 300;
-border-radius: 4.375rem;
-background: #FFF;
-color: black;
-padding: 0.5rem;
-}
+    border-radius: 4.375rem;
+    background: #FFF;
+    color: black;
+    padding: 0.5rem;
+    }
 .homePage .trial{
     display: flex;
     gap: 1rem;
@@ -44,31 +49,34 @@ padding: 0.5rem;
 }
 .homePage .trialButton button{
     width: 14.1875rem;
-height: 4.1875rem;
-border-radius: 0.5rem;
-background: rgba(255, 255, 255, 0.77);
-border: none;
-font-size: 1.375rem;
-font-style: normal;
-font-weight: 400;
-line-height: normal
+    height: 4.1875rem;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.77);
+    border: none;
+    font-size: 1.375rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal
 }
 .homePage .trialArrow{
 padding: 1rem;
 }
 .homePage p{
     color: #FFF;
-font-family: Josefin Sans;
-font-size: 1.84519rem;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-width: 44.45763rem;
-height: 4.15169rem;
-flex-shrink: 0;
+    font-family: 'Josefin Sans';
+    font-size: 1.84519rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 44.45763rem;
+    height: 4.15169rem;
+    flex-shrink: 0;
 }
 .homePage .wave{
     margin: 0;
     padding: 0;
    
+}
+.homePage button{
+    cursor: pointer;
 }
