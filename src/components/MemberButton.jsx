@@ -4,7 +4,7 @@ import "./MemberButtoncss.css"
 const MemberButton = ({value,bol,link}) => {
   return (
     <div className='member-button'>
-    <div style={bol?{backgroundColor:"transparent"}:{backgroundColor:"#302c51" , color:"white"}}><img src={link}/>{value}</div>
+    <div style={bol?{backgroundColor:"#202429"}:{backgroundColor:"#0d3b66"}}><img src={link}/>{value}</div>
 </div>
   )
 }

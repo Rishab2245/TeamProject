@@ -5,10 +5,12 @@
     gap: 2rem;
     align-items: center;
     margin-bottom: 1rem;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
 }
 .navbutton button{
     background-color: transparent;
-   color: rgb(0, 0, 0);
+   color:white;
    font-size: 0.8rem;
    border-radius: none;
    height: 2rem;  
@@ -18,6 +20,6 @@
 }
 .navbutton button.click{
    background-color: transparent;
-   color: rgb(137, 137, 137);
-   border-bottom: 1px solid rgb(84, 81, 81);
+   color: white;
+   border-bottom: 3px solid rgb(139, 124, 124);
 }
