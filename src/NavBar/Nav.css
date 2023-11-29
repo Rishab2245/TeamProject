@@ -17,6 +17,7 @@
     font-size: 2.7rem;
     margin: 0;
     padding: 0;
+    color:#FEEBEB;
 }
 .main-nav .nav-buttons button{
     border: none;
@@ -24,6 +25,7 @@
     font-size: 1.5rem;
     border-radius: 5px;
     padding: .7rem;
+    cursor: pointer;
 }
 #b{
     background-color: #FEEBEB;
