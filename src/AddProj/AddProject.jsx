@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import './AddPr.css';
 import axios from 'axios';
 
-const AddProject = ({profunc , setprojectdata}) => {
+const AddProject = ({profunc , setprojectdata , auth}) => {
   const [projectDetails, setProjectDetails] = useState({
     Project: '',
     description: '',
+    bol:"false"
   });
   
 
@@ -25,8 +26,9 @@ const AddProject = ({profunc , setprojectdata}) => {
     console.log(senddata);
 
     try {
-      const response = await axios.post('http://teammanagement.onrender.com/api/board/createBoard', senddata);
+      const response = await axios.post('https://teammanagement.onrender.com/api/board/createBoard/',senddata , {headers: {authorization : auth}});
       console.log('API Response:', response.data);
+      // console.log('API Response:', response.headers.authorization);
     } catch (error) {
       console.error('Error sending data to API:', error);
     }

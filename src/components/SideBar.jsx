@@ -5,26 +5,14 @@ import MemberButtonbind from './MemberButtonBind';
 import AddProject from './AddProject';
 import axios from 'axios';
 
-const SideBar = ({profunc,projectdata}) => {
-
-  const getboards = async () =>{
-    try{
-      let response = await axios.get("http://teammanagement.onrender.com/api/board/getBoards",{
-        headers:{
-          withCredentials:true,
-          'Access-control-Allow-Origin':'*'
-        }
-      })
-      console.lot(response)
-    }
-    catch(e){console.log(e)}
-  }
+const SideBar = ({profunc,projectdata,boarddata}) => {
+  
   // getboards();
 console.log(projectdata);
 
   return (
     <div className='side'>
-      <ProjectButtonBind project={projectdata}/>
+      <ProjectButtonBind project={projectdata} boarddata={boarddata}/>
       <MemberButtonbind/>
       <AddProject profunc={profunc}/>
     </div>

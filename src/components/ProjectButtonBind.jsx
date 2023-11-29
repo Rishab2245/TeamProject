@@ -1,15 +1,34 @@
 import React, { useEffect, useState } from 'react'
 import ProjectButton from './ProjectButton'
 import './ProjectButtonBindcss.css'
-const ProjectButtonbind = ({project}) => {
+const ProjectButtonbind = ({project,boarddata}) => {
+
 
 let [data,setdata] = useState([
-
 ]);
+console.log(boarddata);
+let temp = boarddata.map((e)=>(
+  {value: e.name , description:e.description , id:e._id , bol:"true"}
+));
+
+useEffect(()=>{
+  setdata(temp);
+  console.log(temp);
+},[boarddata]);
+
+// setdata()
 console.log(project);
 useEffect(()=>{
+  let temp = data.map((e)=>{
+    return (
+      {...e , ["bol"]:"true"}
+    )
+  })
+
+  setdata(temp);
+  
   if(project.Project!=""){
-  setdata((p)=>{return([...p,{value:`${project.Project}` , bol:`${true}` , description:`${project.description}`}])})
+  setdata((p)=>{return([...p,{value:`${project.Project}` , bol:`${project.bol}` , description:`${project.description}`}])})
   }
 },[project])
 
@@ -18,12 +37,11 @@ console.log(data);
 const activeproj = (e) =>{
   let temp = data.map((ev)=>{
     return(
-      {...ev,["bol"]: e.target.innerText == ev.value ? false : true }
+      {...ev,["bol"]: e.target.innerText == ev.value ? "false" : "true" }
     )
   })
   setdata(temp);
 }
-
   return (
     <>
     <div className='projectsection'>

@@ -3,7 +3,7 @@ import Search from './Search'
 import Navbar from './Navbar'
 import AddProject from '../AddProj/AddProject'
 
-const MainSection = ({profunc,setprojectdata,add}) => {
+const MainSection = ({profunc,setprojectdata,add , auth}) => {
   
 
 
@@ -13,7 +13,7 @@ const MainSection = ({profunc,setprojectdata,add}) => {
       <Search/>
       
       {
-          add ? <Navbar /> : <AddProject profunc={profunc} setprojectdata={setprojectdata}/>
+          add ? <Navbar /> : <AddProject profunc={profunc} setprojectdata={setprojectdata} auth={auth}/>
         }
     </div>
   )
