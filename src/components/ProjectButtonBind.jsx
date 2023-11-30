@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import ProjectButton from './ProjectButton'
 import './ProjectButtonBindcss.css'
-const ProjectButtonbind = ({project,boarddata}) => {
+const ProjectButtonbind = ({project,boarddata , profunc , setmembers} ) => {
 
 
 let [data,setdata] = useState([
 ]);
 console.log(boarddata);
 let temp = boarddata.map((e)=>(
-  {value: e.name , description:e.description , id:e._id , bol:"true"}
+  {value: e.name , description:e.description , id:e._id , bol:"true" , members:e.members}
 ));
 
 useEffect(()=>{
@@ -17,7 +17,7 @@ useEffect(()=>{
 },[boarddata]);
 
 // setdata()
-console.log(project);
+console.log(data);
 useEffect(()=>{
   let temp = data.map((e)=>{
     return (
@@ -30,6 +30,8 @@ useEffect(()=>{
   if(project.Project!=""){
   setdata((p)=>{return([...p,{value:`${project.Project}` , bol:`${project.bol}` , description:`${project.description}`}])})
   }
+
+  setmembers(data)
 },[project])
 
 console.log(data);
@@ -41,13 +43,20 @@ const activeproj = (e) =>{
     )
   })
   setdata(temp);
+
 }
+
+useEffect(()=>{
+  let mem = data.filter((e)=>(e.bol == "false"));
+  console.log(mem);
+    setmembers(mem);
+},[data])
   return (
     <>
     <div className='projectsection'>
     <div className='projectheading'>
     <h3>Projects :-</h3>
-    <span>+</span>
+    <span onClick={profunc} style={{cursor:"pointer"}}>+</span>
     </div>
     <div  style={{padding:"0.2rem"}}>
        {
