@@ -13,7 +13,6 @@ const Dashboard = () => {
   const location = useLocation();
   const[boarddata,setboarddata] = useState([]);
   let [projedata, setprojedata] = useState({ Project: "", discription: "" });
-  console.log(location.state.auth);
   const auth = location.state.auth
 
   const profunc = () => {

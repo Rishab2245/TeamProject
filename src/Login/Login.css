@@ -62,13 +62,16 @@ button{
     margin:auto auto;
     margin-bottom:0;
 }
-.svg{
-    margin-bottom: 0;
-}
 .login-img{
     height: 30vw;
 }
 .login-form a{
     text-decoration: none;
     color: white;
+}
+.wave-class{
+    margin: auto;
+    padding:0;
+    margin-bottom: 0;
+    width: 100%;
 }
