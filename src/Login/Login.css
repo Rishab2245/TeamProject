@@ -1,7 +1,6 @@
-
 .login-signup-hero{
-    background: (113deg, #45048A 0%, #C40CC6 100%);}
-
+    background: linear-gradient(113deg, #45048A 0%, #C40CC6 100%);
+}
 button{
     cursor: pointer;
 }

@@ -11,6 +11,7 @@ body{
     height: 100%;
     display: flex;
     flex-direction: column;
+    background: linear-gradient(113deg, #45048A 0%, #C40CC6 100%);
 }
 .otp-hero h1{
     font-size: 2.7rem;
