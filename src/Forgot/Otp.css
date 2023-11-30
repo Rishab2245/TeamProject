@@ -23,6 +23,7 @@ body{
     justify-content: flex-start;
     gap: 10vw;
     align-items: center;
+    margin-top: 6vw;
 }
 .otp-image{
     height: 30vw;
@@ -64,6 +65,8 @@ body{
 .otp-wave{
     margin: auto;
     margin-bottom: 0;
+    width:100%;
+    filter: invert(100%);
 }
 .otp-container button{
     background-color: #3681B9;

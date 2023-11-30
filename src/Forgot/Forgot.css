@@ -27,6 +27,9 @@ body{
     display: flex;
     align-items: center;
 }
+.main-container{
+    margin-top: 6vw;
+}
 .main-container figure img{
     height: 30vw;
 }
@@ -84,7 +87,7 @@ body{
 .forgot-form input{
     width: 100%;
     background: url('../assets/icon _email_.jpg') no-repeat scroll 7px;
-    padding-left: 3.8vw;
+    padding-left: 4.5vw;
     padding-bottom: 1vw;
     padding-top: 1vw;
     background-color: white;
@@ -94,4 +97,6 @@ body{
     margin: auto auto;
     margin-bottom: 0;
     overflow-y: hidden;
+    width: 100%;
+    filter: invert(100%);
 }

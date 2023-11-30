@@ -76,6 +76,9 @@ body{
     background-color: white;
 }
 .signup-wave{
-    margin: auto auto;
+    margin: auto;
+    padding:0;
+    width: 100%;
+    filter: invert(100%);
     margin-bottom: 0;
 }
