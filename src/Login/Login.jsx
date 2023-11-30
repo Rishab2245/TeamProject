@@ -33,7 +33,7 @@ const Login = () => {
             console.log(response);
             const userName = response.data.name;
             const token = response.headers.authorization
-            navigate(`/dashboard`, { state: { id: 1, email: email, name: userName } });
+            navigate(`/dashboard`, { state: { id: 1, email: email, auth: token } });
         }
         catch (error) {
             console.error(error);
