@@ -17,7 +17,7 @@ function Home() {
                             and tools <span>together</span>
                         </h1>
                         <p>Keep everything in the same place-even if<br />
-                            your team isn’t.
+                            your team isn't.
                         </p>
                         <div className="trial">
                             <div className="trialButton"><button>Try free for 30 days</button></div>
@@ -40,9 +40,9 @@ function Home() {
                             </linearGradient>
                         </defs>
                     </svg>
-
                 </div>
-            </div></>
+            </div>
+        </>
     )
 }
-export default Home
+export default Home;

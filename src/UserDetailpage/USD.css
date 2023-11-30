@@ -1,36 +1,106 @@
-.usd .logo{
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.usd{
+    background: linear-gradient(113deg, #45048A 0%, #C40CC6 100%);
+    color: white;
+}
+.usd .usdNav{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    align-items: center;
+    color: white;
+    font-family: 'Josefin Sans';
     gap: 10px;
     font-size: 2.25rem;
-    margin-top: 2rem ;
-    margin-left: 4rem;
-    margin-right: 3rem;
+    padding-left: 4rem;
+   
 }
-.usd .userd{
+.usd .userdB{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+    justify-content:safe;
+    align-items:center;
+    gap: 4rem;
+    margin-top: 0;
 }
-.usd .form{
-    text-align: left;
+
+
+.usd .userd img{
+    width: 46.25rem;
+    flex-shrink: 0;
+    padding: 0rem 5rem;
+
+}
+.usd .welcome{
+    color: #FFF;
+    text-align: center;
+    font-family: Josefin Sans;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.usd h5 ,input{
+    margin: 0;
+
+}
+.usd h5{
+    color: #FFF;
+    font-family: Josefin Sans;
+    font-size: 1.54188rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 .usd input{
-    border: none;
-    outline: none;
-    border-bottom: 1px solid black;
-    background: transparent;
-    padding: 1.1rem 0rem;
-    margin: 2rem;
-    font-size: 1.3rem;
-    width: 30rem;
+    width: 33.09513rem;
+    height: 4.5rem;
+    flex-shrink: 0;
+    border-radius: 0.826rem;
+    border: 1.762px solid #AAADA4;
+    background: #FFF;
+    font-weight: 300;
+    font-size: 2rem;
+
 }
-.usd .avatar{
-    height: 40rem;
+.usd .form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.usd .inputFields{
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+}
+.usd .welcome h1{
+    margin: 1rem;
+    padding: 1rem;
+}
+.usd .welcome h3{
+    font-family: 'Josefin Sans';
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    color: #2F2E51;
 }
 .usd .submit{
-    color: white;
-    margin: -1.4rem 6rem;
+    width: 9.14106rem;
+    height: 3.57931rem;
+    flex-shrink: 0;
+    border-radius: 0.71588rem;
+    background: #0D3B66;
+    color: #FFF;
+    font-family: 'Josefin Sans';
+    font-size: 1.43175rem;
+    font-style: normal;
+    font-weight: 600;
+    box-shadow: none;
 }

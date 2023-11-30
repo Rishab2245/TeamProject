@@ -12,7 +12,7 @@ import AfterOtp from './AfterOtp/AfterOtp';
 import Protect from './Protected/Protected';
 
 function App() {
-  return (
+  return (  
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
