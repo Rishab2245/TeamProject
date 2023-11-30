@@ -31,6 +31,7 @@ const Login = () => {
                 "password": password,
             })
             const token = response.headers.authorization;
+            console.log(response);
             navigate(`/dashboard`, { state: { id: 1, email: email, auth: token } });
         }
         catch (error) {
