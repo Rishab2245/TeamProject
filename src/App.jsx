@@ -12,9 +12,7 @@ import AfterOtp from './AfterOtp/AfterOtp';
 import Protect from './Protected/Protected';
 
 function App() {
-  return (
-    
-  
+  return (  
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -26,7 +24,7 @@ function App() {
         <Route path='confirmOtp' element={<Otp />} />
         <Route path='/userDetail' element={<UserDetails />} />
         <Route path='/afterotp' element={<AfterOtp />} />
-        <Route path='/userDetails' element={<UserDetails/>}/>
+        <Route path='/userDetails' element={<UserDetails />} />
       </Routes>
     </BrowserRouter>
   )
