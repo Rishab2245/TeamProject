@@ -17,7 +17,7 @@ function App() {
   
     <BrowserRouter>
       <Routes>
-        <Route path="/" element= {<Home />} />
+        <Route path="/" element= {<UserDetails />} />
         <Route path='/signup' element={<SignUp />} />
         <Route path='/login' element={<Login />} />
         <Route path='/aftersignup' element={<AfterSignUp />} />
@@ -26,7 +26,7 @@ function App() {
         <Route path='confirmOtp' element={<Otp />} />
         <Route path='/userDetail' element={<UserDetails/>}/>
         <Route path='/afterotp' element={<AfterOtp />} />
-        <Route path='/userDetails' element={<UserDetails/>}/>
+        <Route path='/userDetails' element={<Home/>}/>
       </Routes>
     </BrowserRouter> 
   )  
