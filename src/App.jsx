@@ -9,12 +9,11 @@ import Forgot from './Forgot/Forgot';
 import Otp from './Forgot/Otp';
 import UserDetails from './UserDetailpage/UserDetailForm';
 import AfterOtp from './AfterOtp/AfterOtp';
-import Nav from './NavBar/Nav';
+//import Nav from './NavBar/Nav';
 
 function App() {
   return (
     
-  
     <BrowserRouter>
       <Routes>
         <Route path="/" element= {<Home />} />
@@ -26,7 +25,7 @@ function App() {
         <Route path='confirmOtp' element={<Otp />} />
         <Route path='/userDetail' element={<UserDetails/>}/>
         <Route path='/afterotp' element={<AfterOtp />} />
-        <Route path='/userDetails' element={<UserDetails/>}/>
+        
       </Routes>
     </BrowserRouter> 
   )  
