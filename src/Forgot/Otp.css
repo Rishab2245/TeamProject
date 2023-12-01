@@ -67,7 +67,6 @@ body{
     margin: auto;
     margin-bottom: 0;
     width:100%;
-    filter: invert(100%);
 }
 .otp-container button{
     background-color: #3681B9;
