@@ -14,7 +14,7 @@
 
 .todo .outer{
     flex: 1;
-    background-color:#E2E2E5;
+    background-color:#FFFFFF;
     border-radius: 25px;
     display: flex;
     flex-direction: column;
@@ -91,7 +91,7 @@
     
 }
 .todo .outerProg{
-    background-color: #CFEBFF;
+    background-color: #FFFFFF;
     border-radius: 25px;
     display: flex;
     flex-direction: column;
@@ -105,7 +105,7 @@
    
 }
 .todo .outerComp{
-    background-color: #E7FBBE;
+    background-color: #FFFFFF;
     border-radius: 25px;
     display: flex;
     flex-direction: column;
@@ -116,4 +116,12 @@
    margin: 1%;
    width: 25em;
 
+}
+.todo .new{
+    margin: 1%;
+    height: 10%;
+}
+.todo .popup{
+    border: 1px solid black;
+    height: 20%;
 }

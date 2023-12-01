@@ -1,47 +1,48 @@
 import React from "react";
-import otp from "../assets/otp.jpeg";
+import otp from "../assets/forgot.png";
 import "./Otp.css";
 import Logo from "../assets/Logo.png"
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const Otp = () => {
-    const [OTP,setOTP] = useState();
-    const [password,setPassword] = useState("");
-    const [confirm,setConfirm] = useState("");
-    const [display,setDisplay] = useState(false);
-    const [msg,setMsg] = useState("");
+    const [OTP, setOTP] = useState();
+    const [password, setPassword] = useState("");
+    const [confirm, setConfirm] = useState("");
+    const [display, setDisplay] = useState(false);
+    const [msg, setMsg] = useState("");
     const navigate = useNavigate();
     const HandleChange = (e) => {
         setDisplay(false);
-        const {name , value} = e.target;
-        if (name === 'otp'){
+        const { name, value } = e.target;
+        if (name === 'otp') {
             setOTP(value);
         }
-        else if (name === "newPassword"){
+        else if (name === "newPassword") {
             setPassword(value);
         }
-        else if (name === "confirm"){
+        else if (name === "confirm") {
             setConfirm(value);
         }
     }
 
     const HandleSubmit = async (e) => {
         e.preventDefault();
-        if (password !== confirm){
+        if (password !== confirm) {
             setDisplay(true);
         }
         else {
-            try{
-                await axios.post("https://teammanagement.onrender.com/api/user/password/resetPassword",{
-                    "token" : `${OTP}`,
-                    "password" : password,
+            try {
+                await axios.post("https://teammanagement.onrender.com/api/user/password/resetPassword", {
+                    "token": `${OTP}`,
+                    "password": password,
                     "confirmPassword": confirm
                 })
                 navigate('/afterotp');
             }
-            catch(error){
+            catch (error) {
                 setDisplay(true)
                 console.log(error);
                 console.log(error.response.data.message);
@@ -55,34 +56,41 @@ const Otp = () => {
             <div className="nav">
                 <figure>
                     <img src={Logo} alt="" />
+                    <h1>&nbsp;Teemify</h1>
                 </figure>
-                <h1>&nbsp;Teemify</h1>
+                <div className="otp-nav">
+                    <h2>Home</h2>
+                    <h2>About Us</h2>
+                    <h2>Home</h2>
+                </div>
+                <div className="otp-buttons">
+                    <Link to={'/login'}>
+                        <button id="otp-login">Login</button>
+                    </Link>
+                    <Link to={'/signup'}>
+                        <button>SignUp</button>
+                    </Link>
+                </div> 
             </div>
             <div className="main">
-                <h2>Reset Password</h2>
+                <figure className="otp-image">
+                    <img src={otp} alt="" />
+                </figure>
                 <div className="container">
+                <h2>Reset Password</h2>
                     <form onSubmit={HandleSubmit}>
                         <div className="otp-container">
                             <div>
-                                <label htmlFor="otp">Enter OTP</label>
-                                <br />
-                                <input type="text" name="otp" id="otp" required autoComplete="off" placeholder="OTP" onChange={HandleChange} />
-                                <hr />
+                                <input type="text" name="otp" id="otp" required autoComplete="off" placeholder="OTP" onChange={HandleChange} />              
                             </div>
                             <div>
-                                <label htmlFor="newPassword">Enter New Password</label>
-                                <br />
-                                <input type="password" name="newPassword" id="newPassword" required placeholder="Password" onChange={HandleChange} />
-                                <hr />
+                                <input type="password" name="newPassword" id="newPassword" required placeholder="Password" onChange={HandleChange} className="password" />
                             </div>
                             <div>
-                                <label htmlFor="confirm">Confirm Password</label>
-                                <br />
-                                <input type="password" name="confirm" id="confirm" placeholder="Confirm" required onChange={HandleChange}/>
-                                <hr />
+                                <input type="password" name="confirm" id="confirm" placeholder="Confirm" required onChange={HandleChange} className="password" />
                             </div>
                             <div>
-                                <button type="submit">Proceed</button>
+                                <button type="submit" id="proceed">Proceed</button>
                             </div>
                             <div>
                                 {display && (
@@ -91,9 +99,7 @@ const Otp = () => {
                             </div>
                         </div>
                     </form>
-                    <figure className="otp-image">
-                        <img src={otp} alt="" />
-                    </figure>
+
                 </div>
             </div>
         </div>
