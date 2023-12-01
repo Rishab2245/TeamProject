@@ -1,7 +1,6 @@
-
 .login-signup-hero{
-    background: (113deg, #45048A 0%, #C40CC6 100%);}
-
+    background: linear-gradient(113deg, #45048A 0%, #C40CC6 100%);
+}
 button{
     cursor: pointer;
 }
@@ -62,13 +61,16 @@ button{
     margin:auto auto;
     margin-bottom:0;
 }
-.svg{
-    margin-bottom: 0;
-}
 .login-img{
     height: 30vw;
 }
 .login-form a{
     text-decoration: none;
     color: white;
+}
+.wave-class{
+    margin: auto;
+    padding:0;
+    margin-bottom: 0;
+    width: 100%;
 }
