@@ -5,7 +5,7 @@ import MainSection from '../components/MainSection'
 // import { useParams } from 'react-router'
 import { useLocation } from 'react-router'
 import React, { useEffect, useState } from 'react'
-import AddProject from '../AddProj/AddProject'
+import AddProject from '../NewPro/NewPro'
 import axios from 'axios'
 import Cookies from 'js-cookie'
 
