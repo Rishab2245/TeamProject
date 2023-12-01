@@ -6,9 +6,8 @@ import axios from 'axios';
 
 const MemberButtonbind = ({members , auth}) => {
 
-let [memid,setmemid] = useState([]);
-
 let [data,setdata] = useState([]);
+let [b,setb] = useState(true);  
 
 
 
@@ -18,19 +17,18 @@ useEffect( ()=>{
   if(members[0]!=undefined ){
     let temp = members[0].members;
     console.log(temp);
-    setmemid(temp);
     setdata([]);
-    temp.forEach(async (e)=>{
-      let temp = await memlist(e);
-      setdata((pr)=>([...pr , {value:`${temp.data.name}` , bol:false , link:"https://static.vecteezy.com/system/resources/previews/020/765/399/non_2x/default-profile-account-unknown-icon-black-silhouette-free-vector.jpg"}]));
-      console.log(data);
-  })
 
+  //   temp.forEach(async (e)=>{
+  //     let temp = await memlist(e);
+  //     console.log(temp);
+  //     setdata((pr)=>([...pr , {value:`${temp.data.name}` , bol:false , link:"https://static.vecteezy.com/system/resources/previews/020/765/399/non_2x/default-profile-account-unknown-icon-black-silhouette-free-vector.jpg"}]));
+  //     console.log(data);
+  // })
+  
   }
-
-  console.log(memid);
-
-},[members,])
+   
+},[members])
 
 console.log(auth)
 console.log(data)

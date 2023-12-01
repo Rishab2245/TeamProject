@@ -35,6 +35,7 @@ const Dashboard = () => {
       console.error(error);
     }
   }
+
   useEffect(() => {
     GetBoards();
   }, [])

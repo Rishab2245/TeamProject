@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Tabs from "./Tabs"
+import Todo from "./Todo"
 
 
 const Navbar = () => {
@@ -17,7 +18,7 @@ const Navbar = () => {
       {type === "tasks" && (
         <div>
 
-        <h1>tasks</h1>
+        <Todo/>
         </div>
       )}
       {type === "progress" && (
