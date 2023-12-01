@@ -1,5 +1,6 @@
 // import Todo from './Components/Todo'
 import Home from './home/HomePage'
+import AddProjects from './NewPro/NewPro';
 import SignUp from './SignUp/SignUp'
 import Login from './Login/Login'
 import {BrowserRouter,Routes,Route} from "react-router-dom";
@@ -9,14 +10,16 @@ import Forgot from './Forgot/Forgot';
 import Otp from './Forgot/Otp';
 import UserDetails from './UserDetailpage/UserDetailForm';
 import AfterOtp from './AfterOtp/AfterOtp';
+import AddProject from './components/AddProject';
 //import Nav from './NavBar/Nav';
+
 
 function App() {
   return (
     
     <BrowserRouter>
       <Routes>
-        <Route path="/" element= {<Home />} />
+        <Route path="/" element= {<AddProjects />} />
         <Route path='/signup' element={<SignUp />} />
         <Route path='/login' element={<Login />} />
         <Route path='/aftersignup' element={<AfterSignUp />} />
