@@ -7,31 +7,26 @@ import { Routes } from "react-router-dom";
 import { Route } from "react-router-dom";
 import Cookies from "js-cookie";
 
-const Protect = ({Component,Other}) => {
-    const location = useLocation();
+const Protect = ({ Component, Other }) => {
     const token = Cookies.get('token');
     let isAuthenticated
-    if (token){
+    if (token) {
         isAuthenticated = true;
     }
     else {
         isAuthenticated = false;
     }
     const navigate = useNavigate();
-    console.log(location.state);
-
-    if (isAuthenticated){
-        return(
+    if (isAuthenticated) {
+        return (
             <>
                 {Component}
             </>
         )
     }
     else {
-        return(
-            <>
-                {Other}
-            </>
+        return (
+            <Navigate to={'/login'} />
         )
     }
 

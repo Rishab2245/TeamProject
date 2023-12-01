@@ -9,6 +9,7 @@ import Nav from "../NavBar/Nav";
 import login from "../assets/Login.png"
 import { useEffect } from "react";
 import Cookies from "js-cookie";
+import { Navigate } from "react-router-dom";
 
 const Login = () => {
     const [email, setMail] = useState("");
@@ -16,6 +17,12 @@ const Login = () => {
     const [display, setDisplay] = useState(false);
     const navigate = useNavigate();
 
+    const check = Cookies?.get('token')
+    if (check){
+        return (
+            <Navigate to={'/dashboard'} />
+        )
+    }
 
     const HandleChange = (e) => {
         const { name, value } = e.target;
