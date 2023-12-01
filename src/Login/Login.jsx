@@ -7,6 +7,8 @@ import { Link, useNavigate } from "react-router-dom";
 import Wave from "../wave/Wave.jsx"
 import Nav from "../NavBar/Nav";
 import login from "../assets/Login.png"
+import { useEffect } from "react";
+import Cookies from "js-cookie";
 
 const Login = () => {
     const [email, setMail] = useState("");
@@ -14,6 +16,7 @@ const Login = () => {
     const [display, setDisplay] = useState(false);
     const navigate = useNavigate();
 
+    
     const HandleChange = (e) => {
         const { name, value } = e.target;
         if (name === 'email') {
@@ -32,6 +35,7 @@ const Login = () => {
             })
             const token = response.headers.authorization;
             const userName = response.data.name;
+            Cookies.set('token',token,{expires:7,path:'/'})
             navigate(`/dashboard`, { state: { id: 1, email: email, auth: token } });
         }
         catch (error) {

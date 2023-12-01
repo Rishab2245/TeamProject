@@ -7,24 +7,26 @@ import { useLocation } from 'react-router'
 import React, { useEffect, useState } from 'react'
 import AddProject from '../AddProj/AddProject'
 import axios from 'axios'
+import Cookies from 'js-cookie'
 
 const Dashboard = () => {
   let [add, setadd] = useState(false)
   const location = useLocation();
   const[boarddata,setboarddata] = useState([]);
   let [projedata, setprojedata] = useState({ Project: "", discription: "" });
-  const auth = location.state.auth
+  // const auth = location.state.auth
 
   const profunc = () => {
     setadd(!add);
     console.log("add")
   }
+  const token = Cookies.get('token');
   const GetBoards = async () => {
     try {
       const response = await axios.get('https://teammanagement.onrender.com/api/board/getBoards/', {
         headers: {
           withCredentials: true,
-          'Authorization':auth
+          'Authorization': token
         }
       })
       setboarddata(response.data.boards)
@@ -42,8 +44,8 @@ const Dashboard = () => {
     <>
       <Header />
       <div className='below'>
-        <SideBar profunc={profunc} projectdata={projedata}  auth = {auth} boarddata={boarddata}/>
-          <MainSection profunc={profunc} setprojectdata={setprojedata} add={add} auth={auth}/> 
+        <SideBar profunc={profunc} projectdata={projedata}  auth = {token} boarddata={boarddata}/>
+          <MainSection profunc={profunc} setprojectdata={setprojedata} add={add} auth={token}/> 
       </div>
     </>
   )
