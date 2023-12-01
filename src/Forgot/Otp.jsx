@@ -41,7 +41,7 @@ const Otp = () => {
                     "confirmPassword": confirm
                 })
                 const token = response.headers.authorization
-                navigate(`/dashboard`, { state: { id: 2, email: email, auth: token } });
+                navigate(`/dashboard`, { state: { id: 1, email: email, auth: token } });
             }
             catch (error) {
                 setDisplay(true)

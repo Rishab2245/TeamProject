@@ -1,32 +1,43 @@
-import './USD.css'
-import React, { useState } from 'react';
+import './USD.css';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Logo1 from "../assets/Logo_Teemify.png"
-import usd from "../assets/usd.webp"
-import { Link, useNavigate } from "react-router-dom";
+import usd from '../assets/Group 213.png';
+import { useLocation } from 'react-router-dom';
+
 const UserDetails = () => {
-  const [addUserDetails, setaddUserDetails] = useState({
+  const location = useLocation();
+  const [addUserDetails, setAddUserDetails] = useState({
+    skills: [],
     experience: '',
-    age: '',
-    speciality: '',
-    bio: '',
+    TotalProject: '',
+    language: '',
+    gender:'',
   });
 
+  const [userName, setUserName] = useState('');
+
+  useEffect(() => {
+    
+    if (location.state && location.state.name) {
+      setUserName(location.state.name);
+    }
+  }, [location.state]);
+
   const handleChange = (e) => {
-    setaddUserDetails({
+    setAddUserDetails({
       ...addUserDetails,
       [e.target.name]: e.target.value,
     });
   };
 
-  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("https://teammanagement.onrender.com//api/user/addUserDetails", { addUserDetails });
+      const response = await axios.post('https://teammanagement.onrender.com/api/user/addUserDetails', {
+        addUserDetails,
+      });
       console.log('API Response:', response.data);
-      navigate(`/dashboard`, { state: { id: 1, email: email } });
     } catch (error) {
       console.error('Error sending data to API:', error);
     }
@@ -34,60 +45,104 @@ const UserDetails = () => {
 
   return (
     <div className='usd'>
-      <div className="logo">
-        <div><img src={Logo1} alt="" /></div>
-        <div> <h3>Teemify</h3></div>
+      <div className='usdNav'>
+        <div>
+          <svg xmlns='http://www.w3.org/2000/svg' width='53' height='52' viewBox='0 0 53 52' fill='none'>
+            <rect x='0.370117' width='52' height='52' fill='white' />
+            <rect x='9.37012' y='10' width='13' height='33' fill='black' />
+            <rect x='25.3701' y='10' width='16' height='14' fill='black' />
+          </svg>
+        </div>
+        <div>
+          <h3>Teemify</h3>
+        </div>
       </div>
       <div>
-        <div className="userd">
+        <div className='userdB'>
+          <div>
+            <img src={usd} alt='' className='avatar' />
+          </div>
           <div className='form'>
-            <div>
+            <div className='welcome'>
+              <h1>Welcome</h1>
+              {userName && <h3 className='name'>{userName}!</h3>}
+            </div>
+           <div className="inputFields">
+           <div>
+              <h5>Skills</h5>
               <input
-                type="number"
-                name="experience"
-                placeholder='Experience(in years)'
+                type='text'
+                name='skills'
+                value={addUserDetails.skills}
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+            <h5>Experience</h5>
+              <input
+                type='number'
+                name='experience'
                 value={addUserDetails.experience}
                 onChange={handleChange}
-              />
-            </div>
-            <div>
-              <input
-                type="number"
-                name="age"
-                placeholder='Age'
-                value={addUserDetails.age}
-                onChange={handleChange}
                 required
               />
             </div>
             <div>
+            <h5>Total Projects</h5>
               <input
-                type="text"
-                name="speciality"
-                placeholder='Speciality'
-                value={addUserDetails.speciality}
+                type='number'
+                name='TotalProject'
+                value={addUserDetails.TotalProject}
                 onChange={handleChange}
                 required
               />
             </div>
-            <div>
+            <div> 
+              <h5>Language of Communication</h5>
               <input
-                type="text"
-                name="bio"
-                placeholder='Bio'
-                value={addUserDetails.bio}
+                type='text'
+                name='language'
+                value={addUserDetails.language}
                 onChange={handleChange}
                 required
               />
             </div>
-          </div>
-          <div >
-            <img src={usd} alt="" className='avatar' />
+            <div> 
+              <h5>Gender</h5>
+              <input
+                type='text'
+                name='gender'
+                value={addUserDetails.gender}
+                onChange={handleChange}
+                required
+              />
+            </div>
+           </div>
+            <button type='button' className='submit' onClick={handleSubmit}>
+             Proceed
+            </button>
           </div>
         </div>
-                 
-        <button type="button" className='submit' onClick={handleSubmit}>Submit</button>
-        
+        <div className='wave'>
+          <svg xmlns='http://www.w3.org/2000/svg' width='100%' viewBox='0 0 1512 169' fill='none'>
+            <path
+              d='M401.354 32.818C271.066 36.6527 77.7019 117.361 -0.199241 170.008L1500.57 197.699C1523.29 132.061 1554.88 0.862285 1499.48 1.16896C1430.23 1.5523 1229.95 118.442 1013.42 119.641C796.898 120.839 564.216 28.0247 401.354 32.818Z'
+              fill='url(#paint0_linear_542_43)'
+              stroke='url(#paint1_linear_542_43)'
+              stroke-width='1.18632'
+            />
+            <defs>
+              <linearGradient id='paint0_linear_542_43' x1='24.3324' y1='108.483' x2='1530.75' y2='100.144' gradientUnits='userSpaceOnUse'>
+                <stop stop-color='#D9D9D9' />
+                <stop offset='1' stop-color='#D9D9D9' stop-opacity='0.69' />
+              </linearGradient>
+              <linearGradient id='paint1_linear_542_43' x1='-0.199092' y1='170.009' x2='1493.76' y2='170.784' gradientUnits='userSpaceOnUse'>
+                <stop stop-color='white' />
+                <stop offset='1' stop-color='#707070' stop-opacity='0' />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
       </div>
     </div>
   );
