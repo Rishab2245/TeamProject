@@ -2,18 +2,38 @@ import React from "react";
 // import { UseSelector } from "react-redux/es/hooks/useSelector";
 import { useLocation } from "react-router-dom";
 import { Navigate } from "react-router-dom";
-import Dashboard from "../dashboard/Dashboard";
+import { useNavigate } from "react-router-dom";
+import { Routes } from "react-router-dom";
+import { Route } from "react-router-dom";
+import Cookies from "js-cookie";
 
-const Protect = () => {
+const Protect = ({Component,Other}) => {
     const location = useLocation();
-    const token = location.state?.auth;
-    const isAuthenticated = token !== undefined;
+    const token = Cookies.get('token');
+    let isAuthenticated
+    if (token){
+        isAuthenticated = true;
+    }
+    else {
+        isAuthenticated = false;
+    }
+    const navigate = useNavigate();
+    console.log(location.state);
 
-    return isAuthenticated ? (
-        <Dashboard />
-    ) : (
-        <Navigate to={'/login'} />
-    )
+    if (isAuthenticated){
+        return(
+            <>
+                {Component}
+            </>
+        )
+    }
+    else {
+        return(
+            <>
+                {Other}
+            </>
+        )
+    }
 
 }
 
