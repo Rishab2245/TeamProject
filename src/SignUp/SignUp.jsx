@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import "./Signup.css"
 import Nav from "../NavBar/Nav";
 import Wave from "../wave/Wave";
+import UserDetails from "../UserDetailpage/UserDetailForm";
 
 const SignUp = () => {
     const [name, setName] = useState("");
@@ -38,7 +39,7 @@ const SignUp = () => {
             console.log(response.data.status);
             // console.log(value);
             setDisplay(false);
-            navigate('/aftersignup');
+            navigate('/userDetails',{state:{id:1,name:name}});
         }
         catch (error) {
             console.log(error.response.request.status);
