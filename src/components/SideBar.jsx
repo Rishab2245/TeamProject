@@ -4,7 +4,7 @@ import ProjectButtonBind from './ProjectButtonBind'
 import MemberButtonbind from './MemberButtonBind';
 import AddProject from './AddProject';
 import axios from 'axios';
-const SideBar = ({profunc,projectdata,boarddata,auth}) => {
+const SideBar = ({profunc,projectdata,boarddata,auth,settododata}) => {
   
   // getboards();
 console.log(projectdata);
@@ -13,7 +13,7 @@ console.log(boarddata);
  let [members,setmembers] = useState([]);
   return (
     <div className='side'>
-      <ProjectButtonBind project={projectdata} boarddata={boarddata} profunc={profunc}v  setmembers={setmembers}/>
+      <ProjectButtonBind project={projectdata} boarddata={boarddata} profunc={profunc}v  setmembers={setmembers} settododata={settododata}/>
       <MemberButtonbind members={members} auth={auth}/>
       <AddProject profunc={profunc}/>
     </div>

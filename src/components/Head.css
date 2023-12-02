@@ -1,12 +1,11 @@
 .header{
-    width: 100%;
+    width: 99.4%;
     height: 4vh;
     display: flex;
     gap: 1rem;
     align-items: center;
     padding: 1rem 0 1rem 1rem;
     background-color: #1b1b23;
-    
 }
 .header img{
   width: 2.5rem;
