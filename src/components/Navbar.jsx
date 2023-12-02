@@ -3,8 +3,9 @@ import Tabs from "./Tabs"
 import Todo from "./Todo"
 
 
-const Navbar = ({auth}) => {
+const Navbar = ({auth , tododata}) => {
     let [type,settype] = useState("chat")
+    console.log(tododata)
   return (
     <div>
         <div className='bar'>
@@ -18,7 +19,7 @@ const Navbar = ({auth}) => {
       {type === "tasks" && (
         <div>
 
-        <Todo auth={auth}/>
+        <Todo auth={auth} tododata={tododata}/>
         </div>
       )}
       {type === "progress" && (
