@@ -47,12 +47,12 @@ margin-bottom: 2%;
 
 
 } */
-.headingContainer {
+/* .headingContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     
-  }
+  } */
   .centerDiv {
     display: flex;
     justify-content: center;
@@ -68,6 +68,27 @@ margin-bottom: 2%;
 .todo .container .popup .popContent .add{
     margin: 1%;
     font-size: 1.2rem;
+}
+.todo .container .outer .card{
+    background-color:#B9B9B9;
+    opacity: 42%;
+    width: 50%;
+    height: 100%;
+    margin-top: 6%;
+    border-radius: 10px;
+    padding-left: 5%;
+   
+   
+    
+}
+.todo .container .outer  .taskCard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+      
+   
+   
 }
 
 

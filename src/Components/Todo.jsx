@@ -14,6 +14,7 @@ const Todo = () => {
   const [listTwo,updateListTwo]=useState([]);
   const [listThree,updateListThree]=useState([]);
   const location = useLocation();
+  
   const auth = location.state.auth
   useEffect(()=>{
     const fetchData = async () => {
@@ -32,12 +33,13 @@ const Todo = () => {
         console.log(response);
         const data = response.json();
         console.log(data);
-        const finalData=data.map((item)=>({
-          id: item.id,
-          fullName:item.name,
-          username:item.username,
+        // const finalData=data.map((item)=>({
+        //   id: item.id,
+        //   fullName:item.name,
+        //   username:item.username,
+        //   cards:[],
 
-        }));
+        // }));
         setFinalData(finalData)
         console.log(finalData);
         // const details= data[0];
@@ -91,14 +93,16 @@ const Todo = () => {
     }, [listThree]); 
 
     const [lists, setLists] = useState([
-      { id: 1, name: 'To-Do', items: [] },
-      { id: 2, name: 'In Progress', items: [] },
-      { id: 3, name: 'Completed', items: [] },
+      { id: 1, name: 'To-Do', items: [],cards:[] },
+      { id: 2, name: 'In Progress', items: [],cards:[] },
+      { id: 3, name: 'Completed', items: [],cards:[] },
     ]);
     const [showNewListPopup, setShowNewListPopup] = useState(false);
-    const [showAddCardPopup,setshowAddCardPopup]=useState(false);
     const [newListName, setNewListName]=useState('');
-    const [cardName, setCardName]=useState('')
+    const [newCardName, setNewCardName]=useState('');
+    const [cards,setCards]=useState([])
+    const [showAddCardPopup,setshowAddCardPopup]=useState(false);
+    const [selectedListId, setSelectedListId] = useState(null);
     
     const handleInputChange = (e) => {
       setNewListName(e.target.value);
@@ -108,7 +112,7 @@ const Todo = () => {
       setShowNewListPopup(true)
     };
     const handleSubmit=()=>{
-      const newList = { id: Date.now(), name: newListName, items: [] };
+      const newList = { id: Date.now(), name: newListName, items: [], cards:[] };
     setLists((prevLists) => [...prevLists, newList]);
     setShowNewListPopup(false)
     setNewListName('')
@@ -118,9 +122,34 @@ const Todo = () => {
       setNewListName('');
     };
     const handleNewCard = (e) => {
-      setCardName(e.target.value);
+      setNewCardName(e.target.value);
       
     };
+    const handleAddCard = (listId) => {
+      setSelectedListId(listId);
+      setshowAddCardPopup(true);
+    };
+   const handleAddNewCard=()=>{
+    const newCard = { id: Date.now(), name: newCardName };
+    const updatedLists = lists.map((list) => {
+      if (list.id === selectedListId) {
+       
+        return { ...list, cards: [...list.cards, newCard] };
+      }
+      return list;
+    });
+
+    setLists(updatedLists);
+    setshowAddCardPopup(false);
+    setNewCardName('');
+    setSelectedListId(null);
+
+   }
+   const handleCloseCardPopup = () => {
+    setshowAddCardPopup(false);
+    setNewCardName('');
+    setSelectedListId(null);
+  };
 
 
   
@@ -135,29 +164,35 @@ const Todo = () => {
           <div key={list.id} className="outer">
             <div className="centerDiv">
               <div className="headingContainer">
-
-            
-            <div className="heading">{list.name}</div>
-            <div className="moreContainer">
-              <button className='more'>more</button>
+                <div className="heading">{list.name}</div>
+                 <div className="moreContainer">
+                  <button className='more'  onClick={() => handleAddCard(list.id)}>Add new card</button>
+                 </div>
+              </div>
             </div>
-            
-
+            <div className="taskCard">
+             
+              {list.cards.map((card) => (
+              <div key={card.id} className="card">
+                <div className='head'>{card.name}</div>
+              </div>  
+              ))}
             </div>
-
-            </div>
-            
-            
           </div>
+          
         ))}
-        {/* {showAddCardPopup}&&(
-          <div className="card">
-            <div className="cardContent">
-            <input type="text" placeholder='new card name' value={cardName} onChange={handleNewCard} />
-              qoooo
+       {showAddCardPopup &&(
+          <div className="popup">
+            <div className="popContent">
+            <input className="inputb" type="text" placeholder='new card name' value={newCardName} onChange={handleNewCard} />
+            <button className='close' onClick={handleCloseCardPopup}>Close</button>
+            <button className='add' onClick={handleAddNewCard} >Add</button>
+            
             </div>
+            
           </div>
-        ) */}
+        )
+        }
         <button className="new" onClick={handleAddList}>
           <span className='addNewList'>+ Add new list</span>
         </button>
