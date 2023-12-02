@@ -14,7 +14,11 @@ const Dashboard = () => {
   const location = useLocation();
   const[boarddata,setboarddata] = useState([]);
   let [projedata, setprojedata] = useState({ Project: "", discription: "" });
+  let [members,setmembers] = useState([]);
+  let [tododata , settododata] = useState([]);
   // const auth = location.state.auth
+  console.log(projedata)
+  console.log(boarddata)
 
   const profunc = () => {
     setadd(!add);
@@ -36,16 +40,19 @@ const Dashboard = () => {
       console.error(error);
     }
   }
+
+
+
   useEffect(() => {
     GetBoards();
-  }, [])
+  }, [setboarddata])
 
   return (
     <>
       <Header />
       <div className='below'>
-        <SideBar profunc={profunc} projectdata={projedata}  auth = {token} boarddata={boarddata}/>
-          <MainSection profunc={profunc} setprojectdata={setprojedata} add={add} auth={token}/> 
+        <SideBar profunc={profunc} projectdata={projedata}  auth = {token} boarddata={boarddata} members={members} setmembers={setmembers} settododata={settododata}/>
+          <MainSection profunc={profunc} setprojectdata={setprojedata} add={add} auth={token} setmembers={setmembers} tododata={tododata}/> 
       </div>
     </>
   )

@@ -3,13 +3,13 @@ import './NewProj.css';
 import illust from '../assets/Teamwork_-_Concept_Illustration-removebg-preview 1.png'
 import axios from 'axios';
 
-const NewPro = ({profunc , setprojectdata , auth}) => {
+const NewPro = ({profunc , setprojectdata , auth , setmembers}) => {
   const [projectDetails, setProjectDetails] = useState({
-    Project: '',
+    value: '',
     description: '',
-    bol:"false"
+    bol: "false"
   });
-  
+
 
   const handleChange = (e) => {
     setProjectDetails({
@@ -18,29 +18,33 @@ const NewPro = ({profunc , setprojectdata , auth}) => {
     });
   };
   const handleSubmit = async (e) => {
-    
-     e.preventDefault();
+    // e.preventDefault();
     let senddata = {}
     senddata["name"] = projectDetails["Project"]
     senddata["description"] = projectDetails["description"]
     senddata["color"] = projectDetails[""]
-    console.log(senddata);  
-  try {
-    const response = await axios.post(
-      'https://teammanagement.onrender.com/api/board/createBoard/',
-      senddata,
-      { headers: { authorization: auth } }
-    );
-    console.log('API Response:', response.data);
-    console.log('API Response:', response.headers.authorization);
-  } catch (error) {
-    console.error('Error sending data to API:', error);
-  }
-};
-  const sendda = ()=>{
+    console.log(senddata);
+    try {
+      const response = await axios.post(
+        'https://teammanagement.onrender.com/api/board/createBoard/',
+        senddata,
+        { headers: { authorization: auth } }
+      );
+      console.log('API Response:', response.data);
+      let temp = { value:response.data.board.name , discription: response.data.board.description , id: response.data.board._id , bol:"false" , members: response.data.board.members};
+      setprojectdata(temp);
+      // console.log(temp);
+
+      // setmembers(temp);
+      // console.log('API Response:', response.headers.authorization);
+    } catch (error) {
+      console.error('Error sending data to API:', error);
+    }
+  };
+  const sendda = async () => {
     profunc();
     handleSubmit();
-    setprojectdata(projectDetails);
+    
   }
 
   return (

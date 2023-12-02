@@ -11,13 +11,14 @@ const UserDetails = () => {
     experience: '',
     totalProject: '',
     language: '',
-    gender:'',
+    gender: '',
   });
 
   const [userName, setUserName] = useState('');
+  const name = location.state.name
 
   useEffect(() => {
-    
+
     if (location.state && location.state.name) {
       setUserName(location.state.name);
     }
@@ -33,8 +34,6 @@ const UserDetails = () => {
     });
   };
   
- 
-
   const handleSkillsChange = (e) => {
     const skills = e.target.value.split(',').map((skill) => skill.trim());
 
@@ -78,8 +77,9 @@ const UserDetails = () => {
           <div className='form'>
             <div className='welcome'>
               <h1>Welcome</h1>
-              {userName && <h3 className='name'>{userName}!</h3>}
+              {name && <h3 className='name'>{name}!</h3>}
             </div>
+
            <div className="inputFields">
            <div>
               <h5>Skills</h5>
@@ -131,8 +131,61 @@ const UserDetails = () => {
               />
             </div>
            </div>
+
+            <div className="inputFields">
+              <div>
+                <h5>Skills</h5>
+                <input
+                  type='text'
+                  name='skills'
+                  value={addUserDetails.skills}
+                  onChange={handleChange}
+                />
+              </div>
+              <div>
+                <h5>Experience</h5>
+                <input
+                  type='number'
+                  name='experience'
+                  value={addUserDetails.experience}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div>
+                <h5>Total Projects</h5>
+                <input
+                  type='number'
+                  name='TotalProject'
+                  value={addUserDetails.TotalProject}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div>
+                <h5>Language of Communication</h5>
+                <input
+                  type='text'
+                  name='language'
+                  value={addUserDetails.language}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div>
+                <h5>Gender</h5>
+                <input
+                  type='text'
+                  name='gender'
+                  value={addUserDetails.gender}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+            </div>
+
             <button type='button' className='submit' onClick={handleSubmit}>
-             Proceed
+              Proceed
             </button>
           </div>
         </div>
@@ -142,16 +195,16 @@ const UserDetails = () => {
               d='M401.354 32.818C271.066 36.6527 77.7019 117.361 -0.199241 170.008L1500.57 197.699C1523.29 132.061 1554.88 0.862285 1499.48 1.16896C1430.23 1.5523 1229.95 118.442 1013.42 119.641C796.898 120.839 564.216 28.0247 401.354 32.818Z'
               fill='url(#paint0_linear_542_43)'
               stroke='url(#paint1_linear_542_43)'
-              stroke-width='1.18632'
+              strokeWidth='1.18632'
             />
             <defs>
               <linearGradient id='paint0_linear_542_43' x1='24.3324' y1='108.483' x2='1530.75' y2='100.144' gradientUnits='userSpaceOnUse'>
-                <stop stop-color='#D9D9D9' />
-                <stop offset='1' stop-color='#D9D9D9' stop-opacity='0.69' />
+                <stop stopColor='#D9D9D9' />
+                <stop offset='1' stopColor='#D9D9D9' stopOpacity='0.69' />
               </linearGradient>
               <linearGradient id='paint1_linear_542_43' x1='-0.199092' y1='170.009' x2='1493.76' y2='170.784' gradientUnits='userSpaceOnUse'>
-                <stop stop-color='white' />
-                <stop offset='1' stop-color='#707070' stop-opacity='0' />
+                <stop stopColor='white' />
+                <stop offset='1' stopColor='#707070' stopOpacity='0' />
               </linearGradient>
             </defs>
           </svg>
