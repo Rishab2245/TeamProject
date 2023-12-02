@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Tabs from "./Tabs"
-import Todo from "./Todo.jsx"
+import Todo from '../TaskSection/Todo'
 
 const Navbar = () => {
   let [type, settype] = useState("chat")

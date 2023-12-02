@@ -12,7 +12,7 @@ const UserIcon = ({user}) => {
         <img src={profile} alt=""  style={{height:"1.5rem", borderRadius:"50%"}}/>
         {
           user.map((e)=>(
-            <h2 style={{fontSize:"1rem", color:"white"}}>{e.name}</h2>
+            <h2 style={{fontSize:"1rem", color:"white"}}>Hello</h2>
           ))
         }
     </div>
