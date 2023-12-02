@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { useLocation } from 'react-router'
 
-const Todo = () => {
+const Todo = ({auth}) => {
 
   const [name,setName]=useState('');
   const [finalData,setFinalData]=useState([]);
@@ -14,8 +14,6 @@ const Todo = () => {
   const [listTwo,updateListTwo]=useState([]);
   const [listThree,updateListThree]=useState([]);
   const location = useLocation();
-  
-  const auth = location.state.auth
   useEffect(()=>{
     const fetchData = async () => {
       try {
