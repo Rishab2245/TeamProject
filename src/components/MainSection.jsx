@@ -3,17 +3,17 @@ import Search from './Search'
 import Navbar from './Navbar'
 import AddProject from '../NewPro/NewPro'
 
-const MainSection = ({profunc,setprojectdata,add , auth}) => {
+const MainSection = ({profunc,setprojectdata,add , auth , setmembers , tododata}) => {
   
 
 
 
   return (
-    <div style={{width:"85vw" , background:"linear-gradient(135deg , #45048A  , #C40CC6 )"}}>
+    <div style={{width:"85vw" , background:"linear-gradient(135deg , #45048A  , #C40CC6 )", height:"100vh"}}>
       <Search/>
       
       {
-          add ? <Navbar /> : <AddProject profunc={profunc} setprojectdata={setprojectdata} auth={auth}/>
+          add ? <Navbar auth={auth} tododata={tododata}/> : <AddProject profunc={profunc} setprojectdata={setprojectdata} auth={auth} setmembers={setmembers}/>
         }
     </div>
   )

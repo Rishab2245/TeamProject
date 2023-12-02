@@ -6,7 +6,9 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { useLocation } from 'react-router'
 
-const Todo = () => {
+const Todo = ({auth ,  tododata}) => {
+  console.log(tododata);
+
 
   const [name, setName] = useState('');
   const [finalData, setFinalData] = useState([]);
@@ -15,7 +17,7 @@ const Todo = () => {
   const [listThree, updateListThree] = useState([]);
   const location = useLocation();
 
-  const auth = Cookies.get('token');
+  // const auth = Cookies.get('token');
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -45,36 +47,35 @@ const Todo = () => {
     };
 
     fetchData();
-  }, []);
+  }, []);  
 
+  
+    
 
+    
+    
 
-
-
-
-
-
-  const [lists, setLists] = useState([
-    { id: 1, name: 'To-Do', items: [], cards: [] },
-    { id: 2, name: 'In Progress', items: [], cards: [] },
-    { id: 3, name: 'Completed', items: [], cards: [] },
-  ]);
-  const [showNewListPopup, setShowNewListPopup] = useState(false);
-  const [newListName, setNewListName] = useState('');
-  const [newCardName, setNewCardName] = useState('');
-  const [cards, setCards] = useState([])
-  const [showAddCardPopup, setshowAddCardPopup] = useState(false);
-  const [selectedListId, setSelectedListId] = useState(null);
-
-  const handleInputChange = (e) => {
-    setNewListName(e.target.value);
-
-  };
-  const handleAddList = () => {
-    setShowNewListPopup(true)
-  };
-  const handleSubmit = () => {
-    const newList = { id: Date.now(), name: newListName, items: [], cards: [] };
+    const [lists, setLists] = useState([
+      { id: 1, name: 'To-Do', items: [],cards:[] },
+      { id: 2, name: 'In Progress', items: [],cards:[] },
+      { id: 3, name: 'Completed', items: [],cards:[] },
+    ]);
+    const [showNewListPopup, setShowNewListPopup] = useState(false);
+    const [newListName, setNewListName]=useState('');
+    const [newCardName, setNewCardName]=useState('');
+    const [cards,setCards]=useState([])
+    const [showAddCardPopup,setshowAddCardPopup]=useState(false);
+    const [selectedListId, setSelectedListId] = useState(null);
+    
+    const handleInputChange = (e) => {
+      setNewListName(e.target.value);
+      
+    };
+    const handleAddList = () => {
+      setShowNewListPopup(true)
+    };
+    const handleSubmit=()=>{
+      const newList = { id: Date.now(), name: newListName, items: [], cards:[] };
     setLists((prevLists) => [...prevLists, newList]);
     setShowNewListPopup(false)
     setNewListName('')

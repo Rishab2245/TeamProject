@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import Tabs from "./Tabs"
-import Todo from '../TaskSection/Todo'
+import Todo from "../TaskSection/Todo";
 
-const Navbar = () => {
-  let [type, settype] = useState("chat")
+
+const Navbar = ({auth , tododata}) => {
+    let [type,settype] = useState("chat")
+    console.log(tododata)
   return (
     <div>
       <div className='bar'>
@@ -16,10 +18,8 @@ const Navbar = () => {
       )}
       {type === "tasks" && (
         <div>
-          <h1>tasks</h1>
-          <div>
-            <Todo />
-          </div>
+
+        <Todo auth={auth} tododata={tododata}/>
         </div>
       )}
       {type === "progress" && (
