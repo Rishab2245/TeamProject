@@ -18,7 +18,7 @@ const AddProject = ({profunc , setprojectdata , auth}) => {
   };
   const handleSubmit = async (e) => {
     
-    // e.preventDefault();
+    e.preventDefault();
     let senddata = {}
     senddata["name"] = projectDetails["Project"]
     senddata["description"] = projectDetails["description"]
@@ -34,9 +34,9 @@ const AddProject = ({profunc , setprojectdata , auth}) => {
     }
   };
 
-  const sendda = ()=>{
+  const sendda =async ()=>{
     profunc();
-    handleSubmit();
+    await handleSubmit();
     setprojectdata(projectDetails);
   }
 
