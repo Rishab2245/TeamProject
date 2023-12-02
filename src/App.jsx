@@ -1,4 +1,4 @@
-import Todo from './Components/Todo';
+import Todo from '../TaskSection/Todo';
 import Home from './home/HomePage'
 import SignUp from './SignUp/SignUp'
 import Login from './Login/Login'

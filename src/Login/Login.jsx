@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "../assets/Logo.png"
-import Todo from "../Components/Todo.jsx";
+import Todo from "../../TaskSection/Todo.jsx";
 import { useState } from "react";
 import axios from "axios";
 import "./Login.css"
