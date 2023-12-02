@@ -9,7 +9,7 @@ const UserDetails = () => {
   const [addUserDetails, setAddUserDetails] = useState({
     skills: [],
     experience: '',
-    TotalProject: '',
+    totalProject: '',
     language: '',
     gender:'',
   });
@@ -24,12 +24,25 @@ const UserDetails = () => {
   }, [location.state]);
 
   const handleChange = (e) => {
+    const { name, value } = e.target;
+    const updatedValue = name === 'gender' ? value.toUpperCase() : value;
+  
     setAddUserDetails({
       ...addUserDetails,
-      [e.target.name]: e.target.value,
+      [name]: updatedValue,
     });
   };
+  
+ 
 
+  const handleSkillsChange = (e) => {
+    const skills = e.target.value.split(',').map((skill) => skill.trim());
+
+    setAddUserDetails((prevDetails) => ({
+      ...prevDetails,
+      skills,
+    }));
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -73,8 +86,8 @@ const UserDetails = () => {
               <input
                 type='text'
                 name='skills'
-                value={addUserDetails.skills}
-                onChange={handleChange}
+                value={addUserDetails.skills.join(', ')}
+                onChange={handleSkillsChange}
               />
             </div>
             <div>
@@ -91,8 +104,8 @@ const UserDetails = () => {
             <h5>Total Projects</h5>
               <input
                 type='number'
-                name='TotalProject'
-                value={addUserDetails.TotalProject}
+                name='totalProject'
+                value={addUserDetails.totalProject}
                 onChange={handleChange}
                 required
               />

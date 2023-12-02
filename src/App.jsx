@@ -10,12 +10,13 @@ import Otp from './Forgot/Otp';
 import UserDetails from './UserDetailpage/UserDetailForm';
 import AfterOtp from './AfterOtp/AfterOtp';
 import Protect from './Protected/Protected';
+import UserProfilePage from './UserProfile/UserProfilePage';
 
 function App() {
   return (  
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<UserProfilePage />} />
         <Route path='/signup' element={<SignUp />} />
         <Route path='/login' element={<Login />} />
         <Route path='/Todo' element={<Todo />} />
