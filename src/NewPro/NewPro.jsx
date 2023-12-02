@@ -7,9 +7,9 @@ const NewPro = ({profunc , setprojectdata , auth , setmembers}) => {
   const [projectDetails, setProjectDetails] = useState({
     value: '',
     description: '',
-    bol:"false"
+    bol: "false"
   });
-  
+
 
   const handleChange = (e) => {
     setProjectDetails({
@@ -24,9 +24,12 @@ const NewPro = ({profunc , setprojectdata , auth , setmembers}) => {
     senddata["description"] = projectDetails["description"]
     senddata["color"] = projectDetails[""]
     console.log(senddata);
-
     try {
-      const response = await axios.post('https://teammanagement.onrender.com/api/board/createBoard/',senddata , {headers: {authorization : auth}});
+      const response = await axios.post(
+        'https://teammanagement.onrender.com/api/board/createBoard/',
+        senddata,
+        { headers: { authorization: auth } }
+      );
       console.log('API Response:', response.data);
       let temp = { value:response.data.board.name , discription: response.data.board.description , id: response.data.board._id , bol:"false" , members: response.data.board.members};
       setprojectdata(temp);
@@ -38,8 +41,7 @@ const NewPro = ({profunc , setprojectdata , auth , setmembers}) => {
       console.error('Error sending data to API:', error);
     }
   };
-
-  const sendda = ()=>{
+  const sendda = async () => {
     profunc();
     handleSubmit();
     
