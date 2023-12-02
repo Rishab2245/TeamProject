@@ -9,7 +9,7 @@ const UserDetails = () => {
   const [addUserDetails, setAddUserDetails] = useState({
     skills: [],
     experience: '',
-    TotalProject: '',
+    totalProject: '',
     language: '',
     gender: '',
   });
@@ -25,12 +25,23 @@ const UserDetails = () => {
   }, [location.state]);
 
   const handleChange = (e) => {
+    const { name, value } = e.target;
+    const updatedValue = name === 'gender' ? value.toUpperCase() : value;
+  
     setAddUserDetails({
       ...addUserDetails,
-      [e.target.name]: e.target.value,
+      [name]: updatedValue,
     });
   };
+  
+  const handleSkillsChange = (e) => {
+    const skills = e.target.value.split(',').map((skill) => skill.trim());
 
+    setAddUserDetails((prevDetails) => ({
+      ...prevDetails,
+      skills,
+    }));
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -68,6 +79,59 @@ const UserDetails = () => {
               <h1>Welcome</h1>
               {name && <h3 className='name'>{name}!</h3>}
             </div>
+
+           <div className="inputFields">
+           <div>
+              <h5>Skills</h5>
+              <input
+                type='text'
+                name='skills'
+                value={addUserDetails.skills.join(', ')}
+                onChange={handleSkillsChange}
+              />
+            </div>
+            <div>
+            <h5>Experience</h5>
+              <input
+                type='number'
+                name='experience'
+                value={addUserDetails.experience}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div>
+            <h5>Total Projects</h5>
+              <input
+                type='number'
+                name='totalProject'
+                value={addUserDetails.totalProject}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div> 
+              <h5>Language of Communication</h5>
+              <input
+                type='text'
+                name='language'
+                value={addUserDetails.language}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div> 
+              <h5>Gender</h5>
+              <input
+                type='text'
+                name='gender'
+                value={addUserDetails.gender}
+                onChange={handleChange}
+                required
+              />
+            </div>
+           </div>
+
             <div className="inputFields">
               <div>
                 <h5>Skills</h5>
@@ -119,6 +183,7 @@ const UserDetails = () => {
                 />
               </div>
             </div>
+
             <button type='button' className='submit' onClick={handleSubmit}>
               Proceed
             </button>
