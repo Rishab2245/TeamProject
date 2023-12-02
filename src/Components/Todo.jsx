@@ -133,27 +133,40 @@ const Todo = () => {
       <div className="container">
         {lists.map((list) => (
           <div key={list.id} className="outer">
-            <button>more</button>
+            <div className="centerDiv">
+              <div className="headingContainer">
+
+            
             <div className="heading">{list.name}</div>
+            <div className="moreContainer">
+              <button className='more'>more</button>
+            </div>
+            
+
+            </div>
+
+            </div>
+            
+            
           </div>
         ))}
-        {showAddCardPopup}&&(
+        {/* {showAddCardPopup}&&(
           <div className="card">
             <div className="cardContent">
             <input type="text" placeholder='new card name' value={cardName} onChange={handleNewCard} />
-              
+              qoooo
             </div>
           </div>
-        )
+        ) */}
         <button className="new" onClick={handleAddList}>
-          Add new list
+          <span className='addNewList'>+ Add new list</span>
         </button>
         {showNewListPopup &&(
           <div className="popup">
             <div className="popContent">
-            <input type="text" placeholder='new list name' value={newListName} onChange={handleInputChange} />
-            <button onClick={handleClosePopup}>close</button>
-            <button onClick={handleSubmit} >Add</button>
+            <input className="inputb" type="text" placeholder='new list name' value={newListName} onChange={handleInputChange} />
+            <button className='close' onClick={handleClosePopup}>Close</button>
+            <button className='add' onClick={handleSubmit} >Add</button>
             
             </div>
             
