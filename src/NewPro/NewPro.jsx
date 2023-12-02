@@ -19,22 +19,24 @@ const NewPro = ({profunc , setprojectdata , auth}) => {
   };
   const handleSubmit = async (e) => {
     
-    // e.preventDefault();
+     e.preventDefault();
     let senddata = {}
     senddata["name"] = projectDetails["Project"]
     senddata["description"] = projectDetails["description"]
     senddata["color"] = projectDetails[""]
-    console.log(senddata);
-
-    try {
-      const response = await axios.post('https://teammanagement.onrender.com/api/board/createBoard/',senddata , {headers: {authorization : auth}});
-      console.log('API Response:', response.data);
-      // console.log('API Response:', response.headers.authorization);
-    } catch (error) {
-      console.error('Error sending data to API:', error);
-    }
-  };
-
+    console.log(senddata);  
+  try {
+    const response = await axios.post(
+      'https://teammanagement.onrender.com/api/board/createBoard/',
+      senddata,
+      { headers: { authorization: auth } }
+    );
+    console.log('API Response:', response.data);
+    console.log('API Response:', response.headers.authorization);
+  } catch (error) {
+    console.error('Error sending data to API:', error);
+  }
+};
   const sendda = ()=>{
     profunc();
     handleSubmit();
@@ -82,7 +84,7 @@ const NewPro = ({profunc , setprojectdata , auth}) => {
           />
           </div>
         </div>
-        <button className="create">Create</button>
+        <button className="create" onClick={sendda}>Create</button>
         </div>
         <div className="illust">
           <img src={illust} alt="" />
