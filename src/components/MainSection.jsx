@@ -1,7 +1,7 @@
 
 import Search from './Search'
 import Navbar from './Navbar'
-import AddProject from '../AddProj/AddProject'
+import AddProject from '../NewPro/NewPro'
 
 const MainSection = ({profunc,setprojectdata,add , auth}) => {
   
