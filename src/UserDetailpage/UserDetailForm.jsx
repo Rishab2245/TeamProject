@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import usd from '../assets/Group 213.png';
 import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const UserDetails = () => {
   const location = useLocation();
@@ -39,6 +40,7 @@ const UserDetails = () => {
         addUserDetails,
       });
       console.log('API Response:', response.data);
+      Navigate('/aftersignup')
     } catch (error) {
       console.error('Error sending data to API:', error);
     }

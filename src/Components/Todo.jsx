@@ -1,6 +1,6 @@
 import React from 'react'
 import './Todo.css'
-
+import Cookies from 'js-cookie';
 import { useState,useEffect } from 'react'
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
@@ -15,7 +15,7 @@ const Todo = () => {
   const [listThree,updateListThree]=useState([]);
   const location = useLocation();
   
-  const auth = location.state.auth
+  const auth = Cookies.get('token');
   useEffect(()=>{
     const fetchData = async () => {
       try {

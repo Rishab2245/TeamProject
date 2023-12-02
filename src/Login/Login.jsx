@@ -42,7 +42,7 @@ const Login = () => {
             })
             const token = response.headers.authorization;
             const userName = response.data.name;
-            Cookies.set('token',token,{expires:7,path:'/'})
+            Cookies.set('token',token,{expires:7,path:'/',secure: true})
             navigate(`/dashboard`, { state: { id: 1, email: email, auth: token } });
         }
         catch (error) {
