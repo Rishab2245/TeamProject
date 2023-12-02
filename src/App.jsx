@@ -1,4 +1,4 @@
-import Todo from './TaskSection/Todo';
+import Todo from './Components/Todo';
 import Home from './home/HomePage'
 import SignUp from './SignUp/SignUp'
 import Login from './Login/Login'
@@ -10,17 +10,16 @@ import Otp from './Forgot/Otp';
 import UserDetails from './UserDetailpage/UserDetailForm';
 import AfterOtp from './AfterOtp/AfterOtp';
 import Protect from './Protected/Protected';
-import UserProfilePage from './UserProfile/UserProfilePage';
 
 function App() {
   return (  
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<UserProfilePage />} />
+        <Route path="/" element={<Home />} />
         <Route path='/signup' element={<SignUp />} />
         <Route path='/login' element={<Login />} />
         <Route path='/Todo' element={<Todo />} />
-//         <Route path='/aftersignup' element={<AfterSignUp />} />
+        <Route path='/aftersignup' element={<AfterSignUp />} />
         <Route path='/dashboard/*' element={<Protect Component={<Dashboard />} Other={<Login />}/>} />
         <Route path='/forgot' element={<Forgot />} />
         <Route path='confirmOtp' element={<Otp />} />
