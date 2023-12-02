@@ -1,15 +1,16 @@
 import React from 'react'
 import './Todo.css'
 
+
 import { useState,useEffect } from 'react'
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { useLocation } from 'react-router'
 
-const Todo = ({auth , tododata}) => {
-
+const Todo = ({auth ,  tododata}) => {
 
   console.log(tododata);
+
 
   const [name,setName]=useState('');
   const [finalData,setFinalData]=useState([]);
@@ -17,6 +18,8 @@ const Todo = ({auth , tododata}) => {
   const [listTwo,updateListTwo]=useState([]);
   const [listThree,updateListThree]=useState([]);
   const location = useLocation();
+  
+  // const auth = location.state.auth
   useEffect(()=>{
     const fetchData = async () => {
       try {
@@ -34,18 +37,11 @@ const Todo = ({auth , tododata}) => {
         console.log(response);
         const data = response.json();
         console.log(data);
-        // const finalData=data.map((item)=>({
-        //   id: item.id,
-        //   fullName:item.name,
-        //   username:item.username,
-        //   cards:[],
+        
 
-        // }));
         setFinalData(finalData)
         console.log(finalData);
-        // const details= data[0];
-        // console.log(details);
-        // setUserData(details)
+        
         console.log(setUserData);
       } catch (error) {
         console.error('Error:', error);
@@ -54,44 +50,14 @@ const Todo = ({auth , tododata}) => {
 
     fetchData();
   }, []);
-  // const setUserData=({name})=>{
-  //   setName(name)
-  // }
-  // console.log(name);
+  
 
-  const handleDeleteInOne = (idToDelete) => {
-    const elementToDelete = finalData.find((user) => user.id === idToDelete);
-    updateListTwo((prevListTwo) => [...prevListTwo, elementToDelete]);
-    const updatedDataInOne = finalData.filter((user) => user.id !== idToDelete);
-
-    setFinalData(updatedDataInOne)
-    console.log(finalData);
-    const newTwo=updatedDataInOne;
-    console.log(elementToDelete);
-    
-    
-    }
-    useEffect(() => {
-     
-      console.log('List Two:', listTwo);
-    }, [listTwo]); 
-
-    const handleDeleteInTwo = (idToDelete) => {
-      const elementToDelete = listTwo.find((user) => user.id === idToDelete);
-   
-      updateListThree((prevListThree) => [...prevListThree, elementToDelete]);
-      const updatedDataInTwo = listTwo.filter((user) => user.id !== idToDelete);
-      console.log(updatedDataInTwo);
-      setDataInThird(updatedDataInTwo)
-      updateListTwo(updatedDataInTwo)
 
   
     
-    }
-    useEffect(() => {
-   
-      console.log('list three:',listThree);
-    }, [listThree]); 
+
+    
+    
 
     const [lists, setLists] = useState([
       { id: 1, name: 'To-Do', items: [],cards:[] },
