@@ -1,10 +1,15 @@
 .add-project-button button{
-    background-color: black;
     width: 85%;
     height: 2rem;
     margin-top: 0.2rem;
     font-size: small;
     border-radius: 0.6rem;
+    border: none;
+    background-color:#0d3b66; 
+   
+}
+.add-project-button button:hover{
+    background-color: #092946;
    
 }
 .add-project-button {

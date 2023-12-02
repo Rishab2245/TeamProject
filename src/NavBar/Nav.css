@@ -1,0 +1,36 @@
+.main-nav{
+    display:flex;
+    justify-content: space-around;
+}
+.main-nav figure{
+    display:flex;
+    align-items: center;
+}
+.main-nav .nav-buttons{
+    display: flex;
+    justify-content: space-between;
+    gap: 2vw;
+    font-size: 1.3rem;
+    align-items: center;
+}
+.main-nav h1{
+    font-size: 2.7rem;
+    margin: 0;
+    padding: 0;
+    color:#FEEBEB;
+}
+.main-nav .nav-buttons button{
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    padding: .7rem;
+    cursor: pointer;
+}
+#b{
+    background-color: #FEEBEB;
+}
+#a{
+    background-color: #0D3B66;
+    color: white;
+}

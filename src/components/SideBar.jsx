@@ -4,30 +4,20 @@ import ProjectButtonBind from './ProjectButtonBind'
 import MemberButtonbind from './MemberButtonBind';
 import AddProject from './AddProject';
 import axios from 'axios';
-
-const SideBar = ({profunc,projectdata}) => {
-
-  const getboards = async () =>{
-    try{
-      let response = await axios.get("http://teammanagement.onrender.com/api/board/getBoards",{
-        headers:{
-          withCredentials:true,
-          'Access-control-Allow-Origin':'*'
-        }
-      })
-      console.lot(response)
-    }
-    catch(e){console.log(e)}
-  }
+const SideBar = ({profunc,projectdata,boarddata,auth}) => {
+  
   // getboards();
 console.log(projectdata);
+console.log(boarddata);
 
+ let [members,setmembers] = useState([]);
   return (
     <div className='side'>
-      <ProjectButtonBind project={projectdata}/>
-      <MemberButtonbind/>
+      <ProjectButtonBind project={projectdata} boarddata={boarddata} profunc={profunc}v  setmembers={setmembers}/>
+      <MemberButtonbind members={members} auth={auth}/>
       <AddProject profunc={profunc}/>
     </div>
   )
 }
+
 export default SideBar

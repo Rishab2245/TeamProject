@@ -1,3 +1,12 @@
+html{
+    height: 99%;
+}
+body{
+    height: 100%;
+}
+#root{
+    height: 100%;
+}
 .forgot-hero .nav{
     display: flex;
     flex-direction: row;
@@ -11,15 +20,19 @@
 .forgot-hero {
     display: flex;
     flex-direction: column;
-    margin: 0;
-    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    background: linear-gradient(113deg, #45048A 0%, #C40CC6 100%);
 }
 .forgot-hero .nav figure{
     display: flex;
     align-items: center;
 }
+.main-container{
+    margin-top: 6vw;
+}
 .main-container figure img{
-    height: 40vw;
+    height: 30vw;
 }
 .forgot-hero h1{
     font-size: 2.7rem;
@@ -27,20 +40,13 @@
     margin-bottom: 0;
 }
 .forgot-hero h2{
-    margin: 0;
-    padding: 0;
+    text-align: center;
+    font-size: 2.3rem;
+    color:#0D3B66;
     text-align: center;
 }
-.forgot-hero h3{
-    font-size: 2.3rem;
-    font-weight: 100;
-}
-.forgot-hero .sub-buttons{
-    display: flex;
-    gap: 1vw;
-}
-#forgot-login {
-    background-color: #E1E1E5;
+.forgot-form h3{
+    font-size: 1.5rem;
 }
 .main-container{
     display: flex;
@@ -49,9 +55,12 @@
 }
 .forgot-form{
     display: flex;
-    text-wrap: nowrap;
     flex-direction: column;
     align-items: flex-start;
+    backdrop-filter: -100px;
+    box-shadow:inset 0 0 2000px rgba(255,255,255,.5);
+    padding: 3vw 6vw;
+    border-radius: 10px;
 }
 .forgot-form input,p,button{
     font-size: 1.5rem;
@@ -60,14 +69,15 @@
     margin-top: 1rem;
 }
 .forgot-form button{
-    background-image:linear-gradient(to right,#3681B9,#2D5B86);
-    padding: .5rem;
+    padding: .7rem;
     font-size: 1.5rem;
     outline: none;
     border: none;
     border-radius: 5px;
     margin-top: 1rem;
     cursor: pointer;
+    background-color: #0D3B66;
+    color: white;
 }
 .proceed {
     margin-top: 2.1vw;
@@ -78,8 +88,15 @@
 .forgot-form input{
     width: 100%;
     background: url('../assets/icon _email_.jpg') no-repeat scroll 7px;
-    padding-left: 50px;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    padding-left: 4.5vw;
+    padding-bottom: 1vw;
+    padding-top: 1vw;
+    background-color: white;
     border-radius: 10px;
+}
+.forgot-wave{
+    margin: auto auto;
+    margin-bottom: 0;
+    overflow-y: hidden;
+    width: 100%;
 }

@@ -1,11 +1,11 @@
 import React from "react";
 import otp from "../assets/forgot.png";
 import "./Otp.css";
-import Logo from "../assets/Logo.png"
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import {Link} from "react-router-dom";
+import Nav from "../NavBar/Nav";
+import Wave from "../wave/Wave";
 
 const Otp = () => {
     const [OTP, setOTP] = useState();
@@ -35,12 +35,13 @@ const Otp = () => {
         }
         else {
             try {
-                await axios.post("https://teammanagement.onrender.com/api/user/password/resetPassword", {
+                const response = await axios.post("https://teammanagement.onrender.com/api/user/password/resetPassword", {
                     "token": `${OTP}`,
                     "password": password,
                     "confirmPassword": confirm
                 })
-                navigate('/afterotp');
+                const token = response.headers.authorization
+                navigate(`/dashboard`, { state: { id: 1, email: email, auth: token } });
             }
             catch (error) {
                 setDisplay(true)
@@ -53,35 +54,17 @@ const Otp = () => {
 
     return (
         <div className="otp-hero">
-            <div className="nav">
-                <figure>
-                    <img src={Logo} alt="" />
-                    <h1>&nbsp;Teemify</h1>
-                </figure>
-                <div className="otp-nav">
-                    <h2>Home</h2>
-                    <h2>About Us</h2>
-                    <h2>Home</h2>
-                </div>
-                <div className="otp-buttons">
-                    <Link to={'/login'}>
-                        <button id="otp-login">Login</button>
-                    </Link>
-                    <Link to={'/signup'}>
-                        <button>SignUp</button>
-                    </Link>
-                </div> 
-            </div>
+            <Nav />
             <div className="main">
-                <figure className="otp-image">
-                    <img src={otp} alt="" />
+                <figure>
+                    <img src={otp} alt="" className="otp-image" />
                 </figure>
                 <div className="container">
-                <h2>Reset Password</h2>
                     <form onSubmit={HandleSubmit}>
                         <div className="otp-container">
+                            <h2>Reset Password</h2>
                             <div>
-                                <input type="text" name="otp" id="otp" required autoComplete="off" placeholder="OTP" onChange={HandleChange} />              
+                                <input type="text" name="otp" id="otp" required autoComplete="off" placeholder="OTP" onChange={HandleChange} className="otp" />
                             </div>
                             <div>
                                 <input type="password" name="newPassword" id="newPassword" required placeholder="Password" onChange={HandleChange} className="password" />
@@ -99,8 +82,10 @@ const Otp = () => {
                             </div>
                         </div>
                     </form>
-
                 </div>
+            </div>
+            <div className="otp-wave">
+                <Wave />
             </div>
         </div>
     )

@@ -1,0 +1,78 @@
+.newP{
+    background: linear-gradient(113deg, #45048A 0%, #C40CC6 100%);
+    padding:7rem 0rem 6rem 2.5rem;
+}
+.newPBody{
+    display: flex;
+    flex-direction: row;
+    align-items:last baseline;
+    gap: 6rem;
+    padding: 3rem;
+}
+.newP .card1{
+    border-radius: 0.9375rem;
+    border: 1px solid #A4A4A4;
+    background: #FFF;
+    width: 45.6875rem;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+
+}
+.newP .card1 h1{
+    color: #000;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: 'Josefin Sans';
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-decoration-line: underline;
+    padding: 2rem;
+    align-self: center;
+}
+.newP .create{
+    width: 7.67806rem;
+    height: 2.46775rem;
+    flex-shrink: 0;
+    border-radius: 0.54319rem;
+    background: #0D3B66;
+    color: #FFF;
+    font-family: 'Josefin Sans';
+    font-size: 1.08644rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0rem 4rem 4rem 0rem;
+    align-self: flex-end;
+    border: none;
+}
+.newP .input1{
+    width: 33.91313rem;
+    height: 3.18006rem;
+    flex-shrink: 0;
+    border: none;
+    border-radius: 0.625rem;
+    background: #E2E2E2;
+}
+.newP .input2{
+    width: 33.85969rem;
+    height: 14.53738rem;
+    flex-shrink: 0;
+    border-radius: 0.625rem;
+    border: none;
+    background: #E2E2E2;
+}
+.newP .inputProj{
+    margin: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+.newP .labels{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    font-family: 'Josefin Sans';
+    font-weight: 400;
+    padding-bottom: 1.3rem;
+    font-size: 1.3125rem;
+}
