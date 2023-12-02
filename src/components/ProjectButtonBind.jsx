@@ -26,12 +26,11 @@ useEffect(()=>{
   })
 
   setdata(temp);
-  
-  if(project.Project!=""){
-  setdata((p)=>{return([...p,{value:`${project.Project}` , bol:`${project.bol}` , description:`${project.description}`}])})
+  console.log(project);
+  if(project.value!=""){
+  console.log(project);
+  setdata((p)=>{return([...p,project])})
   }
-
-  setmembers(data)
 },[project])
 
 console.log(data);

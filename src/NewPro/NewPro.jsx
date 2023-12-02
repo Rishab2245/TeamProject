@@ -3,9 +3,9 @@ import './NewProj.css';
 import illust from '../assets/Teamwork_-_Concept_Illustration-removebg-preview 1.png'
 import axios from 'axios';
 
-const NewPro = ({profunc , setprojectdata , auth}) => {
+const NewPro = ({profunc , setprojectdata , auth , setmembers}) => {
   const [projectDetails, setProjectDetails] = useState({
-    Project: '',
+    value: '',
     description: '',
     bol:"false"
   });
@@ -18,7 +18,6 @@ const NewPro = ({profunc , setprojectdata , auth}) => {
     });
   };
   const handleSubmit = async (e) => {
-    
     // e.preventDefault();
     let senddata = {}
     senddata["name"] = projectDetails["Project"]
@@ -29,6 +28,11 @@ const NewPro = ({profunc , setprojectdata , auth}) => {
     try {
       const response = await axios.post('https://teammanagement.onrender.com/api/board/createBoard/',senddata , {headers: {authorization : auth}});
       console.log('API Response:', response.data);
+      let temp = { value:response.data.board.name , discription: response.data.board.description , id: response.data.board._id , bol:"false" , members: response.data.board.members};
+      setprojectdata(temp);
+      // console.log(temp);
+
+      // setmembers(temp);
       // console.log('API Response:', response.headers.authorization);
     } catch (error) {
       console.error('Error sending data to API:', error);
@@ -38,7 +42,7 @@ const NewPro = ({profunc , setprojectdata , auth}) => {
   const sendda = ()=>{
     profunc();
     handleSubmit();
-    setprojectdata(projectDetails);
+    
   }
 
   return (
@@ -82,7 +86,7 @@ const NewPro = ({profunc , setprojectdata , auth}) => {
           />
           </div>
         </div>
-        <button className="create">Create</button>
+        <button className="create" onClick={sendda}>Create</button>
         </div>
         <div className="illust">
           <img src={illust} alt="" />
