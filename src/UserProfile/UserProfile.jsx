@@ -36,7 +36,7 @@ const UserProfile = () => {
   return (
     <div className='UserProfileCards'>
       <div className="cardHead">
-        <h1>Name: {userProfile.name}</h1>
+        <h1>{userProfile.name}</h1>
         <p>Email: {userProfile.email}</p>
       </div>
       <div className="UCardBody">

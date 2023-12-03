@@ -1,6 +1,20 @@
 .main-nav{
     display:flex;
-    justify-content: space-around;
+    flex-direction: row;
+    padding: 2rem;
+    align-items: center;
+    justify-content: space-between;
+}
+.main-nav .logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    gap: 1rem;
 }
 .main-nav figure{
     display:flex;
@@ -17,7 +31,7 @@
     font-size: 2.7rem;
     margin: 0;
     padding: 0;
-    color:#FEEBEB;
+    color:white;
 }
 .main-nav .nav-buttons button{
     border: none;
