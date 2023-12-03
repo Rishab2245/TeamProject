@@ -164,15 +164,19 @@ const Todo = ({auth ,  tododata}) => {
           console.log(addCard.data);
           const newCard=addCard.data.card
           console.log(newCard);
-
-          setLists((prevLists) =>
-      prevLists.map((list) =>
-        list.id === selectedListId
-          ? { ...list, cards: [...list.cards, newCard] }
-          : list
-      )
-    );
-    console.log(lists);
+          setLists((prevLists) => {
+            return prevLists.map((list) => {
+              if (list.id === selectedListId) {
+                return {
+                  ...list,
+                  cards: [...list.cards, newCard],
+                };
+              }
+              return list;
+            });
+          });
+          
+    
         }
           catch(error){
             console.error("Error:",error)
@@ -180,6 +184,37 @@ const Todo = ({auth ,  tododata}) => {
            
           }
         }
+        const handleDeleteCard = async (cardId) => {
+          try {
+            // Make a DELETE request to your API endpoint
+            await axios.delete(`https://teammanagement.onrender.com/api/card/deleteCard/${cardId}`, {
+              headers: {
+                withCredentials: true,
+                'Authorization': auth,
+              },
+            });
+            setLists((prevLists) => {
+              return prevLists.map((list) => {
+                return {
+                  ...list,
+                  cards: list.cards.filter((card) => card._id !== cardId),
+                };
+              });
+            });
+        
+           
+          } catch (error) {
+            console.error('Error:', error);
+          }
+        };
+        
+        
+        
+        
+        
+        
+        
+        
     
 
    
@@ -211,6 +246,7 @@ const Todo = ({auth ,  tododata}) => {
             {list.cards.map((card)=>(
                 <div className="card">
                   {card.name}
+                  <button  className="more1" onClick={() => handleDeleteCard(card._id)}>Delete</button>
                 </div>
               ))}
               
