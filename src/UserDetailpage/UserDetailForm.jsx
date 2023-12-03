@@ -27,12 +27,21 @@ const UserDetails = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    const updatedValue = name === 'gender' ? value.toUpperCase() : value;
+    const updatedValue = name === 'gender' ? value.toUpperCase() : capitalizeFirstLetter(value);
   
     setAddUserDetails({
       ...addUserDetails,
-      [name]: updatedValue,
+        [name]: name === 'experience' || name === 'totalProject' ? Math.max(0, parseInt(updatedValue)) : updatedValue,
+      
     });
+  };
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      handleSubmit(e);
+    }
+  };
+  const capitalizeFirstLetter = (value) => {
+    return value.charAt(0).toUpperCase() + value.slice(1);
   };
   
   const handleSkillsChange = (e) => {
@@ -51,14 +60,14 @@ const UserDetails = () => {
         addUserDetails,
       });
       console.log('API Response:', response.data);
-      Navigate('/aftersignup')
-    } catch (error) {
+      navigate('/aftersignup')
+    } catch (error) { 
       console.error('Error sending data to API:', error);
     }
   };
 
   return (
-    <div className='usd'>
+    <div className='usd' >
       <div className='usdNav'>
         <div>
           <svg xmlns='http://www.w3.org/2000/svg' width='53' height='52' viewBox='0 0 53 52' fill='none'>
@@ -102,64 +111,12 @@ const UserDetails = () => {
                 required
               />
             </div>
-            <div>
-            <h5>Total Projects</h5>
-              <input
-                type='number'
-                name='totalProject'
-                value={addUserDetails.totalProject}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div> 
-              <h5>Language of Communication</h5>
-              <input
-                type='text'
-                name='language'
-                value={addUserDetails.language}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div> 
-              <h5>Gender</h5>
-              <input
-                type='text'
-                name='gender'
-                value={addUserDetails.gender}
-                onChange={handleChange}
-                required
-              />
-            </div>
-           </div>
-
-            <div className="inputFields">
-              <div>
-                <h5>Skills</h5>
-                <input
-                  type='text'
-                  name='skills'
-                  value={addUserDetails.skills}
-                  onChange={handleChange}
-                />
-              </div>
-              <div>
-                <h5>Experience</h5>
-                <input
-                  type='number'
-                  name='experience'
-                  value={addUserDetails.experience}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
               <div>
                 <h5>Total Projects</h5>
                 <input
                   type='number'
-                  name='TotalProject'
-                  value={addUserDetails.TotalProject}
+                  name='totalProject'
+                  value={addUserDetails.totalProject}
                   onChange={handleChange}
                   required
                 />
@@ -185,8 +142,7 @@ const UserDetails = () => {
                 />
               </div>
             </div>
-
-            <button type='button' className='submit' onClick={handleSubmit}>
+            <button type='button' className='submit' onKeyDown={handleKeyDown} onClick={handleSubmit}>
               Proceed
             </button>
           </div>

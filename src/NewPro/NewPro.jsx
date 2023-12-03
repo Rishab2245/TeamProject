@@ -55,10 +55,7 @@ const NewPro = ({profunc , setprojectdata , auth , setmembers}) => {
         <h1>New Project</h1>
         <div className="inputProj">
           <div className="pname">
-          <div className="labels"> <div> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
-  <rect x="1" y="1" width="15.8061" height="16.2926" stroke="black" stroke-width="2"/>
-  <line x1="2" y1="11.3936" x2="15.8061" y2="11.3936" stroke="black" stroke-width="2"/>
-</svg></div> <div>
+          <div className="labels"> <div>
   <h4>Name of Project</h4></div>
   </div>
           <input
@@ -70,16 +67,9 @@ const NewPro = ({profunc , setprojectdata , auth , setmembers}) => {
           />
           </div>
           <div className="pdescrip">
-          <div className="labels"> <div> 
-          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
-  <path d="M1 1H13.8176" stroke="black" stroke-width="2" stroke-linecap="round"/>
-  <path d="M1 5.54102H13.8176" stroke="black" stroke-width="2" stroke-linecap="round"/>
-  <path d="M1 10.0869H13.8176" stroke="black" stroke-width="2" stroke-linecap="round"/>
-  <path d="M1 14.6289H6.69669" stroke="black" stroke-width="2" stroke-linecap="round"/>
-</svg>
-</div> <div>
+          <div className="labels"><div>
   <h4>Description Of Project</h4></div></div>
-          <input
+          <textarea
           className='input2'
             type="text"
             name="description"
@@ -89,9 +79,6 @@ const NewPro = ({profunc , setprojectdata , auth , setmembers}) => {
           </div>
         </div>
         <button className="create" onClick={sendda}>Create</button>
-        </div>
-        <div className="illust">
-          <img src={illust} alt="" />
         </div>
      </div>
     </div>

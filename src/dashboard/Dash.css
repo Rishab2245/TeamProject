@@ -1,6 +1,6 @@
 .below{
     display: flex;
-    height: 100%;
+    height: 90%;
     width: 100%;
     background-color: white;
     
@@ -8,4 +8,5 @@
 *{
     margin: 0;
     padding: 0;
+    
 }

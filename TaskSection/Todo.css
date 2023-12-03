@@ -9,7 +9,7 @@
     display: inline-block;
     justify-content: space-between;
     flex-direction: row;
-    background: linear-gradient(113deg, #45048A 0%, #C40CC6 100%);
+    /* background: linear-gradient(113deg, #45048A 0%, #C40CC6 100%); */
 }
 .todo .container .new{
     background-color: #FFFFFF;
@@ -219,4 +219,8 @@ margin-bottom: 2%;
 .todo .popup{
     border: 1px solid black;
     height: 20%;
+}
+.todo .container .outer .taskCard .card .more1{
+    font-size: 1rem;
+    margin-top: 20%;
 }
