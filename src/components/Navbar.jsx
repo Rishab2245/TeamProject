@@ -24,7 +24,7 @@ const Navbar = ({ auth, tododata }) => {
       )}
       {type === "progress" && (
 
-        <div>
+        
 
 
           <div style={{ height: "80%", width: "100%" }}>
@@ -32,7 +32,7 @@ const Navbar = ({ auth, tododata }) => {
             <h1>progress</h1>
           </div>
 
-        </div>
+        
       )}
     </div>
 

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 
-const Members = ( {members , auth , change , seterr ,setmembers}) => {
+const Membersadd = ( {members , auth , change , seterr ,setmembers}) => {
 let [email , setemail] =useState("")
 
 
@@ -49,4 +49,4 @@ change();
   )
 }
 
-export default Members
+export default Membersadd
