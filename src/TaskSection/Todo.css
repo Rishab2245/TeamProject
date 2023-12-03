@@ -69,7 +69,7 @@ margin-bottom: 2%;
     margin: 1%;
     font-size: 1.2rem;
 }
-.todo .container .outer .card{
+/* .todo .container .outer .card{
     background-color:#B9B9B9;
     opacity: 42%;
     width: 50%;
@@ -80,21 +80,30 @@ margin-bottom: 2%;
    
    
     
-}
+} */
 .todo .container .outer  .taskCard{
     display: flex;
     align-items: center;
     justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
     
-      
-   
+}
+.todo .container .outer  .taskCard .card{
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #E2E2E2;
+    display: flex;
+    
    
 }
 
 
 
 
-.todo .outer{
+.todo .container .outer{
     flex: 1;
     background-color:#FFFFFF;
     border-radius: 25px;
