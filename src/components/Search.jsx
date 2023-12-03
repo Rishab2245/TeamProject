@@ -13,7 +13,7 @@ const Search = () => {
   }]
 
   return (
-    <div style={{display:"flex", width:"100%", justifyContent:"space-between" , background:"rgba(0,0,0,0.52)", padding:"0.5rem 0"}}>
+    <div style={{display:"flex", width:"100%", justifyContent:"space-between" , background:"rgba(0,0,0,0.52)", padding:"0.5rem 0", height:"5%"}}>
         <SearchField/>
         <UserIcon user={user} />
     </div>

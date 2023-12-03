@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 function Home() {
     return (
         <>
-            <div className="homePage">
+            <div className="homePage" id='homePage'>
                 <div className="homeNav">
                     <HomeNav />
                 </div>
