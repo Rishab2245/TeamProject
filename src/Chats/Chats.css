@@ -1,0 +1,28 @@
+.chats{
+    background: linear-gradient(113deg, #45048A 0%, #C40CC6 100%);
+    height: 100%;
+}
+
+.chatbox{
+    width: 70%;
+    border-radius: 0.8rem;
+    font-family: 'Josefin Sans;';
+    font-size: 1.1rem;
+    padding: 0.8rem;
+    border: none;
+    position:fixed;
+    bottom: 0;
+    margin: 2rem;
+
+}
+.sendmessage{
+    position:fixed;
+    bottom: 0;
+    border-radius: 0.8rem;  
+    padding: 0.8rem;
+    right: 15rem;
+    margin: 2rem;
+    background-color: rgb(20, 238, 136);
+    border: none;
+    color: white;
+}

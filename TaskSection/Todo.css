@@ -220,3 +220,7 @@ margin-bottom: 2%;
     border: 1px solid black;
     height: 20%;
 }
+.todo .container .outer .taskCard .card .more1{
+    font-size: 1rem;
+    margin-top: 20%;
+}

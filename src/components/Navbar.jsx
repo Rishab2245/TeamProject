@@ -26,7 +26,7 @@ const Navbar = ({ auth, tododata }) => {
       {type === "progress" && (
 
         
-
+         
 
           <div style={{ height: "80%", width: "100%" }}>
 
