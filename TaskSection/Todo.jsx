@@ -19,7 +19,7 @@ const Todo = ({ auth, tododata }) => {
   const id=tododata[0].id
   console.log(id);
 
-
+  let all = {}
   const fetchData = async () => {
     try {
       const response = await axios.get(`https://teammanagement.onrender.com/api/list/getLists/${id}`, {
@@ -35,7 +35,7 @@ const Todo = ({ auth, tododata }) => {
       // setLname(lname)
       // console.log(lid);
       // console.log(lname);
-      console.log(response.data.lists);
+      console.log("All : ",response.data.lists);
 
       setLists(response.data.lists)
 
@@ -196,8 +196,22 @@ const Todo = ({ auth, tododata }) => {
     setSelectedListId(null);
   };
 
-
-  
+  const GetAllCards = async () => {
+    try{
+    const response = await axios.get('https://teammanagement.onrender.com/api/card/getCards/656c55a8a104641e6e9a68ab',{
+      headers: {
+        'Authorization':auth
+      }
+    })
+    console.log(response)
+  }
+  catch (error){
+    console.log(error)
+  }
+}
+  useEffect(() => {
+    GetAllCards()
+  },[])
   
 // console.log(arr[0].name);
   return (
