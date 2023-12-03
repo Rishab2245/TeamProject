@@ -4,7 +4,7 @@ import Todo from "../../TaskSection/Todo";
 //import ProgressReport from '../progress/Progress';
 
 const Navbar = ({auth , tododata}) => {
-    let [type,settype] = useState("tasks")
+    let [type,settype] = useState("chat")
     console.log(tododata)
   return (
     <>
@@ -24,7 +24,7 @@ const Navbar = ({auth , tododata}) => {
       )}
       {type === "progress" && (
 
-        <div>
+        
          
 
         <div style={{height:"80%", width:"100%"}}>
