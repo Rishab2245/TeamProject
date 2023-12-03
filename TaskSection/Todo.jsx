@@ -35,10 +35,14 @@ const Todo = ({ auth, tododata }) => {
       console.log(response.data.lists);
 
       setLists(response.data.lists)
-
       const l = response.data.lists;
-      console.log(l);
+      
 
+      // const l = response.data.lists;
+      // console.log(l);
+      // l.map((e) => {
+      //   console.log(e.cards)
+      // })
 
       console.log(response.data.lists[0].name);
 
