@@ -85,6 +85,7 @@ const Todo = ({auth ,  tododata}) => {
     const [newCardDesc,setNewCardDesc]=useState('')
     const [cards,setCards]=useState([])
     const [showAddCardPopup,setshowAddCardPopup]=useState(false);
+    const [showDescPopup,setshowDescPopup]=useState(false);
     const [selectedListId, setSelectedListId] = useState(null);
     
     const handleInputChange = (e) => {
@@ -149,7 +150,7 @@ const Todo = ({auth ,  tododata}) => {
           try{
             const addCard=  await axios.post("https://teammanagement.onrender.com/api/card/createCard/", {
               "name":newCardName,
-              "description": "lorem",
+              "description": newCardDesc,
               "position":"2",
               "boardId":id,
               "listId":selectedListId
@@ -207,13 +208,20 @@ const Todo = ({auth ,  tododata}) => {
             console.error('Error:', error);
           }
         };
+  const handleViewDesc=(description)=>{
+    setshowDescPopup(true)
+    setNewCardDesc(description)
+
+  }
         
         
         
         
         
         
-        
+   const handleCloseDescPopup=()=>{
+    setshowDescPopup(false)
+   }     
         
     
 
@@ -247,6 +255,8 @@ const Todo = ({auth ,  tododata}) => {
                 <div className="card">
                   {card.name}
                   <button  className="more1" onClick={() => handleDeleteCard(card._id)}>Delete</button>
+                  <button  className="more1" onClick={() => handleViewDesc(card.description)}>View description</button>
+
                 </div>
               ))}
               
@@ -260,11 +270,19 @@ const Todo = ({auth ,  tododata}) => {
           <div className="popup">
             <div className="popContent">
             <input className="inputb" type="text" placeholder='new card name' value={newCardName} onChange={handleNewCard} />
-            {/* <input className="inputb" type="text" placeholder='card description' value={newCardDesc} onChange={handleNewCardDesc} /> */}
+            <input className="inputb" type="text" placeholder='card description' value={newCardDesc} onChange={handleNewCardDesc} />
             <button className='close' onClick={handleCloseCardPopup}>Close</button>
             <button className='add' onClick={handleAddNewCard} >Add</button>
             
             </div>
+            
+          </div>
+        )}
+        {showDescPopup&&(
+          <div className="popup">
+          {newCardDesc}
+          <button className='close' onClick={handleCloseDescPopup}>Close</button>
+
             
           </div>
         )
