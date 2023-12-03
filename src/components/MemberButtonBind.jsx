@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import MemberButton from './MemberButton'
 import "./MemberButtonBindcss.css"
 import axios from 'axios';
-import Addmembers from './Addmembers'
+import Members from './Members';
 
 
 const MemberButtonbind = ({members , auth , setmembers , setnewmem}) => {
@@ -70,7 +70,7 @@ useEffect(()=>{
     <h3>Members :-</h3>
     <span onClick={change} style={{cursor:"pointer"}}>+</span>
     {
-      toggle && <Addmembers members={members} auth={auth} change={change} seterr={seterr} setmembers={setmembers}/>
+      toggle && <Members members={members} auth={auth} change={change} seterr={seterr} setmembers={setmembers}/>
     }
     {    err && <h3 style={{color:"black"}}>enter the register email</h3>   } 
    

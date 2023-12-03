@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import ProjectButton from './ProjectButton'
 import './ProjectButtonBindcss.css'
-const ProjectButtonbind = ({project,boarddata , profunc , setmembers , settododata , newmem} ) => {
+const ProjectButtonbind = ({project,boarddata , profunc , setmembers , settododata , newmem , setadd} ) => {
 
 
   let [data, setdata] = useState([
@@ -50,6 +50,7 @@ useEffect(()=>{
   console.log(mem);
   settododata(mem);
   setmembers(mem);
+  // setadd(true);
 },[data])
 
 useEffect(()=>{
@@ -62,7 +63,6 @@ useEffect(()=>{
     else{
       return e
     }
-    
   })
 
  

@@ -21,7 +21,6 @@ const Dashboard = () => {
   console.log(boarddata)
   console.log(tododata)
 
-
   const profunc = () => {
     setadd(!add);
     console.log("add")
@@ -53,7 +52,7 @@ const Dashboard = () => {
     <div style={{height:"100%", width:"100%"}}>
       <Header/>
       <div className='below'>
-        <SideBar profunc={profunc} projectdata={projedata}  auth = {token} boarddata={boarddata} members={members} setmembers={setmembers} settododata={settododata}/>
+        <SideBar profunc={profunc} projectdata={projedata} setadd={setadd}  auth = {token} boarddata={boarddata} members={members} setmembers={setmembers} settododata={settododata}/>
           <MainSection profunc={profunc} setprojectdata={setprojedata} add={add} auth={token} setmembers={setmembers} tododata={tododata}/> 
       </div>
     </div>
