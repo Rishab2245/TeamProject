@@ -1,0 +1,122 @@
+.payment{
+    background: linear-gradient(113deg, #45048A 0%, #C40CC6 100%);
+    font-family: 'Josefin Sans';
+}
+.paymentCard{
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.899);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 46.6875rem;
+    
+    flex-shrink: 0;
+    margin: 5rem auto 2rem;
+}
+.PCtop h1{
+    width: 36.25rem;
+    height: 4.6875rem;
+    flex-shrink: 0;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.PCcontent{
+    padding: 4rem 5rem;
+}
+.PCtop h3{
+    margin-top: 0.7rem;
+    color: #000;
+    font-family: Josefin Sans;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 35.25rem;
+    height: 3.4375rem;
+    flex-shrink: 0;
+    border-bottom: 2px solid #9D9D9D;
+}
+.radio{
+    border-radius: 1rem;
+    border: 2px solid #71717A;
+    background: #B9B9B9;
+    width: 15.5625rem;
+    height: 7.4375rem;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: first baseline;
+    text-align: center;
+    justify-content: center;
+    padding: 1.3rem;
+    margin:0rem 0rem 2rem 0rem;
+    gap: 2rem;
+}
+
+.radio h3{
+    color: #000;
+    font-family: 'Josefin Sans';
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.radio h4{
+    color: #000;
+    font-family: Josefin Sans;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding: 1rem;
+}
+.radio p{
+    color: #5C5E64;
+    font-family: Josefin Sans;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.PCB {
+   margin: 3rem;
+}
+.PCB{
+   padding: 1.5rem;
+   margin: 0;
+   border-bottom: 2px solid #9D9D9D;
+}
+.PCfoot{color: #000;
+    font-family: Josefin Sans;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2rem 0rem;
+}
+.payTotal{
+    color: #000;
+    font-family: Josefin Sans;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.l1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.table{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 0;
+}
+.bill{
+    margin-top: 0;
+}
