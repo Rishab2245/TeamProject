@@ -26,6 +26,14 @@
     background: #FFF;
     color: black;
     font-family: 'Josefin Sans';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: none;
+    padding: 2rem;
+    margin: auto;
 }
 .profile{
     display: flex;
@@ -39,24 +47,25 @@
     border: 2px solid #A4A4A4;
 }
 .UCardBody{
-    border-radius: 0.6875rem 0.6875rem 0rem 0rem;
 background: #FFF;
-width: 95%;
 }
-.UserProfileCards{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+
 .cardHead h1{
     font-size: 1.5rem;
     font-style: normal;
     font-weight: 400;
-    padding: 2rem;
+    padding: 2rem 2rem 1rem 2rem;
 }
 .cardHead p{
     font-size: 0.75rem;
     font-style: normal;
     font-weight: 400;
+    text-align: center;
 } 
+.UCardBody ul{
+list-style-type: none;
+}
+.UCardBody li{
+    padding: 1rem;
+    font-size: 1.4rem;
+}
