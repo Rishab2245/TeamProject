@@ -6,7 +6,10 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { useLocation } from 'react-router'
 
-const Todo = () => {
+const Todo = ({auth ,  tododata}) => {
+
+  console.log(tododata)
+
 
   const [name,setName]=useState('');
   const [finalData,setFinalData]=useState([]);
