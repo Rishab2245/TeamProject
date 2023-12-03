@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "../assets/Logo.png"
-import Todo from "../TaskSection/Todo.jsx";
+import Todo from "../../TaskSection/Todo.jsx";
 import { useState } from "react";
 import axios from "axios";
 import "./Login.css"
@@ -42,8 +42,10 @@ const Login = () => {
                 "password": password,
             })
             const token = response.headers.authorization;
-            const userName = response.data.name;
-            Cookies.set('token',token,{expires:7,path:'/'})
+            // console.log("Data : ",response.data.user._id);
+            const id = response.data.user._id;
+            Cookies.set('id',id,{expires:7,path:'/',secure:true})
+            Cookies.set('token',token,{expires:7,path:'/',secure: true})
             navigate(`/dashboard`, { state: { id: 1, email: email, auth: token } });
         }
         catch (error) {

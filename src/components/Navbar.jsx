@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Tabs from "./Tabs"
-import Todo from "../TaskSection/Todo"
+import Todo from "../../TaskSection/Todo";
 
 
 const Navbar = ({auth , tododata}) => {
@@ -25,7 +25,7 @@ const Navbar = ({auth , tododata}) => {
       {type === "progress" && (
         <div style={{height:"80%", width:"100%"}}>
 
-        <h1>progress</h1>
+          <h1>progress</h1>
         </div>
       )}
     </>

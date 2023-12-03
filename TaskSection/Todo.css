@@ -1,0 +1,222 @@
+.todo .container{
+    display: flex;
+    justify-content: space-between;
+    
+
+}
+.todo{
+    
+    display: inline-block;
+    justify-content: space-between;
+    flex-direction: row;
+    background: linear-gradient(113deg, #45048A 0%, #C40CC6 100%);
+}
+.todo .container .new{
+    background-color: #FFFFFF;
+    opacity: 34%;
+   border-radius: 10.65px;
+   width: 14.6rem;
+   height:3.4rem
+}
+.todo .container .new .addNewList{
+    color:black;
+    opacity: 100%;
+}
+.todo .container .popup{
+    height: 5rem;
+    background-color: #FFFFFF;
+    width: 18rem;
+    height: 15rem;
+    position: fixed;
+    top:30%;
+    left: 50%;
+    background: #EA3DD2;
+    /* opacity: 80%; */
+    border-radius: 15px;
+}
+.todo .container .popup .popContent .inputb{
+   margin-left: 5%;
+   font-size: 1.2rem;
+margin-bottom: 2%;
+    
+}
+/* .todo .container .outer .more{
+    width: 20%;
+    margin-top: 1%;
+    border-radius: 10px;
+
+
+} */
+/* .headingContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+  } */
+  .centerDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+.todo .container .popup .popContent .close{
+    margin-left: 5%;
+    font-size: 1.2rem;
+    
+}
+.todo .container .popup .popContent .add{
+    margin: 1%;
+    font-size: 1.2rem;
+}
+/* .todo .container .outer .card{
+    background-color:#B9B9B9;
+    opacity: 42%;
+    width: 50%;
+    height: 100%;
+    margin-top: 6%;
+    border-radius: 10px;
+    padding-left: 5%;
+   
+   
+    
+} */
+.todo .container .outer  .taskCard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    
+}
+.todo .container .outer  .taskCard .card{
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #E2E2E2;
+    display: flex;
+    
+   
+}
+
+
+
+
+.todo .container .outer{
+    flex: 1;
+    background-color:#FFFFFF;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+   /* justify-content: center;
+    */
+    
+   border: 1px solid black;
+   margin: 1%;
+   width: 25em;
+   height: 100vh;
+}
+.todo .container .outer .taskBox{
+    background-color:#FFFFFF;
+    width: 15em;
+    /* margin: 2%; */
+    margin-left: 8%;
+    margin-bottom: 5%;
+    
+    
+    /* margin-top: 20%; */
+    
+    /* margin-top: 20%;
+    margin-right:50%; */
+   
+    border-radius: 25px;
+    /* margin:2%; */
+    /* margin-top: 20%; */
+    
+
+
+}
+
+.todo .taskBox,.taskBoxProg,.taskBoxComp{
+    
+    background-color: #FFFFFF;
+    width: 20em;
+    margin: 2%;
+    
+    /* margin-top: 20%; */
+    
+    /* margin-top: 20%;
+    margin-right:50%; */
+   
+    border-radius: 25px;
+    /* margin:2%; */
+    /* margin-top: 20%; */
+    
+}
+
+.content{
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.heading{
+    color: black;
+    margin: 10px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.name{
+    color: black;
+    font-size: 20px;
+}
+.todo .btn{
+    width: 10%;
+    margin-left:80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 6%;
+    padding-right: 6%;
+    
+    
+}
+.todo .outerProg{
+    background-color: #FFFFFF;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+   /* justify-content: center;
+    */
+    
+   border: 1px solid black;
+   margin: 1%;
+   /* height: 100vh; */
+   width: 25em;
+   
+}
+.todo .outerComp{
+    background-color: #FFFFFF;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+   /* justify-content: center;
+    */
+   
+   border: 1px solid black;
+   margin: 1%;
+   width: 25em;
+
+}
+.todo .new{
+    margin: 1%;
+    height: 10%;
+}
+.todo .popup{
+    border: 1px solid black;
+    height: 20%;
+}

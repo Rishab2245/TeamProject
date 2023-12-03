@@ -4,36 +4,36 @@ import './ProjectButtonBindcss.css'
 const ProjectButtonbind = ({project,boarddata , profunc , setmembers , settododata , newmem} ) => {
 
 
-let [data,setdata] = useState([
-]);
-console.log(boarddata);
-let temp = boarddata.map((e)=>(
-  {value: e.name , description:e.description , id:e._id , bol:"true" , members:e.members}
-));
+  let [data, setdata] = useState([
+  ]);
+  console.log(boarddata);
+  let temp = boarddata.map((e) => (
+    { value: e.name, description: e.description, id: e._id, bol: "true", members: e.members }
+  ));
 
-useEffect(()=>{
-  setdata(temp);
-  console.log(temp);
-},[boarddata]);
+  useEffect(() => {
+    setdata(temp);
+    console.log(temp);
+  }, [boarddata]);
 
-// setdata()
-console.log(data);
-useEffect(()=>{
-  let temp = data.map((e)=>{
-    return (
-      {...e , ["bol"]:"true"}
-    )
-  })
+  // setdata()
+  console.log(data);
+  useEffect(() => {
+    let temp = data.map((e) => {
+      return (
+        { ...e, ["bol"]: "true" }
+      )
+    })
 
-  setdata(temp);
-  console.log(project);
-  if(project.value!=""){
-  console.log(project);
-  setdata((p)=>{return([...p,project])})
-  }
-},[project])
+    setdata(temp);
+    console.log(project);
+    if (project.value != "") {
+      console.log(project);
+      setdata((p) => { return ([...p, project]) })
+    }
+  }, [project])
 
-console.log(data);
+  console.log(data);
 
 const activeproj = (e) =>{
   let temp = data.map((ev)=>{
@@ -71,19 +71,19 @@ useEffect(()=>{
 },[newmem])
   return (
     <>
-    <div className='projectsection'>
-    <div className='projectheading'>
-    <h3>Projects :-</h3>
-    <span onClick={profunc} style={{cursor:"pointer"}}>+</span>
-    </div>
-    <div  style={{padding:"0.2rem"}}>
-       {
-        data.map((e,idx)=>(
-             <ProjectButton key={idx} value={e.value} bol={e.bol} acpj={activeproj}/>
-        ))
-       }
-    </div>
-    </div>
+      <div className='projectsection'>
+        <div className='projectheading'>
+          <h3>Projects :-</h3>
+          <span onClick={profunc} style={{ cursor: "pointer" }}>+</span>
+        </div>
+        <div style={{ padding: "0.2rem" }}>
+          {
+            data.map((e, idx) => (
+              <ProjectButton key={idx} value={e.value} bol={e.bol} acpj={activeproj} />
+            ))
+          }
+        </div>
+      </div>
     </>
   )
 }
