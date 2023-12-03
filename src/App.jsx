@@ -10,7 +10,8 @@ import Otp from './Forgot/Otp';
 import UserDetails from './UserDetailpage/UserDetailForm';
 import AfterOtp from './AfterOtp/AfterOtp';
 import Protect from './Protected/Protected';
-
+//import ProgressReport from './progress/Progress';
+//import Payment from './Payment/Payment';
 function App() {
   return (  
     <BrowserRouter>

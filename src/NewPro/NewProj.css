@@ -52,6 +52,7 @@
     border: none;
     border-radius: 0.625rem;
     background: #E2E2E2;
+    font-size: 2rem;
 }
 .newP .input2{
     width: 33.85969rem;
@@ -60,6 +61,8 @@
     border-radius: 0.625rem;
     border: none;
     background: #E2E2E2;
+    text-align: start;
+    font-size: 1.4rem;
 }
 .newP .inputProj{
     margin: 3rem;
