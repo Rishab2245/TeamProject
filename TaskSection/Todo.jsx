@@ -12,12 +12,10 @@ const Todo = ({ auth, tododata }) => {
   // const [lname,setLname]=useState('')
   // const [ldata,setLdata]=useState('')
   
-  
-  console.log(auth);
-  console.log(tododata);
-  const id=tododata[0].id
+  // console.log(auth);
+  // console.log(tododata);
+  const id = tododata[0].id
   console.log(id);
-
 
   const fetchData = async () => {
     try {
@@ -37,14 +35,6 @@ const Todo = ({ auth, tododata }) => {
       console.log(response.data.lists);
 
       setLists(response.data.lists)
-      const l = response.data.lists;
-      
-
-      // const l = response.data.lists;
-      // console.log(l);
-      // l.map((e) => {
-      //   console.log(e.cards)
-      // })
 
       console.log(response.data.lists[0].name);
 
@@ -139,55 +129,38 @@ const Todo = ({ auth, tododata }) => {
         "boardId": id,
         "listId": selectedListId
 
-             
-          },{
-            headers:{
-              withCredentials:true,
-              'Authorization':auth,
-            }
-          })
-          console.log(addCard.data);
-          const newCard=addCard.data.card
-          console.log(newCard);
-        }
-          catch(error){
-            console.error("Error:",error)
-        
-           
-          }
-          
-        const cardData=async()=>{
-          try{
-            const cardapi=await axios.get(`https://teammanagement.onrender.com/api/card/getCards/${selectedListId}`, {
-              headers:{
-                withCredentials:true,
-                'Authorization':auth,
-              }
-            });
-            console.log(cardapi.data.cards[0].name);
-            const arr=cardapi.data.cards
-            console.log(arr);
-            setarr(arr)
-            const updatedLists = lists.map((list) =>
-        list.id === selectedListId
-          ? { ...list, cards: cardapi.data.cards }
-          : list
-      );
 
-      setLists(updatedLists);
-          }
-          catch (error) {
-            console.error('Error:', error);
-          }
+      }, {
+        headers: {
+          withCredentials: true,
+          'Authorization': auth,
         }
-        cardData()
-        }
-    
-      
-    
-      
-  
-    
+      })
+      console.log(addCard.data);
+      const newCard = addCard.data.card
+      console.log(newCard);
+
+      setLists((prevLists) =>
+        prevLists.map((list) =>
+          list.id === selectedListId
+            ? { ...list, cards: [...list.cards, newCard] }
+            : list
+        )
+      );
+      console.log(lists);
+    }
+    catch (error) {
+      console.error("Error:", error)
+
+
+    }
+  }
+
+
+
+
+
+
 
 
 
@@ -200,9 +173,9 @@ const Todo = ({ auth, tododata }) => {
   };
 
 
-  
-  
-// console.log(arr[0].name);
+
+
+
   return (
 
     <div className="todo">
@@ -218,30 +191,20 @@ const Todo = ({ auth, tododata }) => {
               </div>
             </div>
             <div className="taskCard">
-              {arr.map((card)=>(
-                <div className="card">
-                  {card.name}
-                </div>
-              ))}
-            </div>
-            {/* <div className="taskCard">
-              <div className="card">
-                {arr[0]}
-              </div>
 
-            {arr.map((card) => (
-              <div key={card.id} className="card">
-                <div className='head'>{card.name}</div>
-                <div className='description'>{card.description}</div>
-                {card}
-                
-              </div>
-    
-            ))}
-              
-              
-          
-            </div> */}
+              {list.cards && Array.isArray(list.cards) && list.cards.map((card) => (
+                <div key={card._id} className="card">
+                  {/* <div className='head'>{card.name}</div>
+                <div className='description'>{card.description}</div> */}
+                  {card}
+
+                </div>
+
+              ))}
+
+
+
+            </div>
           </div>
 
         ))}
