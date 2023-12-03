@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Tabs from "./Tabs"
-import Todo from "../TaskSection/Todo";
+import Todo from "../../TaskSection/Todo";
 
 
 const Navbar = ({auth , tododata}) => {
