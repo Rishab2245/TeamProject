@@ -2,12 +2,20 @@ import React, { useEffect, useState } from 'react'
 import MemberButton from './MemberButton'
 import "./MemberButtonBindcss.css"
 import axios from 'axios';
+// import Members from './Members';
 
 
-const MemberButtonbind = ({ members, auth }) => {
+const MemberButtonbind = ({members , auth , setmembers , setnewmem}) => {
 
-  let [data, setdata] = useState([]);
+let [data,setdata] = useState([]);
+let [toggle,settoggle] = useState(false);
+let [err , seterr] = useState(false);
 
+
+const change = () => {
+  settoggle(!toggle);
+  console.log("hellow")
+}
 
 
   useEffect(() => {
@@ -24,9 +32,11 @@ const MemberButtonbind = ({ members, auth }) => {
 
     }
 
+},[members])
 
-
-  }, [members])
+useEffect(()=>{
+  setnewmem(members);
+},[members])
 
   console.log(auth)
   console.log(data)
@@ -55,19 +65,24 @@ const MemberButtonbind = ({ members, auth }) => {
 
   return (
     <>
-      <div className='membersection'>
-        <div className='memberheading'>
-          <h3>Members :-</h3>
-          <span>+</span>
-        </div>
-        <div style={{ padding: "0.2rem" }}>
-          {
-            data.map((e, idx) => (
-              <MemberButton key={idx} value={e.value} bol={e.bol} link={e.link} />
-            ))
-          }
-        </div>
-      </div>
+    <div className='membersection'>
+    <div className='memberheading' style={{position:"relative"}}>
+    <h3>Members :-</h3>
+    <span onClick={change} style={{cursor:"pointer"}}>+</span>
+    {
+      toggle && <Members members={members} auth={auth} change={change} seterr={seterr} setmembers={setmembers}/>
+    }
+    {    err && <h3 style={{color:"black"}}>enter the register email</h3>   } 
+   
+    </div>
+    <div  style={{padding:"0.2rem"}}>
+       {
+        data.map((e , idx)=>(
+          <MemberButton  key={idx} value={e.value} bol={e.bol} link={e.link}/>
+        ))
+       }
+    </div>
+    </div>
     </>
   )
 }

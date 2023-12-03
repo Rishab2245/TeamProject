@@ -9,7 +9,7 @@
     display: inline-block;
     justify-content: space-between;
     flex-direction: row;
-    background: linear-gradient(113deg, #45048A 0%, #C40CC6 100%);
+    /* background: linear-gradient(113deg, #45048A 0%, #C40CC6 100%); */
 }
 .todo .container .new{
     background-color: #FFFFFF;
