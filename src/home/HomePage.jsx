@@ -3,6 +3,8 @@ import './Homepg.css'
 import HomeNav from './HomeNav/HomeNav'
 import graphic from '../assets/Group 19.png'
 import arrow from '../assets/Vector 4.png'
+import Payment from '../Payment/Payment'
+import { Link } from 'react-router-dom'
 function Home() {
     return (
         <>
@@ -20,7 +22,11 @@ function Home() {
                             your team isn't.
                         </p>
                         <div className="trial">
-                            <div className="trialButton"><button>Try free for 30 days</button></div>
+                            <div className="trialButton">
+                                <Link to={'/payment'}>
+                                    <button>Try free for 30 days</button>
+                                </Link>
+                            </div>
                             <div className="trialArrow"><img src={arrow} alt="" /></div>
                         </div>
                     </div>

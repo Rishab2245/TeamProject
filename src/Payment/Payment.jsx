@@ -1,56 +1,56 @@
 import HomeNav from "../home/HomeNav/HomeNav"
 import './Payment.css'
-const Payment=()=>{
-    return(
+const Payment = () => {
+    return (
         <>
-        <div className="payment">
-            <div className="nav">
-                <HomeNav/>
-            </div>
-         <div className="paymentBody">
-            <div className="paymentCard">
-                <div className="PCcontent">
-                    <div className="PCtop">
-                        <h1>
-                            Start your free 30-day trial of Teemify Premium
-                        </h1>
-                        <h3>
-                            No payment is due today. If you change your mind, you can switch to our new <br /> version at any time.
-                        </h3>
-                    </div>
-                    <div className="PCB">
-                        <div className="radio">
-                            <input type="radio" className="bill" />
-                        <div>
-                            <h3>  Billed Annually</h3>
-                            <h4>Rs. 2999/-</h4>
-                            <p>Per user per Year </p>
-                        </div>
-                        </div>
-                    
-                        <div className="table">
-                            <div className="l1">
-                                <div>1 Teemify annual license @ 2999 INR each</div>
-                                <div>Rs. 2999 INR</div>
-                            </div>
-                            <div className="l1">
-                                <div>G.S.T.</div>
-                                <div>  Rs. 539.82 INR</div>
-                            </div>
-                            <div className="l1">
-                                <div>Annual payment due Dec. 27th, 2023 </div>
-                                <div>Rs. 3539 INR</div>
-                            </div>
-                        </div>
-                    </div>
-                <div className="PCfoot">
-                    <div>Due Today</div>
-                    <div className="payTotal">Rs. 3539/-INR</div>
+            <div className="payment">
+                <div className="nav">
+                    <HomeNav />
                 </div>
+                <div className="paymentBody">
+                    <div className="paymentCard">
+                        <div className="PCcontent">
+                            <div className="PCtop">
+                                <h1>
+                                    Start your free 30-day trial of Teemify Premium
+                                </h1>
+                                <h3>
+                                    No payment is due today. If you change your mind, you can switch to our new <br /> version at any time.
+                                </h3>
+                            </div>
+                            <div className="PCB">
+                                <div className="radio">
+                                    <input type="radio" className="bill" />
+                                    <div>
+                                        <h3>  Billed Annually</h3>
+                                        <h4>Rs. 2999/-</h4>
+                                        <p>Per user per Year </p>
+                                    </div>
+                                </div>
+
+                                <div className="table">
+                                    <div className="l1">
+                                        <div>1 Teemify annual license @ 2999 INR each</div>
+                                        <div>Rs. 2999 INR</div>
+                                    </div>
+                                    <div className="l1">
+                                        <div>G.S.T.</div>
+                                        <div>  Rs. 539.82 INR</div>
+                                    </div>
+                                    <div className="l1">
+                                        <div>Annual payment due Dec. 27th, 2023 </div>
+                                        <div>Rs. 3539 INR</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="PCfoot">
+                                <div>Due Today</div>
+                                <div className="payTotal">Rs. 3539/-INR</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div className="wave">
+                <div className="wave">
                     <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1512 169" fill="none">
                         <path d="M401.354 32.818C271.066 36.6527 77.7019 117.361 -0.199241 170.008L1500.57 197.699C1523.29 132.061 1554.88 0.862285 1499.48 1.16896C1430.23 1.5523 1229.95 118.442 1013.42 119.641C796.898 120.839 564.216 28.0247 401.354 32.818Z" fill="url(#paint0_linear_542_43)" stroke="url(#paint1_linear_542_43)" strokeWidth="1.18632" />
                         <defs>
@@ -65,7 +65,8 @@ const Payment=()=>{
                         </defs>
                     </svg>
                 </div></div>
-        
-    </>
-    )}
+
+        </>
+    )
+}
 export default Payment;
