@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import Tabs from "./Tabs"
 import Todo from "../../TaskSection/Todo";
-//import ProgressReport from '../progress/Progress';
+import Progress from '../progress/Progress';
+import Chats from "../Chats/Chats"
+
 
 const Navbar = ({ auth, tododata }) => {
   let [type, settype] = useState("tasks")
@@ -13,7 +15,7 @@ const Navbar = ({ auth, tododata }) => {
       </div>
       {type === "chat" && (
         <div style={{ height: "80%", width: "100%" }}>
-          <h1>chats</h1>
+         <Chats auth={auth} tododata={tododata} />
         </div>
       )}
       {type === "tasks" && (
@@ -29,7 +31,7 @@ const Navbar = ({ auth, tododata }) => {
 
           <div style={{ height: "80%", width: "100%" }}>
 
-            <h1>progress</h1>
+            <Progress auth = {auth} tododata={tododata}/>
           </div>
 
         
