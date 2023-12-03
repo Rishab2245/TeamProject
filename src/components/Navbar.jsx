@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Tabs from "./Tabs"
 import Todo from "../../TaskSection/Todo";
-
+import ProgressReport from '../progress/Progress';
 
 const Navbar = ({auth , tododata}) => {
     let [type,settype] = useState("chat")
@@ -24,8 +24,7 @@ const Navbar = ({auth , tododata}) => {
       )}
       {type === "progress" && (
         <div>
-
-          <h1>progress</h1>
+          <ProgressReport/>
         </div>
       )}
     </div>

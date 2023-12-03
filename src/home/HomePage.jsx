@@ -6,7 +6,7 @@ import arrow from '../assets/Vector 4.png'
 function Home() {
     return (
         <>
-            <div className="homePage">
+            <div className="homePage" id='homePage'>
                 <div className="homeNav">
                     <HomeNav />
                 </div>

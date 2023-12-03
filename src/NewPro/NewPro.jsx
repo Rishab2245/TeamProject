@@ -79,7 +79,7 @@ const NewPro = ({profunc , setprojectdata , auth , setmembers}) => {
 </svg>
 </div> <div>
   <h4>Description Of Project</h4></div></div>
-          <input
+          <textarea
           className='input2'
             type="text"
             name="description"
