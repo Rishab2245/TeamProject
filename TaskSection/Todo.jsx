@@ -11,6 +11,7 @@ const Todo = ({ auth, tododata }) => {
   // const [lid,setLid]=useState('')
   // const [lname,setLname]=useState('')
   // const [ldata,setLdata]=useState('')
+  const [arr,setarr]=useState([])
   
   
   console.log(auth);
@@ -179,7 +180,7 @@ const Todo = ({ auth, tododata }) => {
         cardData()
         }
     
-      
+   
     
       
   
