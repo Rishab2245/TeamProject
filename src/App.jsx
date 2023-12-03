@@ -1,4 +1,4 @@
-import Todo from './TaskSection/Todo';
+import Todo from '../TaskSection/Todo';
 import Home from './home/HomePage'
 import SignUp from './SignUp/SignUp'
 import Login from './Login/Login'
@@ -19,7 +19,7 @@ function App() {
         <Route path='/signup' element={<SignUp />} />
         <Route path='/login' element={<Login />} />
         <Route path='/Todo' element={<Todo />} />
-//         <Route path='/aftersignup' element={<AfterSignUp />} />
+        <Route path='/aftersignup' element={<AfterSignUp />} />
         <Route path='/dashboard/*' element={<Protect Component={<Dashboard />} Other={<Login />}/>} />
         <Route path='/forgot' element={<Forgot />} />
         <Route path='confirmOtp' element={<Otp />} />

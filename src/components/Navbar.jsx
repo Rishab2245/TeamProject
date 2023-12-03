@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Tabs from "./Tabs"
-import Todo from "../TaskSection/Todo"
+import Todo from "../../TaskSection/Todo";
 
 
 const Navbar = ({auth , tododata}) => {
@@ -8,12 +8,12 @@ const Navbar = ({auth , tododata}) => {
     console.log(tododata)
   return (
     <div>
-        <div className='bar'>
-        <Tabs type={type} settype={settype}/>
+      <div className='bar'>
+        <Tabs type={type} settype={settype} />
       </div>
       {type === "chat" && (
         <div>
-         <h1>chats</h1>
+          <h1>chats</h1>
         </div>
       )}
       {type === "tasks" && (
@@ -25,7 +25,7 @@ const Navbar = ({auth , tododata}) => {
       {type === "progress" && (
         <div>
 
-        <h1>progress</h1>
+          <h1>progress</h1>
         </div>
       )}
     </div>
