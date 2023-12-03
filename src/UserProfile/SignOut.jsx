@@ -14,7 +14,7 @@ const Signout = () => {
         if (!token) {
             console.error('Authentication token not found.');
             return;}
-        Cookies.remove('authorization');
+        Cookies.remove('token');
       await axios.get('https://teammanagement.onrender.com/api/user/logout', null, {
         headers: { Authorization: token },
       });
