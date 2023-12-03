@@ -35,8 +35,12 @@ const Todo = ({auth ,  tododata}) => {
       // setLname(lname)
       // console.log(lid);
       // console.log(lname);
+
       console.log(response.data.lists);
       
+
+      console.log("All : ",response.data.lists);
+
       setLists(response.data.lists)
     
       
@@ -177,14 +181,6 @@ const Todo = ({auth ,  tododata}) => {
           }
         }
     
-      
-    
-      
-  
-    
-
-   
-
 
    
    const handleCloseCardPopup = () => {

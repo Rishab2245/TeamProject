@@ -1,7 +1,11 @@
 .todo .container{
     display: flex;
     justify-content: space-between;
+    width: 100%;
+    height: 100%;
+
     
+  
 
 }
 .todo{
@@ -9,7 +13,11 @@
     display: inline-block;
     justify-content: space-between;
     flex-direction: row;
-    background: linear-gradient(113deg, #45048A 0%, #C40CC6 100%);
+    height: 100%;
+    /* overflow: auto; */
+    width: 100%;
+    /* background: linear-gradient(113deg, #45048A 0%, #C40CC6 100%); */
+    
 }
 .todo .container .new{
     background-color: #FFFFFF;
@@ -106,8 +114,9 @@ margin-bottom: 2%;
     
    border: 1px solid black;
    margin: 1%;
-   width: 25em;
-   height: 100vh;
+   width: 25%;
+   height: 100%;
+   box-sizing: border-box;
 }
 .todo .container .outer .taskBox{
     background-color:#FFFFFF;
