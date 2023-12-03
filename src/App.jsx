@@ -11,7 +11,7 @@ import UserDetails from './UserDetailpage/UserDetailForm';
 import AfterOtp from './AfterOtp/AfterOtp';
 import Protect from './Protected/Protected';
 //import ProgressReport from './progress/Progress';
-//import Payment from './Payment/Payment';
+import Payment from './Payment/Payment';
 function App() {
   return (  
     <BrowserRouter>
@@ -27,6 +27,7 @@ function App() {
         <Route path='/userDetail' element={<UserDetails />} />
         <Route path='/afterotp' element={<AfterOtp />} />
         <Route path='/userDetails' element={<UserDetails />} />
+        <Route path='/payment' element={<Payment />} />
       </Routes>
     </BrowserRouter>
   )
