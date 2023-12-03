@@ -4,42 +4,48 @@ const Payment=()=>{
     return(
         <>
         <div className="payment">
-        <div className="nav">
-            <HomeNav/>
-        </div>
-        <div className="paymentBody">
+            <div className="nav">
+                <HomeNav/>
+            </div>
+         <div className="paymentBody">
             <div className="paymentCard">
                 <div className="PCcontent">
-                <div className="PCtop">
-                    <h1>Start your free 30-day trial of Teemify Premium</h1>
-                <h3>No payment is due today. If you change your mind, you can switch to our new <br /> version at any time.</h3></div>
-                <div className="PCB">
-                    <div className="radio">
-                        <input type="radio" className="bill" />
-                        <div><h3>  Billed Annually</h3>
-                        <h4>Rs. 2999/-</h4>
-                        <p>Per user per Year </p></div>
+                    <div className="PCtop">
+                        <h1>
+                            Start your free 30-day trial of Teemify Premium
+                        </h1>
+                        <h3>
+                            No payment is due today. If you change your mind, you can switch to our new <br /> version at any time.
+                        </h3>
                     </div>
-                    
-                        <div className="table">
-                            <tr>
-                            <td>1 Teemify annual license @ 2999 INR each</td>
-                            <td>Rs. 2999 INR</td>
-                        </tr>
-                        <tr>
-                            <td>G.S.T.</td>
-                            <td>  Rs. 539.82 INR</td>
-                            </tr>
-                        <tr>
-                            <td>Annual payment due Dec. 27th, 2023 </td>
-                            <td>Rs. 3539 INR</td>
-                        </tr>
+                    <div className="PCB">
+                        <div className="radio">
+                            <input type="radio" className="bill" />
+                        <div>
+                            <h3>  Billed Annually</h3>
+                            <h4>Rs. 2999/-</h4>
+                            <p>Per user per Year </p>
+                        </div>
                         </div>
                     
-                </div>
+                        <div className="table">
+                            <div className="l1">
+                                <div>1 Teemify annual license @ 2999 INR each</div>
+                                <div>Rs. 2999 INR</div>
+                            </div>
+                            <div className="l1">
+                                <div>G.S.T.</div>
+                                <div>  Rs. 539.82 INR</div>
+                            </div>
+                            <div className="l1">
+                                <div>Annual payment due Dec. 27th, 2023 </div>
+                                <div>Rs. 3539 INR</div>
+                            </div>
+                        </div>
+                    </div>
                 <div className="PCfoot">
                     <div>Due Today</div>
-                    <div className="payTotal">Rs. 3539/- INR</div>
+                    <div className="payTotal">Rs. 3539/-INR</div>
                 </div>
                 </div>
             </div>
@@ -58,9 +64,8 @@ const Payment=()=>{
                             </linearGradient>
                         </defs>
                     </svg>
-                </div>
-        </div>
-                </>
-    )
-}
+                </div></div>
+        
+    </>
+    )}
 export default Payment;
