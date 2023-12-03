@@ -4,11 +4,11 @@ import { Calendar, momentLocalizer } from 'react-big-calendar';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import moment from 'moment';
 import axios from 'axios';
-
+import './Calendar.css'
 
 const localizer = momentLocalizer(moment);
 
-const MyCalendar = () => {
+const CalendarComponent = () => {
   const [events, setEvents] = useState([]);
   const [hoveredDate, setHoveredDate] = useState(null);
 
@@ -38,14 +38,41 @@ const MyCalendar = () => {
 
     try {
       await axios.post('your-api-endpoint', newEvent);
-      fetchData(); // Fetch updated events
+      fetchData(); 
     } catch (error) {
       console.error('Error adding event:', error);
     }
   };
+  const dayPropGetter = date => {
+    
+    const isCurrentDate = moment(date).isSame(moment(), 'day');
+    return {
+      style: {
+        border: 'none',
+        borderRadius: isCurrentDate ? '50%' : '0',
+        backgroundColor: isCurrentDate ? 'blue' : 'white',
+        color: 'white',
+        padding: '5px',
+      },
+    }}
 
+  const calendarStyles = {
+    background: 'tranparent',
+    color: 'black',
+    border: 'none',
+
+  };
+
+  const eventListStyles = {
+    listStyle: 'none',
+    padding: 0,
+  };
+  const eventItemStyles = {
+    marginBottom: '8px',
+  };
   return (
-    <div>
+    
+    <div style={calendarStyles}>
     
       <Calendar
         localizer={localizer}
@@ -59,11 +86,11 @@ const MyCalendar = () => {
       {hoveredDate && (
         <div>
           <h2>Events on {moment(hoveredDate).format('MMMM D, YYYY')}</h2>
-          <ul>
+          <ul style={eventListStyles}>
             {events
               .filter(event => moment(event.start).isSame(hoveredDate, 'day'))
               .map(event => (
-                <li key={event.id}>{event.title}</li>
+                <li key={event.id} style={eventItemStyles}>{event.title}</li>
               ))}
           </ul>
         </div>
@@ -72,4 +99,4 @@ const MyCalendar = () => {
   );
 };
 
-export default MyCalendar;
+export default CalendarComponent;

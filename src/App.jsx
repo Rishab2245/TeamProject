@@ -10,12 +10,12 @@ import Otp from './Forgot/Otp';
 import UserDetails from './UserDetailpage/UserDetailForm';
 import AfterOtp from './AfterOtp/AfterOtp';
 import Protect from './Protected/Protected';
-
+import ProgressReport from './progress/Progress';
 function App() {
   return (  
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<ProgressReport />} />
         <Route path='/signup' element={<SignUp />} />
         <Route path='/login' element={<Login />} />
         <Route path='/Todo' element={<Todo />} />

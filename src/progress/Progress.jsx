@@ -1,12 +1,15 @@
 import React from 'react'
 import './ProgressR.css'
- import Calendar from './calendar'
- import Charts from './charts'
+ import CalendarComponent from './Calendar'
+ import Charts from './Charts'
 const ProgressReport=()=>{
+   
+        const api = 'YOUR_API_ENDPOINT'; 
     return(
 <>
-<Calendar/>
+
 <Charts/>
+<CalendarComponent api={api}/>
 </>
     )
 }
