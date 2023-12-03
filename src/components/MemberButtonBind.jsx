@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import MemberButton from './MemberButton'
 import "./MemberButtonBindcss.css"
 import axios from 'axios';
-import Members from './Members';
+// import Members from './Members';
 
 
 const MemberButtonbind = ({members , auth , setmembers , setnewmem}) => {
