@@ -9,7 +9,7 @@ import { useLocation } from 'react-router'
 
 const Todo = ({auth ,  tododata}) => {
 
-  console.log(tododata);
+  console.log(tododata)
 
 
   const [name,setName]=useState('');

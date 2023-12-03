@@ -11,10 +11,11 @@ console.log(projectdata);
 console.log(boarddata);
 
  let [members,setmembers] = useState([]);
+ let [newmem,setnewmem] = useState([]);
   return (
     <div className='side'>
-      <ProjectButtonBind project={projectdata} boarddata={boarddata} profunc={profunc}v  setmembers={setmembers} settododata={settododata}/>
-      <MemberButtonbind members={members} auth={auth}/>
+      <ProjectButtonBind project={projectdata} boarddata={boarddata} profunc={profunc} setmembers={setmembers} settododata={settododata} newmem={newmem}/>
+      <MemberButtonbind members={members} auth={auth} setmembers={setmembers} setnewmem={setnewmem}/>
       <AddProject profunc={profunc}/>
     </div>
   )

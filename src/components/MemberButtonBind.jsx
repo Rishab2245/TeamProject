@@ -2,12 +2,20 @@ import React, { useEffect, useState } from 'react'
 import MemberButton from './MemberButton'
 import "./MemberButtonBindcss.css"
 import axios from 'axios';
+import Addmembers from './Addmembers'
 
 
-const MemberButtonbind = ({members , auth}) => {
+const MemberButtonbind = ({members , auth , setmembers , setnewmem}) => {
 
 let [data,setdata] = useState([]);
+let [toggle,settoggle] = useState(false);
+let [err , seterr] = useState(false);
 
+
+const change = () => {
+  settoggle(!toggle);
+  console.log("hellow")
+}
 
 
 useEffect( ()=>{
@@ -24,8 +32,10 @@ useEffect( ()=>{
 
   }
 
+},[members])
 
-
+useEffect(()=>{
+  setnewmem(members);
 },[members])
 
 console.log(auth)
@@ -56,9 +66,14 @@ const memlist = async (e)=>{
   return (
     <>
     <div className='membersection'>
-    <div className='memberheading'>
+    <div className='memberheading' style={{position:"relative"}}>
     <h3>Members :-</h3>
-    <span>+</span>
+    <span onClick={change} style={{cursor:"pointer"}}>+</span>
+    {
+      toggle && <Addmembers members={members} auth={auth} change={change} seterr={seterr} setmembers={setmembers}/>
+    }
+    {    err && <h3 style={{color:"black"}}>enter the register email</h3>   } 
+   
     </div>
     <div  style={{padding:"0.2rem"}}>
        {
