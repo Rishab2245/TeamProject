@@ -3,6 +3,7 @@ import MemberButton from './MemberButton'
 import "./MemberButtonBindcss.css"
 import axios from 'axios';
 // import Members from './Members';
+import Membersadd from '../newcomponent/Membersadd';
 
 
 const MemberButtonbind = ({members , auth , setmembers , setnewmem}) => {
@@ -70,7 +71,7 @@ useEffect(()=>{
     <h3>Members :-</h3>
     <span onClick={change} style={{cursor:"pointer"}}>+</span>
     {
-      toggle && <Members members={members} auth={auth} change={change} seterr={seterr} setmembers={setmembers}/>
+      toggle && <Membersadd members={members} auth={auth} change={change} seterr={seterr} setmembers={setmembers}/>
     }
     {    err && <h3 style={{color:"black"}}>enter the register email</h3>   } 
    

@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import ProjectButton from './ProjectButton'
 import './ProjectButtonBindcss.css'
-const ProjectButtonbind = ({project,boarddata , profunc , setmembers , settododata , newmem , setadd} ) => {
-
+const ProjectButtonbind = ({project,boarddata , profunc , setmembers , settododata , newmem , setadd , setboarddata} ) => {
 
   let [data, setdata] = useState([
   ]);
@@ -11,6 +10,7 @@ const ProjectButtonbind = ({project,boarddata , profunc , setmembers , settododa
     { value: e.name, description: e.description, id: e._id, bol: "true", members: e.members }
   ));
 
+  
   useEffect(() => {
     setdata(temp);
     console.log(temp);
@@ -46,11 +46,14 @@ const activeproj = (e) =>{
 }
 
 useEffect(()=>{
+  console.log(newmem)
+
   let mem = data.filter((e)=>(e.bol == "false"));
   console.log(mem);
   settododata(mem);
   setmembers(mem);
   // setadd(true);
+  
 },[data])
 
 useEffect(()=>{
@@ -64,6 +67,10 @@ useEffect(()=>{
       return e
     }
   })
+
+  
+
+  // setdata(temp);
 
  
   
