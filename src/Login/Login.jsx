@@ -42,8 +42,10 @@ const Login = () => {
                 "password": password,
             })
             const token = response.headers.authorization;
-            const userName = response.data.name;
-            Cookies.set('token',token,{expires:7,path:'/'})
+            // console.log("Data : ",response.data.user._id);
+            const id = response.data.user._id;
+            Cookies.set('id',id,{expires:7,path:'/',secure:true})
+            Cookies.set('token',token,{expires:7,path:'/',secure: true})
             navigate(`/dashboard`, { state: { id: 1, email: email, auth: token } });
         }
         catch (error) {
