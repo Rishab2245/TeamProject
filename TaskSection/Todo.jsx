@@ -87,6 +87,7 @@ const Todo = ({auth ,  tododata}) => {
     const [showAddCardPopup,setshowAddCardPopup]=useState(false);
     const [showDescPopup,setshowDescPopup]=useState(false);
     const [selectedListId, setSelectedListId] = useState(null);
+    const [daysAlloted,setDaysAlloted]=useState(null)
     
     const handleInputChange = (e) => {
       setNewListName(e.target.value);
@@ -145,6 +146,7 @@ const Todo = ({auth ,  tododata}) => {
       setshowAddCardPopup(true);
     };
     const handleAddNewCard = async() => {
+      console.log(parseInt((daysAlloted),10));
       setshowAddCardPopup(false)
       console.log(selectedListId);
           try{
@@ -153,7 +155,8 @@ const Todo = ({auth ,  tododata}) => {
               "description": newCardDesc,
               "position":"2",
               "boardId":id,
-              "listId":selectedListId
+              "listId":selectedListId,
+              "daysAlloted":parseInt((daysAlloted),10)
           },{
             headers:{
               withCredentials:true,
@@ -185,7 +188,7 @@ const Todo = ({auth ,  tododata}) => {
         }
         const handleDeleteCard = async (cardId) => {
           try {
-            // Make a DELETE request to your API endpoint
+           
             await axios.delete(`https://teammanagement.onrender.com/api/card/deleteCard/${cardId}`, {
               headers: {
                 withCredentials: true,
@@ -229,6 +232,10 @@ const Todo = ({auth ,  tododata}) => {
     setNewCardName('');
     setSelectedListId(null);
   };
+  const handledays=(e)=>{
+    setDaysAlloted(e.target.value)
+
+  }
 
 
   
