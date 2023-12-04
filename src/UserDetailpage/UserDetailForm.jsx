@@ -6,65 +6,48 @@ import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 const UserDetails = () => {
+  const [skills,setSkills] = useState("");
+  const [exp,setExp] = useState(0);
+  const [projects,setProjects] = useState(null);
+  const [gender,setGender] = useState(null);
+  const [language,setLang] = useState(null);
   const location = useLocation();
-  const [addUserDetails, setAddUserDetails] = useState({
-    skills: [],
-    experience: '',
-    totalProject: '',
-    language: '',
-    gender: '',
-  });
 
-  const [userName, setUserName] = useState('');
-  const name = location.state.name
-
-  useEffect(() => {
-
-    if (location.state && location.state.name) {
-      setUserName(location.state.name);
-    }
-  }, [location.state]);
+  const named = location.state.name
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    const updatedValue = name === 'gender' ? value.toUpperCase() : capitalizeFirstLetter(value);
-  
-    setAddUserDetails({
-      ...addUserDetails,
-        [name]: name === 'experience' || name === 'totalProject' ? Math.max(0, parseInt(updatedValue)) : updatedValue,
-      
-    });
-  };
-  const handleKeyDown = (e) => {
-    if (e.key === 'Enter') {
-      handleSubmit(e);
+    const { name,value } = e.target;
+    if (name === 'skills'){
+      setSkills(value);
     }
-  };
-  const capitalizeFirstLetter = (value) => {
-    return value.charAt(0).toUpperCase() + value.slice(1);
-  };
-  
-  const handleSkillsChange = (e) => {
-    const skills = e.target.value.split(',').map((skill) => skill.trim());
+    if (name === 'experience'){
+      setExp(value)
+    }
+    if (name === 'project'){
+      setProjects(value)
+    }
+    if (name === 'gender'){
+      setGender(value)
+    }
+    if (name === 'language'){
+      setLang(value);
+    }
+  }
 
-    setAddUserDetails((prevDetails) => ({
-      ...prevDetails,
-      skills,
-    }));
-  };
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    try {
-      const response = await axios.post('https://teammanagement.onrender.com/api/user/addUserDetails', {
-        addUserDetails,
-      });
-      console.log('API Response:', response.data);
-      navigate('/aftersignup')
-    } catch (error) { 
-      console.error('Error sending data to API:', error);
+    try{
+      const response = await axios.post("https://teammanagement.onrender.com/api/user/addUserDetails",{
+        "experience":exp,
+        "specaility":skills,
+        "bio":language
+      })
+      console.log(response);
     }
-  };
+    catch (error){
+      console.error(error);
+    }
+  }
 
   return (
     <div className='usd' >
@@ -88,65 +71,64 @@ const UserDetails = () => {
           <div className='form'>
             <div className='welcome'>
               <h1>Welcome</h1>
-              {name && <h3 className='name'>{name}!</h3>}
+              {named && <h3 className='name'>{named}!</h3>}
             </div>
+            <div className="inputFields">
+              <form onSubmit={handleSubmit}>
+                <div>
+                  <h5>Skills</h5>
+                  <input
+                    type='text'
+                    name='skills'
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
 
-           <div className="inputFields">
-           <div>
-              <h5>Skills</h5>
-              <input
-                type='text'
-                name='skills'
-                value={addUserDetails.skills.join(', ')}
-                onChange={handleSkillsChange}
-              />
+                <div>
+                  <h5>Experience</h5>
+                  <input
+                    type='number'
+                    name='experience'
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div>
+                  <h5>Total Projects</h5>
+                  <input
+                    type='number'
+                    name='project'
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div>
+                  <h5>Bio</h5>
+                  <input
+                    type='text'
+                    name='language'
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div>
+                  <h5>Gender</h5>
+                  <input
+                    type='text'
+                    name='gender'
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <button type="submit" className='submit'>
+                  Proceed
+                </button>
+              </form>
             </div>
-            <div>
-            <h5>Experience</h5>
-              <input
-                type='number'
-                name='experience'
-                value={addUserDetails.experience}
-                onChange={handleChange}
-                required
-              />
-            </div>
-              <div>
-                <h5>Total Projects</h5>
-                <input
-                  type='number'
-                  name='totalProject'
-                  value={addUserDetails.totalProject}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div>
-                <h5>Language of Communication</h5>
-                <input
-                  type='text'
-                  name='language'
-                  value={addUserDetails.language}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div>
-                <h5>Gender</h5>
-                <input
-                  type='text'
-                  name='gender'
-                  value={addUserDetails.gender}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-            </div>
-            <button type='button' className='submit' onKeyDown={handleKeyDown} onClick={handleSubmit}>
-              Proceed
-            </button>
           </div>
         </div>
+
         <div className='wave'>
           <svg xmlns='http://www.w3.org/2000/svg' width='100%' viewBox='0 0 1512 169' fill='none'>
             <path
@@ -168,7 +150,7 @@ const UserDetails = () => {
           </svg>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 

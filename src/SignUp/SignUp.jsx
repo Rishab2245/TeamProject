@@ -37,6 +37,7 @@ const SignUp = () => {
                 "password": password
             })
             console.log(response.data.status);
+            console.log(response.headers);
             // console.log(value);
             setDisplay(false);
             navigate('/userDetails',{state:{id:1,name:name}});
