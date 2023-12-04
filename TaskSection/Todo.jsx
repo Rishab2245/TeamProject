@@ -2,30 +2,30 @@ import React from 'react'
 import './Todo.css'
 
 
-import { useState,useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { useLocation } from 'react-router'
 
-const Todo = ({auth ,  tododata}) => {
+const Todo = ({ auth, tododata }) => {
   // const [lid,setLid]=useState('')
   // const [lname,setLname]=useState('')
   // const [ldata,setLdata]=useState('')
-  
-  
+
+
   console.log(auth);
   console.log(tododata);
-  const id=tododata[0].id
+  const id = tododata[0].id
   console.log(id);
 
-  
- 
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(`https://teammanagement.onrender.com/api/list/getLists/${id}`, {
-        headers:{
-          withCredentials:true,
-          'Authorization':auth,
+
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(`https://teammanagement.onrender.com/api/list/getLists/${id}`, {
+        headers: {
+          withCredentials: true,
+          'Authorization': auth,
         }
       });
       //  lid=response.data.lists[0]._id;
@@ -37,15 +37,15 @@ const Todo = ({auth ,  tododata}) => {
       // console.log(lname);
 
       console.log(response.data.lists);
-      
 
-      console.log("All : ",response.data.lists);
+
+      console.log("All : ", response.data.lists);
 
       setLists(response.data.lists)
-    
-      
-          
-        
+
+
+
+
       console.log(response.data.lists[0].name);
       
         
@@ -58,6 +58,19 @@ const Todo = ({auth ,  tododata}) => {
     useEffect(() => {
       fetchData();
     }, [auth, id]);
+    
+    
+   
+    
+
+
+
+
+  
+    
+
+    
+    
 
     const [lists, setLists] = useState([
       // { id: lid, name: 'To-Do', items: [],cards:[] },
@@ -81,143 +94,165 @@ const Todo = ({auth ,  tododata}) => {
       
     };
 
-    const handleAddList = () => {
-      setShowNewListPopup(true)
-    };
+  const handleAddList = () => {
+    setShowNewListPopup(true)
+  };
 
-    const handleSubmit= async()=>{
-      try{
-        
-        const addList= await axios.post("https://teammanagement.onrender.com/api/list/createList/", {
-          "boardId":id,
-          "name": newListName,
-          "position":"1"
-      },{
-        headers:{
-          withCredentials:true,
-          'Authorization':auth,
+  const handleSubmit = async () => {
+    try {
+
+      const addList = await axios.post("https://teammanagement.onrender.com/api/list/createList/", {
+        "boardId": id,
+        "name": newListName,
+        "position": "1"
+      }, {
+        headers: {
+          withCredentials: true,
+          'Authorization': auth,
         }
       })
-      const idOfList=(addList.data.list._id);
-      const newList = { id: idOfList, name: newListName, items: [], cards:[]};
-        setLists((prevLists) => [...prevLists, newList]);
-        
-        setShowNewListPopup(false)
-        setNewListName('')
+      const idOfList = (addList.data.list._id);
+      const newList = { id: idOfList, name: newListName, items: [], cards: [] };
+      setLists((prevLists) => [...prevLists, newList]);
+
+      setShowNewListPopup(false)
+      setNewListName('')
     }
-      catch(error){
-        console.error("Error:",error)
+    catch (error) {
+      console.error("Error:", error)
 
-      }
-   };
+    }
+  };
 
-    
 
-    
-    const handleClosePopup = () => {
-      setShowNewListPopup(false);
-      setNewListName('');
-    };
-    const handleNewCard = (e) => {
-      setNewCardName(e.target.value);
-      
-    };
-    
-    const handleNewCardDesc = (e) => {
-      setNewCardDesc(e.target.value);
-      
-    };
-    const handleAddCard = (listId) => {
-      console.log(listId);
-      setSelectedListId(listId);
-      setshowAddCardPopup(true);
-    };
-    const handleAddNewCard = async() => {
-      console.log(parseInt((daysAlloted),10));
-      setshowAddCardPopup(false)
-      console.log(selectedListId);
-          try{
-            const addCard=  await axios.post("https://teammanagement.onrender.com/api/card/createCard/", {
-              "name":newCardName,
-              "description": newCardDesc,
-              "position":"2",
-              "boardId":id,
-              "listId":selectedListId,
-              "daysAlloted":parseInt((daysAlloted),10)
-          },{
-            headers:{
-              withCredentials:true,
-              'Authorization':auth,
-            }
-          })
-          console.log(addCard.data);
-          const newCard=addCard.data.card
-          console.log(newCard);
-          setLists((prevLists) => {
-            return prevLists.map((list) => {
-              if (list.id === selectedListId) {
-                return {
-                  ...list,
-                  cards: [...list.cards, newCard],
-                };
-              }
-              return list;
-            });
-          });
-          
-    
+
+
+  const handleClosePopup = () => {
+    setShowNewListPopup(false);
+    setNewListName('');
+  };
+  const handleNewCard = (e) => {
+    setNewCardName(e.target.value);
+
+  };
+
+  const handleNewCardDesc = (e) => {
+    setNewCardDesc(e.target.value);
+
+  };
+  const handleAddCard = (listId) => {
+    console.log(listId);
+    setSelectedListId(listId);
+    setshowAddCardPopup(true);
+  };
+  const handleAddNewCard = async () => {
+    console.log(parseInt((daysAlloted), 10));
+    setshowAddCardPopup(false)
+    console.log(selectedListId);
+    try {
+      const addCard = await axios.post("https://teammanagement.onrender.com/api/card/createCard/", {
+        "name": newCardName,
+        "description": newCardDesc,
+        "position": "2",
+        "boardId": id,
+        "listId": selectedListId,
+        "daysAlloted": parseInt((daysAlloted), 10)
+      }, {
+        headers: {
+          withCredentials: true,
+          'Authorization': auth,
         }
-          catch(error){
-            console.error("Error:",error)
-        
-           
+      })
+      console.log(addCard.data);
+      const newCard = addCard.data.card
+      console.log(newCard);
+      setLists((prevLists) => {
+        return prevLists.map((list) => {
+          if (list.id === selectedListId) {
+            return {
+              ...list,
+              cards: [...list.cards, newCard],
+            };
           }
-        }
-        const handleDeleteCard = async (cardId) => {
-          try {
-           
-            await axios.delete(`https://teammanagement.onrender.com/api/card/deleteCard/${cardId}`, {
-              headers: {
-                withCredentials: true,
-                'Authorization': auth,
-              },
-            });
-            setLists((prevLists) => {
-              return prevLists.map((list) => {
-                return {
-                  ...list,
-                  cards: list.cards.filter((card) => card._id !== cardId),
-                };
-              });
-            });
-        
-           
-          } catch (error) {
-            console.error('Error:', error);
-          }
-        };
-  const handleViewDesc=(description)=>{
+          return list;
+        });
+      });
+
+
+    }
+    catch (error) {
+      console.error("Error:", error)
+
+
+    }
+    fetchData();
+  }
+  const handleDeleteCard = async (cardId) => {
+    try {
+
+      await axios.delete(`https://teammanagement.onrender.com/api/card/deleteCard/${cardId}`, {
+        headers: {
+          withCredentials: true,
+          'Authorization': auth,
+        },
+      });
+      setLists((prevLists) => {
+        return prevLists.map((list) => {
+          return {
+            ...list,
+            cards: list.cards.filter((card) => card._id !== cardId),
+          };
+        });
+      });
+
+
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+  const handleViewDesc = (description) => {
     setshowDescPopup(true)
     setNewCardDesc(description)
 
   }
-     
+        
+        
+        
+        
+        
+        
    const handleCloseDescPopup=()=>{
     setshowDescPopup(false)
    }     
         
+    
+
+   
    const handleCloseCardPopup = () => {
     setshowAddCardPopup(false);
     setNewCardName('');
     setSelectedListId(null);
   };
-  const handledays=(e)=>{
+  const handledays = (e) => {
     setDaysAlloted(e.target.value)
 
   }
-  
 
-  
+  const HandleDeleteList = async (id) => {
+    try {
+      const response = await axios.delete(`https://teammanagement.onrender.com/api/list/deleteList/${id}`, {
+        headers: {
+          'Authorization': auth,
+        }
+      })
+    }
+    catch (error) {
+      console.error(error);
+    }
+  }
+
+
+
   console.log(lists.cards);
 
   return (
@@ -228,71 +263,74 @@ const Todo = ({auth ,  tododata}) => {
           <div key={list.id} className="outer">
             <div className="centerDiv">
               <div className="headingContainer">
-                <div className="heading"><h2>{list.name}</h2></div>
-                 <div className="moreContainer">
+                <div className="heading"><h2>{list.name}</h2><button onClick={() => HandleDeleteList(list._id)}>-</button></div>
+                <div className="moreContainer">
                   <div className='buttton'>
                     <h4>Add Task</h4>
-                  <button className='more'  onClick={() => handleAddCard(list._id)}>+</button>
+                    <button className='more' onClick={() => handleAddCard(list._id)}>+</button>
                   </div>
-                 </div>
+                </div>
               </div>
             </div>
             <div className="taskCard">
-            {list.cards.map((card)=>(
+              {list.cards.map((card) => (
                 <div className="card">
                   <h5>{card.name}</h5>
                   <div className="card-buttons">
-                  <button  className="more1" onClick={() => handleDeleteCard(card._id)}>-</button>
-                  <button  className="more2" onClick={() => handleViewDesc(card.description)}>Details</button>
+                    <button className="more1" onClick={() => handleDeleteCard(card._id)}>-</button>
+                    <button className="more2" onClick={() => handleViewDesc(card.description)}>Details</button>
                   </div>
 
                 </div>
               ))}
+              
+              
+          
             </div>
           </div>
-          
+
         ))}
-       {showAddCardPopup &&(
+        {showAddCardPopup && (
           <div className="popup">
             <div className="popContent">
             <input className="inputb" type="text" placeholder='Name' onChange={handleNewCard} />
             <input className="inputb" type="text" placeholder='Description' onChange={handleNewCardDesc} />
-            <button className='add' onClick={handleAddNewCard} >Add</button>
             <button className='close' onClick={handleCloseCardPopup}>Close</button>
-            
+            <button className='add' onClick={handleAddNewCard} >Add</button>
             
             </div>
-            
+
           </div>
         )}
-        {showDescPopup&&(
+        {showDescPopup && (
           <div className="popup">
-          {newCardDesc}
-          <button className='close' onClick={handleCloseDescPopup}>Close</button>
+            {newCardDesc}
+            <button className='close' onClick={handleCloseDescPopup}>Close</button>
 
-            
+
           </div>
         )
         }
         <button className="new" onClick={handleAddList}>
           <span className='addNewList'>+ Add new list</span>
         </button>
-        {showNewListPopup &&(
+        {showNewListPopup && (
           <div className="popup">
             <div className="popContent">
-            <input className="inputb" type="text" placeholder='New List Name' value={newListName} onChange={handleInputChange} />
-            <button className='close' onClick={handleClosePopup}>Close</button>
-            <button className='add' onClick={handleSubmit} >Add</button>
-            
+              <input className="inputb" type="text" placeholder='New List Name' value={newListName} onChange={handleInputChange} />
+              <button className='close' onClick={handleClosePopup}>Close</button>
+              <button className='add' onClick={handleSubmit} >Add</button>
+
             </div>
-            
+
           </div>
         )
         }
       </div>
     </div>
-  )}
+  )
+}
 
-      
+
 
 export default Todo
