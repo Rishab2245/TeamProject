@@ -9,7 +9,7 @@ const AddProject = ({profunc}) => {
   }
   return (
     <div className='add-project-button'>
-    <button onClick={profunc} style={{color:"white"}}>Add Project</button>
+    <button onClick={profunc} name={"addp"} style={{color:"white"}}>Add Project</button>
 </div>
   )
 }
