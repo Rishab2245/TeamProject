@@ -36,18 +36,9 @@ const UserProfile = () => {
   return (
     <div className='UserProfileCards'>
       <div className="cardHead">
-        <h1>{userProfile.name}</h1>
-        <p>Email: {userProfile.email}</p>
+        <h1>Name : {userProfile.name}</h1>
+        <h1>Mail : {userProfile.email}</h1>
       </div>
-      <div className="UCardBody">
-        <ul>
-          <li>Skills: {userProfile.skills}</li>
-          <li>Experience: {userProfile.experience} years</li>
-          <li>Number of Projects: {userProfile.projects}</li>
-          <li>Language: {userProfile.language}</li>
-        </ul>
-      </div>
-
     </div>
   );
 };

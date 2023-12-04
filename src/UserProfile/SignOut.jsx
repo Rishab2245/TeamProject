@@ -5,24 +5,14 @@ import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 
 const Signout = () => {
-    const token = Cookies.get('token');
-    const navigate = useNavigate()
+  const token = Cookies.get('token');
+  const navigate = useNavigate()
 
-  const handleSignOut = async () => {
-    try {
-        
-        if (!token) {
-            console.error('Authentication token not found.');
-            return;}
-        Cookies.remove('token');
-      await axios.get('https://teammanagement.onrender.com/api/user/logout', null, {
-        headers: { Authorization: token },
-      });
-      navigate('/');
-    } catch (error) {
-      console.error('Error signing out:', error);
-    }
-  };
+  const handleSignOut = () => {
+    Cookies.remove('token');
+    Cookies.remove('id');
+    navigate('/');
+  }
 
   return (
     <button onClick={handleSignOut} className='signout'>

@@ -4,6 +4,7 @@ import axios from 'axios';
 import usd from '../assets/Group 213.png';
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
 const UserDetails = () => {
   const [skills,setSkills] = useState("");
@@ -14,6 +15,8 @@ const UserDetails = () => {
   const location = useLocation();
 
   const named = location.state.name
+  const navigate = useNavigate();
+  const token = Cookies.get('token');
 
   const handleChange = (e) => {
     const { name,value } = e.target;
@@ -38,11 +41,18 @@ const UserDetails = () => {
     e.preventDefault();
     try{
       const response = await axios.post("https://teammanagement.onrender.com/api/user/addUserDetails",{
-        "experience":exp,
-        "specaility":skills,
-        "bio":language
-      })
+        "age" : projects,
+        "experience" : exp,
+        "speciality" : skills,
+        "bio" : language
+      },{
+        headers: {
+          'Authorization': token
+        }
+      }
+      )
       console.log(response);
+      navigate('/dashboard')
     }
     catch (error){
       console.error(error);
@@ -76,7 +86,7 @@ const UserDetails = () => {
             <div className="inputFields">
               <form onSubmit={handleSubmit}>
                 <div>
-                  <h5>Skills</h5>
+                  <h5>Speciality</h5>
                   <input
                     type='text'
                     name='skills'
@@ -95,9 +105,9 @@ const UserDetails = () => {
                   />
                 </div>
                 <div>
-                  <h5>Total Projects</h5>
+                  <h5>Age</h5>
                   <input
-                    type='number'
+                    type="text"
                     name='project'
                     onChange={handleChange}
                     required

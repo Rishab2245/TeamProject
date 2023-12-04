@@ -21,7 +21,7 @@ const UserIcon = ({user}) => {
         <img src={profile} alt="" onClick={RenderPopUp} style={{height:"1.5rem", borderRadius:"50%",cursor:'pointer'}}/>
         {
           user.map((e)=>(
-            <h2 style={{fontSize:"1rem", color:"white"}}>{e.name}</h2>
+            <h2 style={{fontSize:"1rem", color:"white"}}>Profile</h2>
           ))
         }
     </div>
