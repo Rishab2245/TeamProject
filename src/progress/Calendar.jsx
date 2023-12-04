@@ -57,7 +57,7 @@ const CalendarComponent = () => {
 
   const calendarStyles = {
     background: 'tranparent',
-    color: '',
+    color: 'yellow',
     border: 'none',
     padding:'1rem',
 

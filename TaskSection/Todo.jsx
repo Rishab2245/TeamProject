@@ -263,10 +263,10 @@ const Todo = ({ auth, tododata }) => {
           <div key={list.id} className="outer">
             <div className="centerDiv">
               <div className="headingContainer">
-                <div className="heading"><h2>{list.name}</h2><button onClick={() => HandleDeleteList(list._id)}>-</button></div>
+                <div className="heading"><h2 className='listnamehead'>{list.name}</h2><button className='cross' onClick={() => HandleDeleteList(list._id)}>x</button></div>
                 <div className="moreContainer">
                   <div className='buttton'>
-                    <h4>Add Task</h4>
+                    <h4 className='addtasktext'>Add Task</h4>
                     <button className='more' onClick={() => handleAddCard(list._id)}>+</button>
                   </div>
                 </div>
@@ -275,11 +275,13 @@ const Todo = ({ auth, tododata }) => {
             <div className="taskCard">
               {list.cards.map((card) => (
                 <div className="card">
-                  <h5>{card.name}</h5>
-                  <div className="card-buttons">
-                    <button className="more1" onClick={() => handleDeleteCard(card._id)}>-</button>
-                    <button className="more2" onClick={() => handleViewDesc(card.description)}>Details</button>
+                 <div className="taskcardhead">
+                <div> <h5 className='cardname7'>{card.name}</h5>
                   </div>
+                <div>  <button className="cross" onClick={() => handleDeleteCard(card._id)}>x</button></div>
+                 </div>
+                    <button className="more2" onClick={() => handleViewDesc(card.description)}>Details</button>
+                  
 
                 </div>
               ))}
@@ -304,8 +306,8 @@ const Todo = ({ auth, tododata }) => {
         )}
         {showDescPopup && (
           <div className="popup">
-            {newCardDesc}
-            <button className='close' onClick={handleCloseDescPopup}>Close</button>
+          <div className="description3"> <div> {newCardDesc}</div>
+          <div>  <button className='close' onClick={handleCloseDescPopup}>Close</button></div></div>
 
 
           </div>
