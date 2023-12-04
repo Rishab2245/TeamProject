@@ -40,8 +40,7 @@ const Otp = () => {
                     "password": password,
                     "confirmPassword": confirm
                 })
-                const token = response.headers.authorization
-                navigate(`/dashboard`, { state: { id: 1, email: email, auth: token } });
+                navigate(`/login`,)
             }
             catch (error) {
                 setDisplay(true)
