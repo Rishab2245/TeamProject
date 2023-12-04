@@ -8,6 +8,7 @@ import React, { useEffect, useState } from 'react'
 import AddProject from '../NewPro/NewPro'
 import axios from 'axios'
 import Cookies from 'js-cookie'
+import { useNavigate } from 'react-router-dom'
 
 const Dashboard = () => {
   let [add, setadd] = useState(false)
@@ -16,10 +17,14 @@ const Dashboard = () => {
   let [projedata, setprojedata] = useState({ Project: "", discription: "" });
   let [members,setmembers] = useState([]);
   let [tododata , settododata] = useState([]);
+
+  const user_id = Cookies.get('id');
   // const auth = location.state.auth
   console.log(projedata)
   console.log(boarddata)
   console.log(tododata)
+
+  const navigate = useNavigate();
 
   const profunc = () => {
     setadd(!add);
@@ -42,14 +47,40 @@ const Dashboard = () => {
     }
   }
 
+  const CheckUserDetails = async () => {
+    try{
+      const response = await axios.get(`https://teammanagement.onrender.com/api/user/getUserDetails/${user_id}`,{
+        headers:{
+          'Authorization': token
+        }
+      })
+      if (!response.data.experience){
+        const name = response.data.name;
+        navigate('/userdetails',{state: {id:1,name:name}})
+      }
+    }
+    catch(error){
+      console.log("ERROR");
+      console.log("ERROR");
+      console.log("ERROR");
+      console.error(error);
+      console.log("ERROR");
+      console.log("ERROR");
+      console.log("ERROR");
 
+    }
+  }
+
+  useEffect(() =>{
+    CheckUserDetails()
+  },[])
 
   useEffect(() => {
     GetBoards();
   }, [setboarddata])
 
   return (
-    <div style={{height:"100%", width:"100%"}}>
+    <div style={{height:"100%", width:"100%",display:"flex",justifyContent:"space-between",flexDirection:"column"}}>
       <Header/>
       <div className='below'>
         <SideBar profunc={profunc} projectdata={projedata} setadd={setadd}  auth = {token} boarddata={boarddata} members={members} setmembers={setmembers} settododata={settododata} setboarddata={setboarddata}/>
