@@ -39,7 +39,7 @@ const SignUp = () => {
             console.log(response.data.status);
             // console.log(value);
             setDisplay(false);
-            navigate('/userDetails',{state:{id:1,name:name}});
+            navigate('/aftersignup');
         }
         catch (error) {
             console.log(error.response.request.status);

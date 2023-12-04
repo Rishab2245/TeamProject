@@ -63,12 +63,16 @@ const Login = () => {
                     <br />
                     <div>
                         <input type="password" className="password-input" placeholder="Password" onChange={HandleChange} name="password" />
+                        
                         <Link to={'/forgot'}>
                             <p>Forgot Password?</p>
                         </Link>
                     </div>
                     <br />
                     <button type="submit">LOGIN</button>
+                    {display &&(
+                        <h3>Please Enter Valid Credentials</h3>
+                    )}
                 </form>
                 <figure >
                     <img src={login} alt="image" className="login-img" />
