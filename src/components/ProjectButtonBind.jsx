@@ -42,6 +42,7 @@ const activeproj = (e) =>{
     )
   })
   setdata(temp);
+  setadd(true)
 
 }
 
@@ -86,7 +87,7 @@ useEffect(()=>{
         <div style={{ padding: "0.2rem" }}>
           {
             data.map((e, idx) => (
-              <ProjectButton key={idx} value={e.value} bol={e.bol} acpj={activeproj} />
+              <ProjectButton key={idx} value={e.value} bol={e.bol} acpj={activeproj} setadd={setadd} />
             ))
           }
         </div>

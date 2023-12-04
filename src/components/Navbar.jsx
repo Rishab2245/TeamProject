@@ -6,7 +6,7 @@ import Chats from "../Chats/Chats"
 
 
 const Navbar = ({ auth, tododata }) => {
-  let [type, settype] = useState("tasks")
+  let [type, settype] = useState("chat")
   console.log(tododata)
   return (
     <div>
