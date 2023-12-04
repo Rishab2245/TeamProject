@@ -58,19 +58,6 @@ const Todo = ({auth ,  tododata}) => {
     useEffect(() => {
       fetchData();
     }, [auth, id]);
-    
-    
-   
-    
-
-
-
-
-  
-    
-
-    
-    
 
     const [lists, setLists] = useState([
       // { id: lid, name: 'To-Do', items: [],cards:[] },
@@ -214,19 +201,11 @@ const Todo = ({auth ,  tododata}) => {
     setNewCardDesc(description)
 
   }
-        
-        
-        
-        
-        
-        
+     
    const handleCloseDescPopup=()=>{
     setshowDescPopup(false)
    }     
         
-    
-
-   
    const handleCloseCardPopup = () => {
     setshowAddCardPopup(false);
     setNewCardName('');
@@ -269,9 +248,6 @@ const Todo = ({auth ,  tododata}) => {
 
                 </div>
               ))}
-              
-              
-          
             </div>
           </div>
           
@@ -281,8 +257,9 @@ const Todo = ({auth ,  tododata}) => {
             <div className="popContent">
             <input className="inputb" type="text" placeholder='Name' onChange={handleNewCard} />
             <input className="inputb" type="text" placeholder='Description' onChange={handleNewCardDesc} />
-            <button className='close' onClick={handleCloseCardPopup}>Close</button>
             <button className='add' onClick={handleAddNewCard} >Add</button>
+            <button className='close' onClick={handleCloseCardPopup}>Close</button>
+            
             
             </div>
             

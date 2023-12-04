@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Doughnut } from 'react-chartjs-2';
+import Loader from '../Loader/Loader';
 
 const Charts = ({ api }) => {
   const [mlData, setMLData] = useState([]);
@@ -20,7 +21,7 @@ const Charts = ({ api }) => {
   }, [api]);
 
   if (!mlData || mlData.length === 0) {
-    return <div>Loading...</div>;
+    return <div> <Loader/> </div>;
   }
 
   const labels = mlData.map(entry => entry.label);

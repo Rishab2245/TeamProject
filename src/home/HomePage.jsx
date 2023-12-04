@@ -48,6 +48,12 @@ function Home() {
                     </svg>
                 </div>
             </div>
+            <section id='about'>
+                this is about section
+            </section>
+            <section id='contact'>
+                this is contact section
+            </section>
         </>
     )
 }

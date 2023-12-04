@@ -1,3 +1,6 @@
+*{
+    font-family: 'Josefin Sans';
+}
 .todo .container{
     display: flex;
     justify-content: space-between;
@@ -22,6 +25,10 @@
     color:black;
     opacity: 100%;
 }
+.todo .container .popup .popContent{
+    /* display: flex; */
+    /* flex-direction: row; */
+}
 .todo .container .popup{
     height: 5rem;
     background-color: #FFFFFF;
@@ -30,31 +37,20 @@
     position: fixed;
     top:30%;
     left: 50%;
-    background: #EA3DD2;
-    backdrop-filter: -100px;
-    box-shadow:inset 0 0 2000px #eb67da;
-    /* opacity: 80%; */
+    background: white;
+    box-shadow: 0 0 20px black;
+    border: none;
     border-radius: 15px;
 }
-.todo .container .popup .popContent .inputb{
-   margin-left: 5%;
-   font-size: 1.2rem;
-margin-bottom: 2%;
-    
+.todo .container .popup .inputb{
+    margin: 1rem;
+    padding: 1rem;
+    border: none;
+    box-shadow: 0 0 5px black;
 }
-/* .todo .container .outer .more{
-    width: 20%;
-    margin-top: 1%;
-    border-radius: 10px;
-
-
-} */
-/* .headingContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-  } */
+.todo .container .popup .close{
+    padding: 1rem;
+}
 .centerDiv {
     display: flex;
     justify-content: center;
@@ -88,19 +84,8 @@ margin-bottom: 2%;
     margin: 1%;
     font-size: 1.2rem;
 }
-/* .todo .container .outer .card{
-    background-color:#B9B9B9;
-    opacity: 42%;
-    width: 50%;
-    height: 100%;
-    margin-top: 6%;
-    border-radius: 10px;
-    padding-left: 5%;
-   
-   
-    
-} */
-.todo .container .outer  .taskCard{
+
+.todo .container  .taskCard{
     padding: .5vw;
     display: flex;
     align-items: flex-start;
@@ -110,7 +95,10 @@ margin-bottom: 2%;
     margin-top: 5%;
     
 }
-.todo .container .outer  .taskCard .card{
+.todo .outer{
+    
+}
+.todo .container  .taskCard .card{
     border: 1px solid #ddd;
     margin-bottom: 10px;
     padding: 10px;

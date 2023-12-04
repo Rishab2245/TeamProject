@@ -2,6 +2,7 @@ import './UserProfile.css'
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Cookies from 'js-cookie';
+import Loader from '../Loader/Loader';
 
 const UserProfile = () => {
   const [userProfile, setUserProfile] = useState(null);
@@ -30,7 +31,7 @@ const UserProfile = () => {
   }, []);
 
   if (!userProfile) {
-    return <div className='loader'>Loading...</div>;
+    return <div className='load'><Loader/></div>;
   }
 
   return (
