@@ -157,8 +157,6 @@ const Todo = ({auth ,  tododata}) => {
               "boardId":id,
               "listId":selectedListId,
               "daysAlloted":parseInt((daysAlloted),10)
-
-             
           },{
             headers:{
               withCredentials:true,
@@ -251,18 +249,23 @@ const Todo = ({auth ,  tododata}) => {
           <div key={list.id} className="outer">
             <div className="centerDiv">
               <div className="headingContainer">
-                <div className="heading">{list.name}</div>
+                <div className="heading"><h2>{list.name}</h2></div>
                  <div className="moreContainer">
-                  <button className='more'  onClick={() => handleAddCard(list._id)}>Add new card</button>
+                  <div className='buttton'>
+                    <h4>Add Task</h4>
+                  <button className='more'  onClick={() => handleAddCard(list._id)}>+</button>
+                  </div>
                  </div>
               </div>
             </div>
             <div className="taskCard">
             {list.cards.map((card)=>(
                 <div className="card">
-                  {card.name}
-                  <button  className="more1" onClick={() => handleDeleteCard(card._id)}>Delete</button>
-                  <button  className="more1" onClick={() => handleViewDesc(card.description)}>View description</button>
+                  <h5>{card.name}</h5>
+                  <div className="card-buttons">
+                  <button  className="more1" onClick={() => handleDeleteCard(card._id)}>-</button>
+                  <button  className="more2" onClick={() => handleViewDesc(card.description)}>Details</button>
+                  </div>
 
                 </div>
               ))}
@@ -276,9 +279,8 @@ const Todo = ({auth ,  tododata}) => {
        {showAddCardPopup &&(
           <div className="popup">
             <div className="popContent">
-            <input className="inputb" type="text" placeholder='new card name' value={newCardName} onChange={handleNewCard} />
-            <input className="inputb" type="text" placeholder='card description' value={newCardDesc} onChange={handleNewCardDesc} />
-            <input className="inputb" type="number" placeholder='No. of days' value={daysAlloted} onChange={handledays} />
+            <input className="inputb" type="text" placeholder='Name' value={newCardName} onChange={handleNewCard} />
+            <input className="inputb" type="text" placeholder='Description' value={newCardDesc} onChange={handleNewCardDesc} />
             <button className='close' onClick={handleCloseCardPopup}>Close</button>
             <button className='add' onClick={handleAddNewCard} >Add</button>
             
@@ -301,7 +303,7 @@ const Todo = ({auth ,  tododata}) => {
         {showNewListPopup &&(
           <div className="popup">
             <div className="popContent">
-            <input className="inputb" type="text" placeholder='new list name' value={newListName} onChange={handleInputChange} />
+            <input className="inputb" type="text" placeholder='New List Name' value={newListName} onChange={handleInputChange} />
             <button className='close' onClick={handleClosePopup}>Close</button>
             <button className='add' onClick={handleSubmit} >Add</button>
             
