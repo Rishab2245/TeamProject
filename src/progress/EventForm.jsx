@@ -5,9 +5,16 @@ const EventForm = ({ addEvent }) => {
   const { register, handleSubmit, reset } = useForm();
   
   const onSubmit = data => {
-    addEvent(data);
+    const formattedData = {
+      ...data,
+      start: moment(data.start).toISOString(),
+      end: moment(data.end).toISOString(),
+    };
+
+    addEvent(formattedData);
     reset();
   };
+  
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>

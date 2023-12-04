@@ -36,13 +36,13 @@ const SignUp = () => {
                 "email": mail,
                 "password": password
             })
-            console.log(response.data.status);
+            console.log(response);
             // console.log(value);
             setDisplay(false);
             navigate('/userDetails',{state:{id:1,name:name}});
         }
         catch (error) {
-            console.log(error.response.request.status);
+            console.log(error);
             // const err = error.response.request.status;
             // console.log("Previously :",value);
             setDisplay(true);
