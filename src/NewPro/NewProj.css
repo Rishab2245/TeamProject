@@ -1,7 +1,7 @@
 .newP{
     background: linear-gradient(113deg, #45048A 0%, #C40CC6 100%); 
-    padding:7rem 0rem 6rem 2.5rem; 
-    width: 100%;
+    padding:0rem 0rem 0rem 2.5rem; 
+    width: 95%;
     height: 92%;
     display: flex;
     justify-content: center;
@@ -10,7 +10,7 @@
 .newPBody{
     display: flex;
     flex-direction: row;
-    align-items:last baseline;
+    align-items:last bas3line;
     gap: 6rem;
     padding: 3rem; 
     width: 50%;
@@ -50,7 +50,7 @@
     font-style: normal;
     font-weight: 600;
   line-height: normal; 
-     margin: 10% 1rem 0.5rem 0rem; 
+     /* margin: 10% 1rem 0.5rem 0rem;  */
     margin-right: 2rem;
     margin-bottom: 2rem;
     align-self: flex-end;
