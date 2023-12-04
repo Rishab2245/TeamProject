@@ -7,12 +7,12 @@ const ProgressReport=({auth , tododata})=>{
 
     console.log(auth,tododata)
 
-        const api = 'https://teammanagement.onrender.com/api/board/calendar/65605e42ec5f2bea2e849f82'; 
+        const api = 'https://teammanagement.onrender.com/api/board/calendar/${tododata.id}'; 
     return(
 <>
 
 <Charts/>
-<CalendarComponent api={api}/>
+<CalendarComponent api={api} />
 </>
     )
 }

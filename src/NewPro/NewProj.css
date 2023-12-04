@@ -39,8 +39,7 @@
     height: 5%;
 }
 .newP .create{
-    width: 20%;
-    height: 10%;
+   padding: 1rem;
     flex-shrink: 0;
     border-radius: 0.54319rem;
     background: #0D3B66;
@@ -50,7 +49,6 @@
     font-style: normal;
     font-weight: 600;
   line-height: normal; 
-     /* margin: 10% 1rem 0.5rem 0rem;  */
     margin-right: 2rem;
     margin-bottom: 2rem;
     align-self: flex-end;
@@ -58,9 +56,8 @@
 
 }
 .newP .input1{
-    width:100%;
-    height: 80%;
-    flex-shrink: 0;
+    width: 100%;
+    height: 3.18006rem;
     border: none;
     border-radius: 0.625rem;
     background: #E2E2E2;
@@ -68,8 +65,8 @@
 }
 .newP .input2{
     width: 100%;
-    height:90% ;
-    flex-shrink: 0;
+height: 14.53738rem;
+    
     border-radius: 0.625rem;
     border: none;
     margin-bottom: 4rem; 

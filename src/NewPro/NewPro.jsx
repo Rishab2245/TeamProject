@@ -31,7 +31,8 @@ const NewPro = ({profunc , setprojectdata , auth , setmembers}) => {
         { headers: { authorization: auth } }
       );
       console.log('API Response:', response.data);
-      let temp = { value:response.data.board.name , discription: response.data.board.description , id: response.data.board._id , bol:"false" , members: response.data.board.members};
+      let temp = { value:response.data.board.name , discription  
+  , bol:"false" , members: response.data.board.members};
       setprojectdata(temp);
       // console.log(temp);
 

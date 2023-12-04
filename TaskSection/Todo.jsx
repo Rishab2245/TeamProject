@@ -47,52 +47,52 @@ const Todo = ({ auth, tododata }) => {
 
 
       console.log(response.data.lists[0].name);
-
-
-    } catch (error) {
-      console.error('Error:', error);
-    }
-
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, [auth, id]);
-
-
-
-
-
-
-
+      
+        
+      } catch (error) {
+        console.error('Error:', error);
+      }
+      
+    };
+    
+    useEffect(() => {
+      fetchData();
+    }, [auth, id]);
+    
+    
+   
+    
 
 
 
 
+  
+    
 
+    
+    
 
-
-  const [lists, setLists] = useState([
-    // { id: lid, name: 'To-Do', items: [],cards:[] },
-    // { id: 2, name: 'In Progress', items: [],cards:[] },
-    // { id: 3, name: 'Completed', items: [],cards:[] },
-    // {id:lid,name:lname,cards:[]}
-  ]);
-  console.log(lists);
-  const [showNewListPopup, setShowNewListPopup] = useState(false);
-  const [newListName, setNewListName] = useState('');
-  const [newCardName, setNewCardName] = useState('');
-  const [newCardDesc, setNewCardDesc] = useState('')
-  const [cards, setCards] = useState([])
-  const [showAddCardPopup, setshowAddCardPopup] = useState(false);
-  const [showDescPopup, setshowDescPopup] = useState(false);
-  const [selectedListId, setSelectedListId] = useState(null);
-  const [daysAlloted, setDaysAlloted] = useState(null)
-
-  const handleInputChange = (e) => {
-    setNewListName(e.target.value);
-
-  };
+    const [lists, setLists] = useState([
+      // { id: lid, name: 'To-Do', items: [],cards:[] },
+      // { id: 2, name: 'In Progress', items: [],cards:[] },
+      // { id: 3, name: 'Completed', items: [],cards:[] },
+      // {id:lid,name:lname,cards:[]}
+    ]);
+    console.log(lists);
+    const [showNewListPopup, setShowNewListPopup] = useState(false);
+    const [newListName, setNewListName]=useState('');
+    const [newCardName, setNewCardName]=useState('');
+    const [newCardDesc,setNewCardDesc]=useState('')
+    const [cards,setCards]=useState([])
+    const [showAddCardPopup,setshowAddCardPopup]=useState(false);
+    const [showDescPopup,setshowDescPopup]=useState(false);
+    const [selectedListId, setSelectedListId] = useState(null);
+    const [daysAlloted,setDaysAlloted]=useState(null)
+    
+    const handleInputChange = (e) => {
+      setNewListName(e.target.value);
+      
+    };
 
   const handleAddList = () => {
     setShowNewListPopup(true)
@@ -215,20 +215,20 @@ const Todo = ({ auth, tododata }) => {
     setNewCardDesc(description)
 
   }
-
-
-
-
-
-
-  const handleCloseDescPopup = () => {
+        
+        
+        
+        
+        
+        
+   const handleCloseDescPopup=()=>{
     setshowDescPopup(false)
-  }
+   }     
+        
+    
 
-
-
-
-  const handleCloseCardPopup = () => {
+   
+   const handleCloseCardPopup = () => {
     setshowAddCardPopup(false);
     setNewCardName('');
     setSelectedListId(null);
@@ -264,10 +264,10 @@ const Todo = ({ auth, tododata }) => {
           <div key={list.id} className="outer">
             <div className="centerDiv">
               <div className="headingContainer">
-                <div className="heading"><h2>{list.name}</h2><button onClick={() => HandleDeleteList(list._id)}>-</button></div>
+                <div className="heading"><h2 className='listnamehead'>{list.name}</h2><button className='cross' onClick={() => HandleDeleteList(list._id)}>x</button></div>
                 <div className="moreContainer">
                   <div className='buttton'>
-                    <h4>Add Task</h4>
+                    <h4 className='addtasktext'>Add Task</h4>
                     <button className='more' onClick={() => handleAddCard(list._id)}>+</button>
                   </div>
                 </div>
@@ -276,17 +276,19 @@ const Todo = ({ auth, tododata }) => {
             <div className="taskCard">
               {list.cards.map((card) => (
                 <div className="card">
-                  <h5>{card.name}</h5>
-                  <div className="card-buttons">
-                    <button className="more1" onClick={() => handleDeleteCard(card._id)}>-</button>
-                    <button className="more2" onClick={() => handleViewDesc(card.description)}>Details</button>
+                 <div className="taskcardhead">
+                <div> <h5 className='cardname7'>{card.name}</h5>
                   </div>
+                <div>  <button className="cross" onClick={() => handleDeleteCard(card._id)}>x</button></div>
+                 </div>
+                    <button className="more2" onClick={() => handleViewDesc(card.description)}>Details</button>
+                  
 
                 </div>
               ))}
-
-
-
+              
+              
+          
             </div>
           </div>
 
@@ -294,19 +296,19 @@ const Todo = ({ auth, tododata }) => {
         {showAddCardPopup && (
           <div className="popup">
             <div className="popContent">
-              <input className="inputb" type="text" placeholder='Name' onChange={handleNewCard} />
-              <input className="inputb" type="text" placeholder='Description' onChange={handleNewCardDesc} />
-              <button className='close' onClick={handleCloseCardPopup}>Close</button>
-              <button className='add' onClick={handleAddNewCard} >Add</button>
-
+            <input className="inputb" type="text" placeholder='Name' onChange={handleNewCard} />
+            <input className="inputb" type="text" placeholder='Description' onChange={handleNewCardDesc} />
+            <button className='close' onClick={handleCloseCardPopup}>Close</button>
+            <button className='add' onClick={handleAddNewCard} >Add</button>
+            
             </div>
 
           </div>
         )}
         {showDescPopup && (
           <div className="popup">
-            {newCardDesc}
-            <button className='close' onClick={handleCloseDescPopup}>Close</button>
+          <div className="description3"> <div> {newCardDesc}</div>
+          <div>  <button className='close' onClick={handleCloseDescPopup}>Close</button></div></div>
 
 
           </div>

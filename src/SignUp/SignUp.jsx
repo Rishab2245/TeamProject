@@ -37,7 +37,6 @@ const SignUp = () => {
                 "password": password
             })
             console.log(response.data.status);
-            console.log(response.headers);
             // console.log(value);
             setDisplay(false);
             navigate('/aftersignup');

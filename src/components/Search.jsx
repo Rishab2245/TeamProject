@@ -1,5 +1,4 @@
 import React from 'react'
-import SearchField from './SearchField'
 import UserIcon from './UserIcon'
 
 const Search = () => {
@@ -13,8 +12,8 @@ const Search = () => {
   }]
 
   return (
-    <div style={{display:"flex", width:"100%", justifyContent:"space-between" , background:"rgba(0,0,0,0.52)", padding:"0.5rem 0", height:"5%"}}>
-        <SearchField/>
+    <div style={{display:"flex", width:"100%", justifyContent:"flex-end" , background:"rgba(0,0,0,0.52)", padding:"0.5rem 0", height:"5%"}}>
+       
         <UserIcon user={user} />
     </div>
   )

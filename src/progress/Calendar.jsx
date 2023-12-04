@@ -17,7 +17,7 @@ const CalendarComponent = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('https://teammanagement.onrender.com/api/board/calendar/65605e42ec5f2bea2e849f82');
+      const response = await axios.get('https://teammanagement.onrender.com/api/board/calendar/${tododata.id}');
       setEvents(response.data);
     } catch (error) {
       console.error('Error fetching events:', error);
@@ -36,7 +36,7 @@ const CalendarComponent = () => {
     };
 
     try {
-      await axios.post('your-api-endpoint', newEvent);
+      await axios.post('https://teammanagement.onrender.com/api/board/calendar/${tododata.id}', newEvent);
       fetchData(); 
     } catch (error) {
       console.error('Error adding event:', error);
@@ -57,14 +57,16 @@ const CalendarComponent = () => {
 
   const calendarStyles = {
     background: 'tranparent',
-    color: 'black',
+    color: 'yellow',
     border: 'none',
+    padding:'1rem',
+
 
   };
 
   const eventListStyles = {
     listStyle: 'none',
-    padding: 0,
+    padding: 0, 
   };
   const eventItemStyles = {
     marginBottom: '8px',

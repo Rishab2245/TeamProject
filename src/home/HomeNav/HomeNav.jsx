@@ -17,8 +17,8 @@ const HomeNav=()=>{
         </div>
         <div className="NavComp">
             <div><a href="#homePage">Home</a></div>
-            <div><a href="">About Us</a></div>
-            <div><a href="">Contact</a></div>
+            <div><a href="#about">About Us</a></div>
+            <div><a href="#contact">Contact</a></div>
         </div>
         <div className="slbuttons">
             <Link to={"/login"}>
