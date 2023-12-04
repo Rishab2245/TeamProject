@@ -5,6 +5,9 @@
     background-color: white;
     align-items: center;
 }
+html{
+    height: 100%;
+}
 *{
     margin: 0;
     padding: 0;

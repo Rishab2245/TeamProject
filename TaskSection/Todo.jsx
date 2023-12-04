@@ -249,6 +249,7 @@ const Todo = ({ auth, tododata }) => {
     catch (error) {
       console.error(error);
     }
+    fetchData();
   }
 
 
