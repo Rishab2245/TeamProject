@@ -236,7 +236,7 @@ const Todo = ({auth ,  tododata}) => {
     setDaysAlloted(e.target.value)
 
   }
-
+  
 
   
   console.log(lists.cards);
@@ -279,8 +279,8 @@ const Todo = ({auth ,  tododata}) => {
        {showAddCardPopup &&(
           <div className="popup">
             <div className="popContent">
-            <input className="inputb" type="text" placeholder='Name' value={newCardName} onChange={handleNewCard} />
-            <input className="inputb" type="text" placeholder='Description' value={newCardDesc} onChange={handleNewCardDesc} />
+            <input className="inputb" type="text" placeholder='Name' onChange={handleNewCard} />
+            <input className="inputb" type="text" placeholder='Description' onChange={handleNewCardDesc} />
             <button className='close' onClick={handleCloseCardPopup}>Close</button>
             <button className='add' onClick={handleAddNewCard} >Add</button>
             
